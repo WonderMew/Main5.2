@@ -10,7 +10,7 @@
 #include "ZzzInfomation.h"
 #include "ZzzScene.h"
 
-// SendRequestLogOut() »ç¿ëÇÏ±â À§ÇØ.¤Ì¤Ì
+// SendRequestLogOut() ì‚¬ìš©í•˜ê¸° ìœ„í•´.ã…œã…œ
 #include "ZzzBMD.h"
 #include "ZzzObject.h"
 #include "ZzzCharacter.h"

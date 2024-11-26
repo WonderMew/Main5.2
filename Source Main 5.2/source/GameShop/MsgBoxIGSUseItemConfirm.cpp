@@ -25,10 +25,10 @@ CMsgBoxIGSUseItemConfirm::CMsgBoxIGSUseItemConfirm()
 		m_szDescription[i][0] = '\0';	
 	}
 	
-	m_iStorageSeq		= 0;		// º¸°üÇÔ ¼ø¹ø
-	m_iStorageItemSeq	= 0;		// º¸°üÇÔ »óÇ° ¼ø¹ø
-	m_wItemCode			= -1;		// ¾ÆÀÌÅÛ ÄÚµå
-	m_szItemType		= '\0';		// »óÇ°±¸ºĞ (C : Ä³½Ã, P : »óÇ°)
+	m_iStorageSeq		= 0;		// ë³´ê´€í•¨ ìˆœë²ˆ
+	m_iStorageItemSeq	= 0;		// ë³´ê´€í•¨ ìƒí’ˆ ìˆœë²ˆ
+	m_wItemCode			= -1;		// ì•„ì´í…œ ì½”ë“œ
+	m_szItemType		= '\0';		// ìƒí’ˆêµ¬ë¶„ (C : ìºì‹œ, P : ìƒí’ˆ)
 }
 
 CMsgBoxIGSUseItemConfirm::~CMsgBoxIGSUseItemConfirm()
@@ -139,7 +139,7 @@ CALLBACK_RESULT CMsgBoxIGSUseItemConfirm::OKButtonDown(class CNewUIMessageBoxBas
 {
 	CMsgBoxIGSUseItemConfirm* pOwnMsgBox = dynamic_cast<CMsgBoxIGSUseItemConfirm*>(pOwner);
 
-	// ÇöÀç¹öÇÁÁõ »ç¿ëÇÏ·Á´Â ¹öÇÁÅ¸ÀÔÀÌ °°À¸¸é °æ°í ¸Ş¼¼Áö Ã³¸®
+	// í˜„ì¬ë²„í”„ì¦ ì‚¬ìš©í•˜ë ¤ëŠ” ë²„í”„íƒ€ì…ì´ ê°™ìœ¼ë©´ ê²½ê³  ë©”ì„¸ì§€ ì²˜ë¦¬
 	BuffScriptLoader& pBuffInfo = TheBuffInfo();
 	int iBuffType = pBuffInfo.GetBuffType(pOwnMsgBox->m_wItemCode);
 	unicode::t_char szBuffName[MAX_TEXT_LENGTH] = {'\0', };
@@ -151,7 +151,7 @@ CALLBACK_RESULT CMsgBoxIGSUseItemConfirm::OKButtonDown(class CNewUIMessageBoxBas
 	
 	if( bEqualBuff )
 	{
-		//  ¹öÇÁ °æ°íÃ¢
+		//  ë²„í”„ ê²½ê³ ì°½
 		CMsgBoxIGSUseBuffConfirm* pMsgBox = NULL;
 		CreateMessageBox(MSGBOX_LAYOUT_CLASS(CMsgBoxIGSUseBuffConfirmLayout), &pMsgBox);
 		pMsgBox->Initialize(pOwnMsgBox->m_iStorageSeq, pOwnMsgBox->m_iStorageItemSeq, 
@@ -160,7 +160,7 @@ CALLBACK_RESULT CMsgBoxIGSUseItemConfirm::OKButtonDown(class CNewUIMessageBoxBas
 	else
 	{
 		SendRequestIGS_UseStorageItem(pOwnMsgBox->m_iStorageSeq, pOwnMsgBox->m_iStorageItemSeq, pOwnMsgBox->m_wItemCode, &(pOwnMsgBox->m_szItemType));
-		SendRequestIGS_CashPointInfo();			// »ç¿ëÀÚÀÇ Ä³½Ã Æ÷ÀÎÆ® Á¤º¸ ¿äÃ»
+		SendRequestIGS_CashPointInfo();			// ì‚¬ìš©ìì˜ ìºì‹œ í¬ì¸íŠ¸ ì •ë³´ ìš”ì²­
 	}
 	
 	PlayBuffer(SOUND_CLICK01);
@@ -192,13 +192,13 @@ void CMsgBoxIGSUseItemConfirm::SetAddCallbackFunc()
 // SetButtonInfo
 void CMsgBoxIGSUseItemConfirm::SetButtonInfo()
 {
-	// È®ÀÎ ¹öÆ°
+	// í™•ì¸ ë²„íŠ¼
 	m_BtnOk.SetInfo(IMAGE_IGS_BUTTON, GetPos().x+IGS_BTN_OK_POS_X, GetPos().y+IGS_BTN_POS_Y, 
 						IMAGE_IGS_BTN_WIDTH, IMAGE_IGS_BTN_HEIGHT, CNewUIMessageBoxButton::MSGBOX_BTN_CUSTOM, true);
 	m_BtnOk.MoveTextPos(0, -1);
 	m_BtnOk.SetText(GlobalText[228]);	
 	
-	// Ãë¼Ò ¹öÆ°
+	// ì·¨ì†Œ ë²„íŠ¼
 	m_BtnCancel.SetInfo(IMAGE_IGS_BUTTON, GetPos().x+IGS_BTN_CANCEL_POS_X, GetPos().y+IGS_BTN_POS_Y, 
 						IMAGE_IGS_BTN_WIDTH, IMAGE_IGS_BTN_HEIGHT, CNewUIMessageBoxButton::MSGBOX_BTN_CUSTOM, true);
 	m_BtnCancel.MoveTextPos(0, -1);
@@ -235,7 +235,7 @@ void CMsgBoxIGSUseItemConfirm::RenderTexts()
 	g_pRenderText->SetTextColor(255, 255, 255, 255);
 	g_pRenderText->SetFont(g_hFontBold);
 
-	// Title - "»ç¿ë È®ÀÎ"
+	// Title - "ì‚¬ìš© í™•ì¸"
 	g_pRenderText->RenderText(GetPos().x, GetPos().y+IGS_TEXT_TITLE_Y, GlobalText[2922], IMAGE_IGS_FRAME_WIDTH, 0, RT3_SORT_CENTER);
 
 	g_pRenderText->SetFont(g_hFont);

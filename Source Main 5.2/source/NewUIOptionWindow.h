@@ -83,11 +83,11 @@ namespace SEASON3B
 
 		CNewUIButton m_BtnClose;
 		
-		bool m_bAutoAttack;		// ÀÚµ¿ °ø°İ
-		bool m_bWhisperSound;	// ±Ó¸» ¾Ë¸²À½ 
-		bool m_bSlideHelp;		// ½½¶óÀÌµå µµ¿ò¸»
-		int m_iVolumeLevel;		// º¼·ıÁ¶Àı
-		int m_iRenderLevel;		// È¿°úÁ¦ÇÑ
+		bool m_bAutoAttack;		// ìë™ ê³µê²©
+		bool m_bWhisperSound;	// ê·“ë§ ì•Œë¦¼ìŒ 
+		bool m_bSlideHelp;		// ìŠ¬ë¼ì´ë“œ ë„ì›€ë§
+		int m_iVolumeLevel;		// ë³¼ë¥¨ì¡°ì ˆ
+		int m_iRenderLevel;		// íš¨ê³¼ì œí•œ
 	};
 	
 }

@@ -317,7 +317,7 @@ void M34CryWolf1st::ChangeBackGroundMusic(int World)
 bool M34CryWolf1st::IsCyrWolf1st()
 { return (gMapManager.WorldActive == WD_34CRYWOLF_1ST) ? true : false; }
 
-//. ø¿∫Í¡ß∆Æ
+//. Ïò§Î∏åÏ†ùÌä∏
 bool M34CryWolf1st::CreateCryWolf1stObject(OBJECT* o)
 {
 	if(!IsCyrWolf1st())

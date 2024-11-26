@@ -4,7 +4,7 @@
 
 #include "CGFxProcess.h"
 
-//gfxExpress Ãß°¡
+//gfxExpress ì¶”ê°€
 #include "CGFxMainUi.h"
 #include "CGFxInfoPopup.h"
 
@@ -27,7 +27,7 @@ static void BuxConvert(BYTE *Buffer,int Size)
 //////////////////////////////////////////////////////////////////////
 CGFXBase* GFxProcess::Find(GFxRegistType key)
 {
-	//m_mapGfxContainer »ç¿ë
+	//m_mapGfxContainer ì‚¬ìš©
 	mapGFXContainer::iterator iter = m_mapGfxContainer.find(key);
 
 	if( iter != m_mapGfxContainer.end() )
@@ -289,7 +289,7 @@ bool GFxProcess::GFxInit()
 		}
 
 #ifdef ADD_SELETED_LANGUAGE_FONT
-		//ÆùÆ® ±¹°¡ ¼³Á¤
+		//í°íŠ¸ êµ­ê°€ ì„¤ì •
 		m_FontConfigIndex = SELECTED_LANGUAGE;
 		m_FontConfigIndex %= (SInt)m_FontConfigs.GetSize();
 #endif //ADD_SELETED_LANGUAGE_FONT
@@ -301,11 +301,11 @@ bool GFxProcess::GFxInit()
 			pconfig = GetCurrentFontConfig();
 		} 
 
-		//ÆùÆ®¼³Á¤
+		//í°íŠ¸ì„¤ì •
 		const char* language = (m_FontConfigIndex == -1) ? "Default" : m_FontConfigs[m_FontConfigIndex]->ConfigName.ToCStr();
 		
-		// CGFXBase Class »ý¼º, ÃÊ±âÈ­
-		// m_mapGfxContainer µî·Ï
+		// CGFXBase Class ìƒì„±, ì´ˆê¸°í™”
+		// m_mapGfxContainer ë“±ë¡
 
 		// create main frame swf
 		filename = "mainFrame.gfx";
@@ -347,7 +347,7 @@ bool GFxProcess::GFxInit()
 
 void GFxProcess::GFxDestroy()
 {
-	//m_mapGfxContainer ÃÊ±âÈ­, »èÁ¦
+	//m_mapGfxContainer ì´ˆê¸°í™”, ì‚­ì œ
 	for( mapGFXContainer::iterator iter = m_mapGfxContainer.begin(); iter != m_mapGfxContainer.end(); iter++)
 	{
 		CGFXBase* temp = (*iter).second;
@@ -361,25 +361,25 @@ void GFxProcess::GFxUpdate(int _scene)
 	if(!m_isCompletedLoad)
 		return;
 
-	//scene º¯°æ½Ã ÃÊ±âÈ­
+	//scene ë³€ê²½ì‹œ ì´ˆê¸°í™”
 	if(m_iNowSceneFlag != _scene)
 	{
 		for( mapGFXContainer::iterator iter = m_mapGfxContainer.begin(); iter != m_mapGfxContainer.end(); iter ++ )
 		{
 			CGFXBase* temp = (*iter).second;
 
-			// scene update ÃÊ±âÈ­
+			// scene update ì´ˆê¸°í™”
 			switch (_scene)
 			{
-			case LOG_IN_SCENE:		// ·Î±×ÀÎ ¾À.
+			case LOG_IN_SCENE:		// ë¡œê·¸ì¸ ì”¬.
 				GFxSceneInit_LogIn((*iter).first, temp);
 				break;
 
-			case CHARACTER_SCENE:	// Ä³¸¯ÅÍ ¼±ÅÃ, »ý¼º ¾À.
+			case CHARACTER_SCENE:	// ìºë¦­í„° ì„ íƒ, ìƒì„± ì”¬.
 				GFxSceneInit_Char((*iter).first, temp);
 				break;
 
-			case MAIN_SCENE:		// °ÔÀÓ ¾À.
+			case MAIN_SCENE:		// ê²Œìž„ ì”¬.
 				GFxSceneInit_Main((*iter).first, temp);
 				break;
 			}
@@ -391,18 +391,18 @@ void GFxProcess::GFxUpdate(int _scene)
 	{
 		CGFXBase* temp = (*iter).second;
 
-		// sceneº° ¼³Á¤
+		// sceneë³„ ì„¤ì •
 		switch (_scene)
 		{
-		case LOG_IN_SCENE:		// ·Î±×ÀÎ ¾À.
+		case LOG_IN_SCENE:		// ë¡œê·¸ì¸ ì”¬.
 			GFxSceneControll_LogIn((*iter).first, temp);
 			break;
 
-		case CHARACTER_SCENE:	// Ä³¸¯ÅÍ ¼±ÅÃ, »ý¼º ¾À.
+		case CHARACTER_SCENE:	// ìºë¦­í„° ì„ íƒ, ìƒì„± ì”¬.
 			GFxSceneControll_Char((*iter).first, temp);
 			break;
 
-		case MAIN_SCENE:		// °ÔÀÓ ¾À.
+		case MAIN_SCENE:		// ê²Œìž„ ì”¬.
 			GFxSceneControll_Main((*iter).first, temp);
 			break;
 		}
@@ -421,7 +421,7 @@ void GFxProcess::GFxRender()
 		if(temp->IsVisible())
 		{
 			//GFxRendering--------------------------------------------------------------------------//
-			//¼³Á¤ ÃÊ±âÈ­
+			//ì„¤ì • ì´ˆê¸°í™”
 			glPushAttrib(GL_ALL_ATTRIB_BITS);
 			glDisable(GL_FRAGMENT_PROGRAM_ARB);
 			glDisable(GL_VERTEX_PROGRAM_ARB);
@@ -433,14 +433,14 @@ void GFxProcess::GFxRender()
 				//error log
 			}
 
-			//¼³Á¤ º¹±¸
+			//ì„¤ì • ë³µêµ¬
 			glPopAttrib();
 
 			//3d model rendering--------------------------------------------------------------------//
-			//. 2D¸¦ ±×¸®´ø ÁßÀÌ¿´À¸¹Ç·Î EndBitmap¸¦ È£ÃâÇÑ´Ù.
+			//. 2Dë¥¼ ê·¸ë¦¬ë˜ ì¤‘ì´ì˜€ìœ¼ë¯€ë¡œ EndBitmapë¥¼ í˜¸ì¶œí•œë‹¤.
 			EndBitmap();
 
-			/******************** 3D ±×¸®±â ·çÆ¾ ********************/
+			/******************** 3D ê·¸ë¦¬ê¸° ë£¨í‹´ ********************/
 			glMatrixMode(GL_PROJECTION);
 			glPushMatrix();
 			glLoadIdentity();
@@ -449,12 +449,12 @@ void GFxProcess::GFxRender()
 			glMatrixMode(GL_MODELVIEW);
 			glPushMatrix();
 			glLoadIdentity();
-			GetOpenGLMatrix(CameraMatrix);	// Ä«¸Þ¶ó ¸ÅÆ®¸¯½º ÃÊ±âÈ­
+			GetOpenGLMatrix(CameraMatrix);	// ì¹´ë©”ë¼ ë§¤íŠ¸ë¦­ìŠ¤ ì´ˆê¸°í™”
 			EnableDepthTest();
 			EnableDepthMask();
 
-			// ±âÁ¸ 3D¿Í ²¿ÀÌ´Â °ÍÀ» ¹æÁöÇÏ±â À§ÇØ
-			// ±íÀÌ ¹öÆÛ¸¦ Å¬¸®¾î ½ÃÄÑÁØ´Ù.
+			// ê¸°ì¡´ 3Dì™€ ê¼¬ì´ëŠ” ê²ƒì„ ë°©ì§€í•˜ê¸° ìœ„í•´
+			// ê¹Šì´ ë²„í¼ë¥¼ í´ë¦¬ì–´ ì‹œì¼œì¤€ë‹¤.
 			glClear(GL_DEPTH_BUFFER_BIT);
 
 			if(temp->RenderModel())
@@ -462,7 +462,7 @@ void GFxProcess::GFxRender()
 				//error log
 			}
 
-			// ÇöÀç Ä«¸Þ¶óÀÇ ¸ÅÆ®¸¯½º¸¦ °¡Áö°í MousePosition ¾÷µ¥ÀÌÆ®
+			// í˜„ìž¬ ì¹´ë©”ë¼ì˜ ë§¤íŠ¸ë¦­ìŠ¤ë¥¼ ê°€ì§€ê³  MousePosition ì—…ë°ì´íŠ¸
 			UpdateMousePositionn();
 
 			glMatrixMode(GL_MODELVIEW);
@@ -470,10 +470,10 @@ void GFxProcess::GFxRender()
 			glMatrixMode(GL_PROJECTION);
 			glPopMatrix();
 
-			//. ´Ù½Ã 2D¸¦ ±×·Á¾ß ÇÏ¹Ç·Î BeginBitmap¸¦ È£ÃâÇÑ´Ù.
+			//. ë‹¤ì‹œ 2Dë¥¼ ê·¸ë ¤ì•¼ í•˜ë¯€ë¡œ BeginBitmapë¥¼ í˜¸ì¶œí•œë‹¤.
 			BeginBitmap();
 
-			//. 3D À§¿¡ ±×·ÁÁö´Â 2D Effect¸¦ ±×¸°´Ù.
+			//. 3D ìœ„ì— ê·¸ë ¤ì§€ëŠ” 2D Effectë¥¼ ê·¸ë¦°ë‹¤.
 			// 	while(!m_deque2DEffects.empty())
 			// 	{
 			// 		UI_2DEFFECT_INFO& UI2DEffectInfo = m_deque2DEffects.front();
@@ -564,7 +564,7 @@ void GFxProcess::GFxSceneInit_LogIn(GFxRegistType _type, CGFXBase* _gfx)
 	}
 
 	// Setting Once ------------------------------------------------//
-	// scene º¯°æ½Ã Àá°ÜÀÖ´Â ¼³Á¤À» Ç®¾îÁÜ.
+	// scene ë³€ê²½ì‹œ ìž ê²¨ìžˆëŠ” ì„¤ì •ì„ í’€ì–´ì¤Œ.
 	_gfx->SetUnLockVisible();
 
 	switch(_type)
@@ -573,12 +573,12 @@ void GFxProcess::GFxSceneInit_LogIn(GFxRegistType _type, CGFXBase* _gfx)
 		//error log??
 		break;
 
-		// scene¿¡¼­ ÃÊ±â ¿­¾î³õÀ½
+		// sceneì—ì„œ ì´ˆê¸° ì—´ì–´ë†“ìŒ
 	case GFxRegistType::eGFxRegist_ImageTest:
 		_gfx->SetVisible(TRUE);
 		break;
 
-		// scene¿¡¼­ ÃÊ±â ´Ý¾Æ³õÀ½
+		// sceneì—ì„œ ì´ˆê¸° ë‹«ì•„ë†“ìŒ
 	default:
 		_gfx->SetVisible(FALSE);
 		break;
@@ -596,7 +596,7 @@ void GFxProcess::GFxSceneControll_LogIn(GFxRegistType _type, CGFXBase* _gfx)
 	// show/hide ------------------------------------------------//
 // 	switch(_type)
 // 	{
-// 		// ÇØ´ç¾À¿¡¼­ Àý´ë·Î ¾È´ÝÈû
+// 		// í•´ë‹¹ì”¬ì—ì„œ ì ˆëŒ€ë¡œ ì•ˆë‹«íž˜
 // 	case GFxRegistType::eGFxRegist_TEST_0:
 // 	case GFxRegistType::eGFxRegist_TEST_1:
 // 		{
@@ -604,7 +604,7 @@ void GFxProcess::GFxSceneControll_LogIn(GFxRegistType _type, CGFXBase* _gfx)
 // 		}
 // 		break;
 // 
-// 		// ÇØ´ç¾À¿¡¼­ Àý´ë·Î ¾È¿­¸²
+// 		// í•´ë‹¹ì”¬ì—ì„œ ì ˆëŒ€ë¡œ ì•ˆì—´ë¦¼
 // 	case GFxRegistType::eGFxRegist_MainButton:
 // 		{
 // 			_gfx->SetLockVisible(FALSE);
@@ -634,7 +634,7 @@ void GFxProcess::GFxSceneInit_Char(GFxRegistType _type, CGFXBase* _gfx)
 	}
 
 	// Setting Once ------------------------------------------------//
-	// scene º¯°æ½Ã Àá°ÜÀÖ´Â ¼³Á¤À» Ç®¾îÁÜ.
+	// scene ë³€ê²½ì‹œ ìž ê²¨ìžˆëŠ” ì„¤ì •ì„ í’€ì–´ì¤Œ.
 	_gfx->SetUnLockVisible();
 
 	switch(_type)
@@ -642,9 +642,9 @@ void GFxProcess::GFxSceneInit_Char(GFxRegistType _type, CGFXBase* _gfx)
 	case GFxRegistType::eGFxRegist_NONE:
 		//error log??
 		break;
-		// scene¿¡¼­ ÃÊ±â ¿­¾î³õÀ½
+		// sceneì—ì„œ ì´ˆê¸° ì—´ì–´ë†“ìŒ
 
-		// scene¿¡¼­ ÃÊ±â ´Ý¾Æ³õÀ½
+		// sceneì—ì„œ ì´ˆê¸° ë‹«ì•„ë†“ìŒ
 	default:
 		_gfx->SetVisible(FALSE);
 		break;
@@ -662,14 +662,14 @@ void GFxProcess::GFxSceneControll_Char(GFxRegistType _type, CGFXBase* _gfx)
 	// show/hide ------------------------------------------------//
 // 	switch(_type)
 // 	{
-// 		// ÇØ´ç¾À¿¡¼­ Àý´ë·Î ¾È´ÝÈû
+// 		// í•´ë‹¹ì”¬ì—ì„œ ì ˆëŒ€ë¡œ ì•ˆë‹«íž˜
 // 	case GFxRegistType::eGFxRegist_TEST_2:
 // 		{
 // 			_gfx->SetLockVisible(TRUE);
 // 		}
 // 		break;
 // 
-// 		// ÇØ´ç¾À¿¡¼­ Àý´ë·Î ¾È¿­¸²
+// 		// í•´ë‹¹ì”¬ì—ì„œ ì ˆëŒ€ë¡œ ì•ˆì—´ë¦¼
 // 	case GFxRegistType::eGFxRegist_TEST_3:
 // 	case GFxRegistType::eGFxRegist_MainButton:
 // 		{
@@ -700,7 +700,7 @@ void GFxProcess::GFxSceneInit_Main(GFxRegistType _type, CGFXBase* _gfx)
 	}
 
 	// Setting Once ------------------------------------------------//
-	// scene º¯°æ½Ã Àá°ÜÀÖ´Â ¼³Á¤À» Ç®¾îÁÜ.
+	// scene ë³€ê²½ì‹œ ìž ê²¨ìžˆëŠ” ì„¤ì •ì„ í’€ì–´ì¤Œ.
 	_gfx->SetUnLockVisible();
 
 	switch(_type)
@@ -708,7 +708,7 @@ void GFxProcess::GFxSceneInit_Main(GFxRegistType _type, CGFXBase* _gfx)
 	case GFxRegistType::eGFxRegist_NONE:
 		//error log??
 		break;
-		// scene¿¡¼­ ÃÊ±â ¿­¾î³õÀ½
+		// sceneì—ì„œ ì´ˆê¸° ì—´ì–´ë†“ìŒ
 // 	case GFxRegistType::eGFxRegist_TEST_0:
 // 		{
 // 			_gfx->SetVisible(TRUE);
@@ -724,7 +724,7 @@ void GFxProcess::GFxSceneInit_Main(GFxRegistType _type, CGFXBase* _gfx)
 		break;
 
 
-		// scene¿¡¼­ ÃÊ±â ´Ý¾Æ³õÀ½
+		// sceneì—ì„œ ì´ˆê¸° ë‹«ì•„ë†“ìŒ
 	default:
 		_gfx->SetVisible(FALSE);
 		break;
@@ -751,14 +751,14 @@ void GFxProcess::GFxSceneControll_Main(GFxRegistType _type, CGFXBase* _gfx)
 	// show/hide ------------------------------------------------//
 //	switch(_type)
 //	{
-//		// ÇØ´ç¾À¿¡¼­ Àý´ë·Î ¾È´ÝÈû
+//		// í•´ë‹¹ì”¬ì—ì„œ ì ˆëŒ€ë¡œ ì•ˆë‹«íž˜
 // 	case GFxRegistType::eGFxRegist_MainUI:
 // 		{
 // 			_gfx->SetLockVisible(TRUE);
 // 		}
 // 		break;
 //
-//		// ÇØ´ç¾À¿¡¼­ Àý´ë·Î ¾È¿­¸²
+//		// í•´ë‹¹ì”¬ì—ì„œ ì ˆëŒ€ë¡œ ì•ˆì—´ë¦¼
 //		//_gfx->SetLockVisible(FALSE);
 //	}
 

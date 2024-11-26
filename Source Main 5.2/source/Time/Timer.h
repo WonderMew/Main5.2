@@ -13,10 +13,10 @@ class CTimer
 {
 	BOOL	m_bUsePerformanceCounter;	// use performance counter or multimedia timer?
 	DWORD	m_mmTimerStart;		// Multimedia timer variables for start times
-	DWORD	m_mmAbsTimerStart;	// ÃÖÃÊ·Î MM Timer°¡ »ı¼ºµÈ ½Ã°£
+	DWORD	m_mmAbsTimerStart;	// ìµœì´ˆë¡œ MM Timerê°€ ìƒì„±ëœ ì‹œê°„
 	float	m_resolution;		// Timer resolution for performance counter timer
 	__int64	m_pcTimerStart;		// Performance counter timer variables for start times
-	__int64	m_pcAbsTimerStart;	// ÃÖÃÊ·Î PC Timer°¡ »ı¼ºµÈ ½Ã°£
+	__int64	m_pcAbsTimerStart;	// ìµœì´ˆë¡œ PC Timerê°€ ìƒì„±ëœ ì‹œê°„
 	__int64	m_frequency;		// Time frequency for performance counter timer
 
 public:

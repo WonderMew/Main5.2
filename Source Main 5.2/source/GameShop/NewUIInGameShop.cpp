@@ -68,7 +68,7 @@ bool CNewUIInGameShop::Create(CNewUIManager* pNewUIMng, int x, int y)
 	SetPos(x, y);
 	LoadImages();
 	SetBtnInfo();
-	Show(false);	//visible()À» flase·Î
+	Show(false);	//visible()ì„ flaseë¡œ
 
 	return true;
 }
@@ -432,14 +432,14 @@ bool CNewUIInGameShop::BtnProcess()
 
 		IGS_StorageItem* pSelectItem = m_StorageItemListBox.GetSelectedText();
 		
-		if( iStorageIndex == IGS_SAFEKEEPING_LISTBOX )					// º¸°üÇÔ
+		if( iStorageIndex == IGS_SAFEKEEPING_LISTBOX )					// ë³´ê´€í•¨
 		{
 			CMsgBoxIGSStorageItemInfo* pMsgBox = NULL;
 			CreateMessageBox(MSGBOX_LAYOUT_CLASS(CMsgBoxIGSStorageItemInfoLayout), &pMsgBox);
 			pMsgBox->Initialize(pSelectItem->m_iStorageSeq, pSelectItem->m_iStorageItemSeq, pSelectItem->m_wItemCode, pSelectItem->m_szType, 
 				pSelectItem->m_szName, pSelectItem->m_szNum, pSelectItem->m_szPeriod);
 		}
-		else if( iStorageIndex == IGS_PRESENTBOX_LISTBOX )				// ¼±¹° º¸°üÇÔ
+		else if( iStorageIndex == IGS_PRESENTBOX_LISTBOX )				// ì„ ë¬¼ ë³´ê´€í•¨
 		{
 			CMsgBoxIGSGiftStorageItemInfo* pMsgBox = NULL;
 			CreateMessageBox(MSGBOX_LAYOUT_CLASS(CMsgBoxIGSGiftStorageItemInfoLayout), &pMsgBox);
@@ -482,7 +482,7 @@ bool CNewUIInGameShop::BtnProcess()
 	{	
 		if(g_pNewUISystem->IsVisible(SEASON3B::INTERFACE_INGAMESHOP) == true)
 		{	
-			SendRequestIGS_CashShopOpen(1);		// ¼¥ Close¿äÃ»
+			SendRequestIGS_CashShopOpen(1);		// ìƒµ Closeìš”ì²­
 			g_pNewUISystem->Hide(SEASON3B::INTERFACE_INGAMESHOP);
 
 			return true;

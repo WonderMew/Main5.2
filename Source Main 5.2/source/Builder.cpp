@@ -150,7 +150,7 @@ BoostSmart_Ptr(InfoFile) Builder::MakeInfo( InfoTextType type )
 
 	char TextFileName[512];
 
-	sprintf( TextFileName, "%s%s%s%s%s", //°ζ·Ξ, ΖΔΐΟΈν, ΕΧ½ΊΖ®, ³ª¶σΊ°, Θ®ΐεΈν
+	sprintf( TextFileName, "%s%s%s%s%s", //κ²½λ΅, νμΌλª…, ν…μ¤νΈ, λ‚λΌλ³„, ν™•μ¥λª…
 		                   TEXTFILEPOSITION, 
 						   TEXTFILENAME[type], 
 						   m_isTestServer ? TEXTFILETESTSERVER : "",

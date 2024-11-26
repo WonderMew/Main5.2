@@ -1010,7 +1010,7 @@ typedef struct {
 	BYTE         GuildKeyL;
 } PRECEIVE_GUILD_PLAYER, * LPPRECEIVE_GUILD_PLAYER;
 
-// ╠Ф╣Е©Ь ╦Я╥о
+// Й╦╦К⌠°Л⌡░ К╙╘К║²
 typedef struct {
 	BYTE         ID[MAX_ID_SIZE];
 	BYTE         Number;
@@ -1018,7 +1018,7 @@ typedef struct {
 	BYTE		 GuildStatus;
 } PRECEIVE_GUILD_LIST, * LPPRECEIVE_GUILD_LIST;
 
-// ╠Ф╣Е©Ь ╦Я╥о ╦╝╫╨ф╝
+// Й╦╦К⌠°Л⌡░ К╙╘К║² К╕╛Л┼╓М┼╦
 typedef struct {
 	PWMSG_HEADER Header;
 	BYTE         Result;
@@ -1361,7 +1361,7 @@ typedef struct
 } NPC_QUESTEXP_REQUEST_INFO, *LPNPC_QUESTEXP_REQUEST_INFO;
 #pragma pack(pop)
 
-// ╨╦╩С
+// КЁ╢Л┐│
 enum QUEST_REWARD_TYPE
 {
 	QUEST_REWARD_NONE		= 0x0000,
@@ -2468,7 +2468,7 @@ typedef struct
 } PMSG_ANS_CRYWOLF_INFO, *LPPMSG_ANS_CRYWOLF_INFO;
 
 //--------------------------------------------------------------------------
-// GC [0xBD][0x02] ╧Ф╬Н╦╥, а╕╢э ╩Себ а╓╨╦
+// GC [0xBD][0x02] К╟╘Л√╢К╖┴, Л═°К▀╗ Л┐│М┐° Л═∙КЁ╢
 //--------------------------------------------------------------------------
 typedef struct
 {
@@ -3201,7 +3201,7 @@ typedef struct
 }PMSG_CASHSHOP_BUYITEM_REQ, *LPPMSG_CASHSHOP_BUYITEM_REQ;
 
 //----------------------------------------------------------------------------
-// ╬фюлеш ╠╦╦е ╟А╟З (0xD2)(0x03)
+// Л∙└Л²╢М┘° Й╣╛К╖╓ Й╡╟ЙЁ╪ (0xD2)(0x03)
 //----------------------------------------------------------------------------
 typedef struct
 {

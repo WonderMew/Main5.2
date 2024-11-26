@@ -81,7 +81,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(166);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+166, PosX, PosY);
-			strcpy(pCharacter->ID, "∑π¿Ã∏ÛµÂ");
+			strcpy(pCharacter->ID, "Î†àÏù¥Î™¨Îìú");
 			
 			pCharacter->Object.Scale = 1.45f;
 
@@ -92,7 +92,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(167);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+167, PosX, PosY);
-			strcpy(pCharacter->ID, "ø°∏£ƒ≠¥¿");
+			strcpy(pCharacter->ID, "ÏóêÎ•¥Ïπ∏Îäê");
 			
 			pCharacter->Object.Scale = 1.25f;
 
@@ -103,7 +103,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(168);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+168, PosX, PosY);
-			strcpy(pCharacter->ID, "µ•ΩΩ∑Ø");
+			strcpy(pCharacter->ID, "Îç∞Ïä¨Îü¨");
 			pCharacter->Object.Scale = 1.55f;
 
 			BoneManager::RegisterBone(pCharacter, "node_eyes01", 14);
@@ -135,7 +135,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(171);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+171, PosX, PosY);
-			strcpy(pCharacter->ID, "∞•∏Ææ∆");
+			strcpy(pCharacter->ID, "Í∞àÎ¶¨ÏïÑ");
 			pCharacter->Object.Scale = 1.35f;
 
 			m_bCurrentIsRage_Gallia = false;
@@ -145,7 +145,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(172);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+172, PosX, PosY);
-			strcpy(pCharacter->ID, "∫¥¬¸¿Â±≥");
+			strcpy(pCharacter->ID, "Î≥ëÏ∞∏Ïû•Íµê");
 			pCharacter->Object.Scale = 1.27f;
 		}
 		break;
@@ -153,7 +153,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(173);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+173, PosX, PosY);
-			strcpy(pCharacter->ID, "¿¸≈ı±≥∞¸");
+			strcpy(pCharacter->ID, "Ï†ÑÌà¨ÍµêÍ¥Ä");
 			pCharacter->Object.Scale = 1.25f;
 		}
 		break;
@@ -161,7 +161,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(178);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+178, PosX, PosY);
-			strcpy(pCharacter->ID, "ºˆ»£±∫πÊ∆–∫¥");
+			strcpy(pCharacter->ID, "ÏàòÌò∏Íµ∞Î∞©Ìå®Î≥ë");
 			pCharacter->Object.Scale = 1.2f;
 
 			Vector(0.0f, 0.0f, 0.0f, pCharacter->Object.EyeRight3);
@@ -172,7 +172,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(179);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+179, PosX, PosY);
-			strcpy(pCharacter->ID, "ºˆ»£±∫ƒ°¿Ø∫¥");	
+			strcpy(pCharacter->ID, "ÏàòÌò∏Íµ∞ÏπòÏú†Î≥ë");	
 			pCharacter->Object.Scale = 0.9f;
 		}
 		break;
@@ -180,7 +180,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(180);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+180, PosX, PosY);
-			strcpy(pCharacter->ID, "±‚ªÁ¥‹");
+			strcpy(pCharacter->ID, "Í∏∞ÏÇ¨Îã®");
 			pCharacter->Object.Scale = 1.1f;
 		}
 		break;
@@ -188,7 +188,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(181);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+181, PosX, PosY);
-			strcpy(pCharacter->ID, "»£¿ß∫¥");
+			strcpy(pCharacter->ID, "Ìò∏ÏúÑÎ≥ë");
 			pCharacter->Object.Scale = 1.1f;
 		}
 		break;
@@ -196,7 +196,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(183);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+183, PosX, PosY);
-			strcpy(pCharacter->ID, "√¢ªÏ«¸ º∫πÆ");
+			strcpy(pCharacter->ID, "Ï∞ΩÏÇ¥Ìòï ÏÑ±Î¨∏");
 			pCharacter->Object.m_bRenderShadow = false;
 			pCharacter->Object.Scale = 1.25f;
 		}
@@ -205,7 +205,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(184);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+184, PosX, PosY);
-			strcpy(pCharacter->ID, "ªÁ¿⁄∏”∏Æ º∫πÆ");
+			strcpy(pCharacter->ID, "ÏÇ¨ÏûêÎ®∏Î¶¨ ÏÑ±Î¨∏");
 			pCharacter->Object.m_bRenderShadow = false;
 			pCharacter->Object.LifeTime = 100;
 			pCharacter->Object.Scale = 1.25f;
@@ -215,7 +215,7 @@ CHARACTER* GMEmpireGuardian1::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(185);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+185, PosX, PosY);
-			strcpy(pCharacter->ID, "ºÆªÛ");
+			strcpy(pCharacter->ID, "ÏÑùÏÉÅ");
 			pCharacter->Object.m_bRenderShadow = false;
 			pCharacter->Object.Scale = 0.6f;
 			pCharacter->Object.LifeTime = 100;
@@ -802,7 +802,7 @@ bool GMEmpireGuardian1::MoveMonsterVisual(CHARACTER* c, OBJECT* o, BMD* b)
 			CreateSprite(BITMAP_LIGHTMARKS, vPos, 0.3f, Light, o);
 
 
-			// Action ¡§¿«
+			// Action Ï†ïÏùò
 			float _fActSpdTemp = b->Actions[o->CurrentAction].PlaySpeed;
 
 			switch( o->CurrentAction )
@@ -2625,27 +2625,27 @@ bool GMEmpireGuardian1::PlayMonsterSound(OBJECT* o)
 				break;
 			case MONSTER01_ATTACK1:
 				{
-					PlayBuffer( SOUND_EMPIREGUARDIAN_JERINT_MONSTER_ATTACK01 );	// ∞¯∞›1 ªÁøÓµÂ
+					PlayBuffer( SOUND_EMPIREGUARDIAN_JERINT_MONSTER_ATTACK01 );	// Í≥µÍ≤©1 ÏÇ¨Ïö¥Îìú
 				}
 				break;
 			case MONSTER01_ATTACK2:
 				{
-					PlayBuffer( SOUND_EMPIREGUARDIAN_JERINT_MONSTER_ATTACK03 );	// ∞¯∞›2 ªÁøÓµÂ
+					PlayBuffer( SOUND_EMPIREGUARDIAN_JERINT_MONSTER_ATTACK03 );	// Í≥µÍ≤©2 ÏÇ¨Ïö¥Îìú
 				}
 				break;
 			case MONSTER01_ATTACK3:
 				{
-					PlayBuffer( SOUND_EMPIREGUARDIAN_ERCANNE_MONSTER_ATTACK03 );	// ∞¯∞›3 ªÁøÓµÂ
+					PlayBuffer( SOUND_EMPIREGUARDIAN_ERCANNE_MONSTER_ATTACK03 );	// Í≥µÍ≤©3 ÏÇ¨Ïö¥Îìú
 				}
 				break;
 			case MONSTER01_APEAR:
 				{
-					PlayBuffer( SOUND_EMPIREGUARDIAN_RAYMOND_MONSTER_RAGE );	// ±§∆¯»≠ ªÁøÓµÂ
+					PlayBuffer( SOUND_EMPIREGUARDIAN_RAYMOND_MONSTER_RAGE );	// Í¥ëÌè≠Ìôî ÏÇ¨Ïö¥Îìú
 				}
 				break;
 			case MONSTER01_DIE:
 				{
-					PlayBuffer( SOUND_EMPIREGUARDIAN_JERINT_MONSTER_DEATH );	// ¡◊¿Ω ªÁøÓµÂ
+					PlayBuffer( SOUND_EMPIREGUARDIAN_JERINT_MONSTER_DEATH );	// Ï£ΩÏùå ÏÇ¨Ïö¥Îìú
 				}
 				break;
 			}

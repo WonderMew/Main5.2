@@ -1560,7 +1560,7 @@ void SEASON3B::CGemIntegrationUnityMsgBox::SetButtonInfo()
 	for( int k=0; k< (int)COMGEM::eCOMTYPE_END; k++ )
 	{
 		cButton.SetInfo(CNewUIMessageBoxMng::IMAGE_MSGBOX_BTN_EMPTY, x+50.0f, y+ (height+10.0f)*k, MSGBOX_BTN_EMPTY_WIDTH + 20, height, CNewUIMessageBoxButton::MSGBOX_BTN_SIZE_EMPTY);
-		// 1808 "%d°³ Á¶ÇÕ(%dÁ¨ ¼Ò¿ä)"
+		// 1808 "%dê°œ ì¡°í•©(%dì   ì†Œìš”)"
 		unicode::_sprintf(szTemp, GlobalText[1808], 10*(k+1), 500000*(k+1));
 		cButton.SetText(szTemp);
 		m_cMixButton.push_back(cButton);
@@ -2448,7 +2448,7 @@ CALLBACK_RESULT SEASON3B::CSystemMenuMsgBox::ChooseCharacterBtnDown(class CNewUI
 	g_ErrorReport.Write( "> Menu - Join with another character. ");
 	g_ErrorReport.WriteCurrentTime();
 
-    //  °ÔÀÓ³»¿¡¼­ ¼³Á¤ÇÑ µ¥ÀÌÅÍ ÀúÀå.
+    //  ê²Œìž„ë‚´ì—ì„œ ì„¤ì •í•œ ë°ì´í„° ì €ìž¥.
     SaveOptions();
 	SaveMacro("Data\\Macro.txt");
 
@@ -4370,7 +4370,7 @@ void CCherryBlossomMsgBox::SetButtonInfo()
 	x = GetPos().x + msgboxhalfwidth - btnhalfwidth;
 	y = GetPos().y + GetSize().cy - (MSGBOX_BTN_EMPTY_HEIGHT + MSGBOX_BTN_BOTTOM_BLANK);
 	m_BtnExit.SetInfo(CNewUIMessageBoxMng::IMAGE_MSGBOX_BTN_EMPTY_SMALL, x, y, width, height, CNewUIMessageBoxButton::MSGBOX_BTN_SIZE_EMPTY_SMALL);
-	// 1002 "´Ý±â"
+	// 1002 "ë‹«ê¸°"
 	m_BtnExit.SetText(GlobalText[1002]);
 }	
 
@@ -5875,11 +5875,11 @@ void SEASON3B::CLuckyTradeMenuMsgBox::SetButtonInfo()
 	x = GetPos().x + msgboxhalfwidth - btnhalfwidth;
 	y = GetPos().y + 85;
 	m_BtnTrade.SetInfo(CNewUIMessageBoxMng::IMAGE_MSGBOX_BTN_EMPTY, x, y, width, height, CNewUIMessageBoxButton::MSGBOX_BTN_SIZE_EMPTY);
-	m_BtnTrade.SetText("·°Å°¾ÆÀÌÅÛ ±³È¯");	// "GlobalText"
+	m_BtnTrade.SetText("ëŸ­í‚¤ì•„ì´í…œ êµí™˜");	// "GlobalText"
 
 	y = GetPos().y + 120;
 	m_BtnRefinery.SetInfo(CNewUIMessageBoxMng::IMAGE_MSGBOX_BTN_EMPTY, x, y, width, height, CNewUIMessageBoxButton::MSGBOX_BTN_SIZE_EMPTY);
-	m_BtnRefinery.SetText("·°Å°¾ÆÀÌÅÛ Á¦·Ã");	// "GlobalText"
+	m_BtnRefinery.SetText("ëŸ­í‚¤ì•„ì´í…œ ì œë ¨");	// "GlobalText"
 
 	width = MSGBOX_BTN_EMPTY_SMALL_WIDTH;
 	btnhalfwidth = width / 2.f;
@@ -5919,12 +5919,12 @@ void SEASON3B::CLuckyTradeMenuMsgBox::RenderTexts()
 	g_pRenderText->SetBgColor(0, 0, 0, 0);
 	g_pRenderText->SetTextColor(255, 255, 255, 255);
 	g_pRenderText->SetFont(g_hFontBold);
-	sprintf( szText, "·°Å°¾ÆÀÌÅÛ ±³È¯NPC" );	// "LuckyItem Trade NPC"
+	sprintf( szText, "ëŸ­í‚¤ì•„ì´í…œ êµí™˜NPC" );	// "LuckyItem Trade NPC"
 	g_pRenderText->RenderText(fPos_x, fPos_y, szText, MSGBOX_WIDTH - 20.0f, 0, RT3_SORT_CENTER);
 	
 	fPos_y += 15;
 	g_pRenderText->SetFont(g_hFont);
-	sprintf( szText, "·°Å°¾ÆÀÌÅÛÀ¸·Î ±³È¯ÇÏ°Å³ª Á¦·ÃÇÒ ¼ö ÀÖ½À´Ï´." );
+	sprintf( szText, "ëŸ­í‚¤ì•„ì´í…œìœ¼ë¡œ êµí™˜í•˜ê±°ë‚˜ ì œë ¨í•  ìˆ˜ ìžˆìŠµë‹ˆ?" );
 	g_pRenderText->RenderText(fPos_x, fPos_y+1*18, szText, MSGBOX_WIDTH - 20.0f, 0, RT3_SORT_CENTER);
 }
 
@@ -6532,7 +6532,7 @@ void SEASON3B::CElpisMsgBox::RenderTexts()
 	g_pRenderText->RenderText(fPos_x, fPos_y+0*18, szText, MSGBOX_WIDTH - 20.0f, 0, RT3_SORT_CENTER);
 
 	fPos_y += 15;
-	g_pRenderText->SetTextColor(220, 183, 131, 255);	// È²±Ý»ö
+	g_pRenderText->SetTextColor(220, 183, 131, 255);	// í™©ê¸ˆìƒ‰
 
 	switch(m_iMessageType)
 	{
@@ -6994,7 +6994,7 @@ void SEASON3B::CResetCharacterPointMsgBox::SetButtonInfo()
 	x = GetPos().x + msgboxhalfwidth - btnhalfwidth;
 	y = GetPos().y + 105;
 	m_ResetCharacterPointBtn.SetInfo(CNewUIMessageBoxMng::IMAGE_MSGBOX_BTN_EMPTY, x, y, width, height, CNewUIMessageBoxButton::MSGBOX_BTN_SIZE_EMPTY);
-	m_ResetCharacterPointBtn.SetText(GlobalText[1884]); // "½ºÅÈ ÃÊ±âÈ­"
+	m_ResetCharacterPointBtn.SetText(GlobalText[1884]); // "ìŠ¤íƒ¯ ì´ˆê¸°í™”"
 
 	
 	width = MSGBOX_BTN_EMPTY_SMALL_WIDTH;

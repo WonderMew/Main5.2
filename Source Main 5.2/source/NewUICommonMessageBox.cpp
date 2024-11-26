@@ -1933,7 +1933,7 @@ bool  SEASON3B::CLuckyItemMsgBoxLayout::SetLayout()
 	if(false == pMsgBox->Create(MSGBOX_COMMON_TYPE_OKCANCEL))
 		return false;
 	
-	// ¾ÆÀÌÅÛ Á¦¸ñ
+	// ì•„ì´í…œ ì œëª©
 	int				nTextIndex[10]	= {0, };
 	eLUCKYITEMTYPE	eAct		 = g_pLuckyItemWnd->GetAct();
 	

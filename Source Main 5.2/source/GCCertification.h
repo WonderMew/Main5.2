@@ -29,13 +29,13 @@ typedef int (*TF_CheckCertification)( const wchar_t*,
 									  BOOL);
 
 
-enum eGAMECHURETURN {	eDATA_SUCCESS		=0,			// µ¥ÀÌÅ¸ Á¤»ó
-						eDATA_HASHVALUE		=1,			// Àß¸øµÈ ¾ÏÈ£È­ °ª (HashValue)
-						eDATA_TIMEOUT		=10,		// Á¤ÇØÁø TimeÀ» ÃÊ°ú.
-						eDATA_PASSINGFAIL	=100,		// ÆÄ½Ì ½ÇÆÐ ( Àß¸øµÈ ½ÇÇà ÆÄ¶ó¹ÌÅÍ )
-						eDATA_USERINFOERROR	=101,		// »ç¿ëÀÚ Á¤º¸ ºÎÁ·
-						eDATA_PARAMERROR	=102,		// ÆÄ¶ó¹ÌÅÍ°ªÀÌ Àß¸øµÇ¾î ÀÖ´Ù.
-						eDATA_UNKNOWNERROR  =1000		// ¾Ë¼ö¾ø´Â ¿¡·¯
+enum eGAMECHURETURN {	eDATA_SUCCESS		=0,			// ë°ì´íƒ€ ì •ìƒ
+						eDATA_HASHVALUE		=1,			// ìž˜ëª»ëœ ì•”í˜¸í™” ê°’ (HashValue)
+						eDATA_TIMEOUT		=10,		// ì •í•´ì§„ Timeì„ ì´ˆê³¼.
+						eDATA_PASSINGFAIL	=100,		// íŒŒì‹± ì‹¤íŒ¨ ( ìž˜ëª»ëœ ì‹¤í–‰ íŒŒë¼ë¯¸í„° )
+						eDATA_USERINFOERROR	=101,		// ì‚¬ìš©ìž ì •ë³´ ë¶€ì¡±
+						eDATA_PARAMERROR	=102,		// íŒŒë¼ë¯¸í„°ê°’ì´ ìž˜ëª»ë˜ì–´ ìžˆë‹¤.
+						eDATA_UNKNOWNERROR  =1000		// ì•Œìˆ˜ì—†ëŠ” ì—ëŸ¬
 					};	
 
 class GCCertificaltionHelper
@@ -60,12 +60,12 @@ public:
 	void	Init( void );
 	void	Release( void );
 
-	// °ª ¼ÂÆÃ (2010.10.11)
+	// ê°’ ì…‹íŒ… (2010.10.11)
 	void	Set_GameChuMyData			( PSTR _szCmdLine );
 	void	Set_UserData				( gcBaseUserInfo _sInfo );
 	void	Set_Error					( int _nVal );
 
-	// °ª ¾ò¾î¿À±â (2010.10.11)
+	// ê°’ ì–»ì–´ì˜¤ê¸° (2010.10.11)
 	gcBaseUserInfo	Get_UserData( void )			{ return m_UserData; }
 	wstring			Get_AuthInfo( void )			{ return m_wParam; }
 	wstring			Get_StatInfo( void )			{ return m_wStatIndex; }

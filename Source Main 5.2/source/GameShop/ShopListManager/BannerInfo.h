@@ -13,14 +13,14 @@ public:
 	bool	SetBanner(std::string strdata, std::string strDirPath, bool bDonwLoad);
 
 public:	
-	int		BannerSeq;									//  1. ¹è³Ê ±×·ì ¼ø¹ø
-	char	BannerName[BANNER_LENGTH_NAME];				//  2. ¹è³Ê ±×·ì ¸í
-	char	BannerImageURL[INTERNET_MAX_URL_LENGTH];	//  3. ¹è³Ê ÀÌ¹ÌÁö URL
-	int		BannerOrder;								//  4. ¹è³Ê ³ëÃâ ¼ø¼­
-	int		BannerDirection;							//  5. ¹è³Ê ³ëÃâ ¹æÇâ * °øÅë ÄÚµå Á¤ÀÇ Âü°í
-	tm 		BannerStartDate;							//  6. ¹è³Ê ³ëÃâ ½ÃÀÛÀÏ
-	tm 		BannerEndDate;								//  7. ¹è³Ê ³ëÃâ Á¾·áÀÏ
-	char	BannerLinkURL[INTERNET_MAX_URL_LENGTH];		//  8. ¹è³Ê ¸µÅ© URL
+	int		BannerSeq;									//  1. ë°°ë„ˆ ê·¸ë£¹ ìˆœë²ˆ
+	char	BannerName[BANNER_LENGTH_NAME];				//  2. ë°°ë„ˆ ê·¸ë£¹ ëª…
+	char	BannerImageURL[INTERNET_MAX_URL_LENGTH];	//  3. ë°°ë„ˆ ì´ë¯¸ì§€ URL
+	int		BannerOrder;								//  4. ë°°ë„ˆ ë…¸ì¶œ ìˆœì„œ
+	int		BannerDirection;							//  5. ë°°ë„ˆ ë…¸ì¶œ ë°©í–¥ * ê³µí†µ ì½”ë“œ ì •ì˜ ì°¸ê³ 
+	tm 		BannerStartDate;							//  6. ë°°ë„ˆ ë…¸ì¶œ ì‹œì‘ì¼
+	tm 		BannerEndDate;								//  7. ë°°ë„ˆ ë…¸ì¶œ ì¢…ë£Œì¼
+	char	BannerLinkURL[INTERNET_MAX_URL_LENGTH];		//  8. ë°°ë„ˆ ë§í¬ URL
 
-	char	BannerImagePath[MAX_PATH];					// ¹è³Ê ÀÌ¹ÌÁö ÆÄÀÏ ·ÎÄÃ °æ·Î
+	char	BannerImagePath[MAX_PATH];					// ë°°ë„ˆ ì´ë¯¸ì§€ íŒŒì¼ ë¡œì»¬ ê²½ë¡œ
 };

@@ -35,7 +35,7 @@ bool SaveTerrainMapping(char *FileName, int iMapNumber);
 int OpenTerrainAttribute(char *FileName);
 bool SaveTerrainAttribute(char *FileName, int iMapNumber);
 
-//  ¼Ó¼º º¯°æ.
+//  ì†ì„± ë³€ê²½.
 void AddTerrainAttribute ( int x, int y, BYTE att );
 void SubTerrainAttribute ( int x, int y, BYTE att );
 void AddTerrainAttributeRange ( int x, int y, int dx, int dy, BYTE att, BYTE Add=0 );
@@ -107,7 +107,7 @@ public:
 	CFrustrum(){}
 	~CFrustrum(){}
 
-	//3DÇÁ·¯½ºÅÒ Ä¸½¶È­
+	//3Dí”„ëŸ¬ìŠ¤í…€ ìº¡ìŠí™”
 	void Create(vec3_t vEye, float fFov, float fAspect, float fDist);
 	bool Test(vec3_t vPos, float fRange);
 	void Reset();
@@ -122,7 +122,7 @@ void ResetAllFrustrum();
 void DeleteAllFrustrum();
 CFrustrum* FindFrustrum(unsigned int iID);
 typedef std::map<unsigned int, CFrustrum* > FrustrumMap_t;
-extern FrustrumMap_t g_FrustrumMap; //ÀüÃ¼ ÇÁ·¯½ºÅÒ°ú º°°³·Î ¾ÆÀÌµğ·Î ÁöÁ¤ÇÒ ¼ö ÀÖ´Â ÇÁ·¯½ºÅÒ
+extern FrustrumMap_t g_FrustrumMap; //ì „ì²´ í”„ëŸ¬ìŠ¤í…€ê³¼ ë³„ê°œë¡œ ì•„ì´ë””ë¡œ ì§€ì •í•  ìˆ˜ ìˆëŠ” í”„ëŸ¬ìŠ¤í…€
 #endif //DYNAMIC_FRUSTRUM
 
 

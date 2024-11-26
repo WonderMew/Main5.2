@@ -679,7 +679,7 @@ void CUIWindowMgr::OpenMainWnd(int iPos_x, int iPos_y)
 		{
 			pWindow->SetSize(m_iMainWindowWidth, m_iMainWindowHeight);
 			pWindow->SetBackPosition(m_bIsMainWindowMaximize, m_iMainWindowBackPos_y, m_iMainWindowBackHeight);
-			// À©µµ¿ì ¸ñ·Ï º¹±¸
+			// ìœˆë„ìš° ëª©ë¡ ë³µêµ¬
 			RefreshMainWndChatRoomList();
 			pWindow->Refresh();
 //			((CUIFriendWindow *)pWindow)->SetTabIndex(m_iLastFriendWindowTabIndex);
@@ -1308,18 +1308,18 @@ void CUIChatWindow::Init(const char * pszTitle, DWORD dwParentID)
 	m_TextInputBox.SetOption(UIOPTION_ENTERIMECHKOFF);
 	m_TextInputBox.SetBackColor(0, 0, 0, 0);
 
-//	m_PalListBox.AddText("ÀÌ¸§³×ÀÚ", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§³ËÀÚ", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§¼ö³Ý", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§1ÀÚ", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§2ÀÚ", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§3³Ý", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§4ÀÚ", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§5ÀÚ", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§6³Ý", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§7³Ý", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§8³Ý", 1, 1);
-//	m_PalListBox.AddText("ÀÌ¸§9³Ý", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„ë„¤ìž", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„ë„‰ìž", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„ìˆ˜ë„·", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„1ìž", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„2ìž", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„3ë„·", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„4ìž", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„5ìž", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„6ë„·", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„7ë„·", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„8ë„·", 1, 1);
+//	m_PalListBox.AddText("ì´ë¦„9ë„·", 1, 1);
 
 	m_ChatListBox.SetParentUIID(GetUIID());
 	m_ChatListBox.SetArrangeType(2, 0, 16);
@@ -1379,7 +1379,7 @@ CWsctlc * CUIChatWindow::GetCurrentSocket()
 	if (pCRSocket != NULL) return &pCRSocket->m_WSClient;
 	else
 	{
-		assert(!"¹æ ¼ÒÄÏ °Ë»ö ½ÇÆÐ!!!");
+		assert(!"ë°© ì†Œì¼“ ê²€ìƒ‰ ì‹¤íŒ¨!!!");
 		return NULL;
 	}
 }
@@ -2063,7 +2063,7 @@ void CUIPhotoViewer::Init(int iInitType)
 
 	CreateCharacterPointer(&m_PhotoChar, MODEL_PLAYER, ( Hero->PositionX), ( Hero->PositionY), 0);
 	
-	// ÀÌµ¿
+	// ì´ë™
 	Vector(-300,-300,-300,m_PhotoChar.Object.Position);
 
 	m_bIsInitialized = TRUE;
@@ -2150,7 +2150,7 @@ void CUIPhotoViewer::CopyPlayer()
 		if (CompareItemEqual(&m_PhotoChar.Helper, &Hero->Helper) == FALSE)
 			bChangeHelper = TRUE;
 	}
-	else	// º¯½Å »óÅÂ
+	else	// ë³€ì‹  ìƒíƒœ
 	{
 
 		if (CompareItemEqual(&m_PhotoChar.BodyPart[BODYPART_HELM], &CharacterMachine->Equipment[EQUIPMENT_HELM],
@@ -2208,7 +2208,7 @@ void CUIPhotoViewer::CopyPlayer()
 			memcpy(&m_PhotoChar.Helper, &Hero->Helper, sizeof(PART_t));
 		}
 	}
-	else	// º¯½Å »óÅÂ
+	else	// ë³€ì‹  ìƒíƒœ
 	{
 		if (bChangeArmor == TRUE)
 		{
@@ -2269,7 +2269,7 @@ void CUIPhotoViewer::CopyPlayer()
 		case 2:CreateBugSub(MODEL_UNICON  ,m_PhotoChar.Object.Position,&m_PhotoChar.Object,&m_PhotoHelper);break;
 		case 3:CreateBugSub(MODEL_PEGASUS, m_PhotoChar.Object.Position,&m_PhotoChar.Object,&m_PhotoHelper);break;
 		case 4:CreateBugSub(MODEL_DARK_HORSE, m_PhotoChar.Object.Position,&m_PhotoChar.Object,&m_PhotoHelper);break;
-		case 37:	//^ Ææ¸± ÆíÁö °ü·Ã
+		case 37:	//^ íŽœë¦´ íŽ¸ì§€ ê´€ë ¨
 			if(m_PhotoChar.Helper.Option1 == 0x01)
 			{
 				CreateBugSub(MODEL_FENRIR_BLACK, m_PhotoChar.Object.Position, &m_PhotoChar.Object, &m_PhotoHelper);
@@ -3185,7 +3185,7 @@ BOOL CUILetterReadWindow::HandleMessage()
 	case UI_MESSAGE_YNRETURN:
 		if (m_WorkMessage.m_iParam2 == 1)
 		{
-			// ÆíÁö »èÁ¦
+			// íŽ¸ì§€ ì‚­ì œ
 			SendRequestDeleteLetter(m_LetterHead.m_dwLetterID);
 			g_pWindowMgr->SendUIMessage(UI_MESSAGE_CLOSE, GetUIID(), 0);
 		}
@@ -3287,7 +3287,7 @@ bool TestAlphabeticOrder(const char * pszText1, const char * pszText2, BOOL * pb
 		else return false;
 	}
 	if (pbEqual != NULL) *pbEqual = TRUE;
-	return false;	// ¿ÏÀüÈ÷ µ¿ÀÏ
+	return false;	// ì™„ì „ížˆ ë™ì¼
 }
 
 bool FriendListSortByID(const GUILDLIST_TEXT & lhs, const GUILDLIST_TEXT & rhs)
@@ -3503,11 +3503,11 @@ BOOL CUIFriendListTabWindow::HandleMessage()
 					}
 				}
 				break;
-			case 4:		// ÆíÁö¾²±â
+			case 4:		// íŽ¸ì§€ì“°ê¸°
 				{
 					char temp[MAX_TEXT_LENGTH + 1];
 					sprintf(temp, GlobalText[1071], g_cdwLetterCost);
-					dwUIID = g_pWindowMgr->AddWindow(UIWNDTYPE_WRITELETTER, 100,100,temp);	// "ÆíÁö¾²±â"
+					dwUIID = g_pWindowMgr->AddWindow(UIWNDTYPE_WRITELETTER, 100,100,temp);	// "íŽ¸ì§€ì“°ê¸°"
 					if (dwUIID == 0) break;
 					if (GetCurrentSelectedFriend() != NULL)
 						((CUILetterWriteWindow *)g_pWindowMgr->GetWindow(dwUIID))->SetMailtoText((const char *)GetCurrentSelectedFriend());
@@ -4275,7 +4275,7 @@ BOOL CUILetterBoxTabWindow::HandleMessage()
 					DWORD dwLetterID = GetCurrentSelectedLetter()->m_dwLetterID;
 					if (g_pWindowMgr->LetterReadCheck(dwLetterID) == FALSE)
 					{
-						// Ä³½Ã
+						// ìºì‹œ
 						if (g_pLetterList->GetLetterText(dwLetterID) == NULL)
 						{
 							SendRequestLetterText(dwLetterID);

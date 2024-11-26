@@ -104,7 +104,7 @@ bool M31HuntingGround::MoveHuntingGroundObject(OBJECT* pObject)
 		break;
 	}
 
-	//. ¹è°æÀ½¾Ç ÄÁÆ®·Ñ
+	//. ë°°ê²½ìŒì•… ì»¨íŠ¸ë¡¤
 	if(::timeGetTime() - g_MusicStartStamp > 300000) {
 		g_MusicStartStamp = ::timeGetTime();
 		PlayBuffer ( SOUND_BC_HUNTINGGROUND_AMBIENT );
@@ -278,8 +278,8 @@ CHARACTER* M31HuntingGround::CreateHuntingGroundMonster(int iType, int PosX, int
 	case 297:
 		{
 			pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
-			strcpy(pCharacter->ID, "ÀúÁÖ¹ÞÀº ±â»ç");
-			pCharacter->Skin = 1;	//. ±â»ç
+			strcpy(pCharacter->ID, "ì €ì£¼ë°›ì€ ê¸°ì‚¬");
+			pCharacter->Skin = 1;	//. ê¸°ì‚¬
 			pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_HELM  +1;
 			pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +1;
 			pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +1;

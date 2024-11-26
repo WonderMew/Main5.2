@@ -35,7 +35,7 @@ protected:
 	char m_lpszFileName[MAX_PATH];
 	int m_iKey;
 #ifdef ASG_ADD_MULTI_CLIENT
-	int m_nFileCount;		// ·Î±× ÆÄÀÏ °³¼ö.
+	int m_nFileCount;		// ë¡œê·¸ íŒŒì¼ ê°œìˆ˜.
 #endif	// ASG_ADD_MULTI_CLIENT
 	
 public:

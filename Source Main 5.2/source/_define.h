@@ -507,7 +507,7 @@
 #define MAX_MAGIC					64
 
 //----------------------------------------------------------------------------
-// ÀúÇ×·Â ¹øÈ£
+// ì €í•­ë ¥ ë²ˆí˜¸
 #define RESISTANCE_COLD				0
 #define RESISTANCE_POISON			1
 #define RESISTANCE_THUNDER			2

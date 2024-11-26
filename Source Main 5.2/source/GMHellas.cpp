@@ -796,7 +796,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Object.Scale = 1.2f;
 		o = &c->Object;
         o->BlendMesh = 1;
-		strcpy(c->ID,"Àå¼ö°ÅºÏ");
+		strcpy(c->ID,"Ã€Ã¥Â¼Ã¶Â°Ã…ÂºÃ");
         break;
     case 145 :
     case 175:
@@ -813,7 +813,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		o = &c->Object;
         o->SubType   = 9;
         o->BlendMesh = 0;
-		strcpy(c->ID,"´ëÇü ºí·ç³ªÀÌÆ®");
+		strcpy(c->ID,"Â´Ã«Ã‡Ã¼ ÂºÃ­Â·Ã§Â³ÂªÃ€ÃŒÃ†Â®");
         break;
     case 146 :
     case 176:
@@ -828,7 +828,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Weapon[0].Level = 0;
 		c->Object.Scale = 0.8f;
 		o = &c->Object;
-		strcpy(c->ID,"¶ø½ºÅÍ");
+		strcpy(c->ID,"Â¶Ã¸Â½ÂºÃ…Ã");
         break;
     case 147:
     case 177:
@@ -844,7 +844,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Object.Scale = 1.4f;
 		o = &c->Object;
         o->BlendMesh = 1;
-		strcpy(c->ID,"°¡¿À¸®");
+		strcpy(c->ID,"Â°Â¡Â¿Ã€Â¸Â®");
         break;
     case 148:
     case 178:
@@ -860,7 +860,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Object.Scale = 1.f;
 		o = &c->Object;
         o->BlendMesh = 0;
-		strcpy(c->ID,"ºí·ç³ªÀÌÆ®");
+		strcpy(c->ID,"ÂºÃ­Â·Ã§Â³ÂªÃ€ÃŒÃ†Â®");
         break;
     case 149:
     case 179:
@@ -876,7 +876,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Object.Scale = 1.2f;
 		o = &c->Object;
         o->BlendMesh = 3;
-		strcpy(c->ID,"¸¶¸°º¸ÀÌ");
+		strcpy(c->ID,"Â¸Â¶Â¸Â°ÂºÂ¸Ã€ÃŒ");
         break;
     case 160:
     case 180:
@@ -893,7 +893,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Weapon[1].Level = 0;
 		c->Object.Scale = 1.2f;
 		o = &c->Object;
-		strcpy(c->ID,"ÄïµÐÈÄº¸");
+		strcpy(c->ID,"Ã„Ã¯ÂµÃÃˆÃ„ÂºÂ¸");
         break;
     case 161:
     case 181:
@@ -910,7 +910,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		o = &c->Object;
         o->SubType  = 9;
 		o->Scale    = 1.5f;
-		strcpy(c->ID,"ÄïµÐÈÄº¸");
+		strcpy(c->ID,"Ã„Ã¯ÂµÃÃˆÃ„ÂºÂ¸");
         break;
 
     case 275:
@@ -921,7 +921,7 @@ CHARACTER* CreateHellasMonster ( int Type, int PositionX, int PositionY, int Key
 		c->Object.Scale = 2.0f;
 //		c->Object.Scale = 1.9f;
 		o = &c->Object;
-		strcpy(c->ID,"ÁøÂ¥ÄïµÐ");
+		strcpy(c->ID,"ÃÃ¸Ã‚Â¥Ã„Ã¯ÂµÃ");
 		o->LifeTime = 100;
         break;
     }
@@ -1581,7 +1581,7 @@ bool RenderHellasMonsterVisual ( CHARACTER* c, OBJECT* o, BMD* b )
 		}
 		else
 		{
-			// ´«
+			// Â´Â«
 			Luminosity = (float)sin ( WorldTime*0.003f )*0.2f+0.8f;
 			Vector(0,0,0,p);
 			Vector ( Luminosity*1.0f, Luminosity*0.0f, Luminosity*0.0f, Light );

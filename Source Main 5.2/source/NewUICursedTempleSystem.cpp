@@ -932,7 +932,7 @@ void SEASON3B::CNewUICursedTempleSystem::RenderMiniMap()
 		}
 	}
 
-	//  ¼º¹° À§Ä¡
+	//  ì„±ë¬¼ ìœ„ì¹˜
 	if( m_HolyItemPlayerIndex != 0xffff && m_HolyItemPlayerIndex != Hero->Key )
 	{
 		float holypcX = MiniMapPos( m_HolyItemPlayerPosX, m_HolyItemPlayerPosY, m_Scale, AXIS_X );
@@ -946,7 +946,7 @@ void SEASON3B::CNewUICursedTempleSystem::RenderMiniMap()
 
 	glColor4f ( 1.f, 1.f, 1.f, m_Alph );
 
-	// È÷¾î·Î
+	// íˆì–´ë¡œ
 	x = (Hero->PositionX);
 	y = (Hero->PositionY);
 	float hero_x = MiniMapPos( x, y, m_Scale, AXIS_X );
@@ -954,9 +954,9 @@ void SEASON3B::CNewUICursedTempleSystem::RenderMiniMap()
 	RenderBitmap( IMAGE_CURSEDTEMPLESYSTEM_MINIMAPICON_HERO, 
 		          hero_x-4, hero_y-4, 11.0f, 11.0f ,0.f,0.f, 11.f/16.f, 11.f/16.f );
 
-	// ¾ËÆÄ °ª
+	// ì•ŒíŒŒ ê°’
     RenderNumber2D ( 517.f+15.f, 246.f, static_cast<int>(m_Alph*100), 8, 8 );
-	// Á¡¼ö
+	// ì ìˆ˜
     RenderNumber2D ( 517.f+66.f, 246.f, m_AlliedPoint, 8, 8 );
     RenderNumber2D ( 517.f+110.f, 246.f, m_IllusionPoint, 8, 8 );
 
@@ -965,7 +965,7 @@ void SEASON3B::CNewUICursedTempleSystem::RenderMiniMap()
 	DisableAlphaBlend();
 
 #ifdef _DEBUG
-	// ¹Ì´Ï¸Ê ÁÂÇ¥ ¼öÁ¤ ÇÒ¶§ ÇÊ¿ä ÇÏ´Ï..³ö µÑ°Í...
+	// ë¯¸ë‹ˆë§µ ì¢Œí‘œ ìˆ˜ì • í• ë•Œ í•„ìš” í•˜ë‹ˆ..ë†” ë‘˜ê²ƒ...
 /*	
 	for ( int j = 0; j < 7; ++j )
 	{
@@ -987,7 +987,7 @@ void SEASON3B::CNewUICursedTempleSystem::RenderScore()
 	::EnableAlphaTest();
 	::glColor4f(1.0f, 1.0f, 1.0f, m_ScoreEffectAlph);
 
-	// ¹Â¿¬ÇÕ±º Á¡¼ö
+	// ë®¤ì—°í•©êµ° ì ìˆ˜
 	if( m_AlliedPoint/10 != 0 )
 	{		
 		RenderBitmap( IMAGE_CURSEDTEMPLESYSTEM_SCORE_ALLIED_NUMBER+(m_AlliedPoint/10), 
@@ -1005,7 +1005,7 @@ void SEASON3B::CNewUICursedTempleSystem::RenderScore()
 	RenderBitmap( IMAGE_CURSEDTEMPLESYSTEM_SCORE_VS1+(m_IllusionPoint/10), 
 			      310, 168.f, 20.0f, 45.0f ,0.f,0.f, 20.f/32.f, 45.f/64.f );
 
-	// È¯¿µ±³´Ü Á¡¼ö
+	// í™˜ì˜êµë‹¨ ì ìˆ˜
 	if( m_IllusionPoint/10 != 0 )
 	{
 		RenderBitmap( IMAGE_CURSEDTEMPLESYSTEM_SCORE_ILLUSION_NUMBER+(m_IllusionPoint/10), 
@@ -1092,7 +1092,7 @@ void SEASON3B::CNewUICursedTempleSystem::RenderTutorialStep()
 
 bool SEASON3B::CNewUICursedTempleSystem::Render()
 {
-	// È¯¿µ»ç¿ø ÀÌº¥Æ® µµÁß ºñÁ¤»óÀûÀ¸·Î ¸Ê ÀÌµ¿ µÆÀ» °æ¿ì¸¦ À§ÇÑ ¿¹¿Ü Ã³¸®
+	// í™˜ì˜ì‚¬ì› ì´ë²¤íŠ¸ ë„ì¤‘ ë¹„ì •ìƒì ìœ¼ë¡œ ë§µ ì´ë™ ëì„ ê²½ìš°ë¥¼ ìœ„í•œ ì˜ˆì™¸ ì²˜ë¦¬
 	if(gMapManager.IsCursedTemple() == false)
 	{
 		if(g_pNewUISystem->IsVisible(SEASON3B::INTERFACE_CURSEDTEMPLE_GAMESYSTEM) == true)
@@ -1126,7 +1126,7 @@ void SEASON3B::CNewUICursedTempleSystem::SetCursedTempleSkill( CHARACTER* c, OBJ
 		return;
 	}
 
-	// ½ºÅ³ »ç¿ë °Å¸®
+	// ìŠ¤í‚¬ ì‚¬ìš© ê±°ë¦¬
 	int CursedTempleCurSkillType = c->m_CursedTempleCurSkill;
 
     int MaxKillCount = SkillAttribute[CursedTempleCurSkillType].KillCount;
@@ -1201,7 +1201,7 @@ void SEASON3B::CNewUICursedTempleSystem::SetCursedTempleSkill( CHARACTER* c, OBJ
 		Hero->m_CursedTempleCurSkillPacket = true;
 		MouseRButtonPush = false;
 
-		//¿¡´Ï¸ŞÀÌ¼Ç ¼³Á¤
+		//ì—ë‹ˆë©”ì´ì…˜ ì„¤ì •
 		switch( CursedTempleCurSkillType )
 		{
 		case AT_SKILL_CURSED_TEMPLE_PRODECTION:

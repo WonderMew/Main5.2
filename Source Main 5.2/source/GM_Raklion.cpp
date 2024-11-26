@@ -96,7 +96,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 	case 454:
 		OpenMonsterModel(145);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+145, PosX, PosY);
-		strcpy(pCharacter->ID, "¾ÆÀÌ½º ¿öÄ¿");
+		strcpy(pCharacter->ID, "ì•„ì´ìŠ¤ ì›Œì»¤");
 		//pCharacter->Object.Scale = 1.0f;
 		pCharacter->Object.Scale = 1.2f;
 		pCharacter->Weapon[0].Type = -1;
@@ -106,7 +106,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 	case 455:
 		OpenMonsterModel(146);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+146, PosX, PosY);
-		strcpy(pCharacter->ID, "ÀÚÀÌ¾ðÆ® ¸Å¸Óµå");
+		strcpy(pCharacter->ID, "ìžì´ì–¸íŠ¸ ë§¤ë¨¸ë“œ");
 		pCharacter->Object.Scale = 1.7f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -121,7 +121,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 	case 456:
 		OpenMonsterModel(147);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+147, PosX, PosY);
-		strcpy(pCharacter->ID, "¾ÆÀÌ½º ÀÚÀÌ¾ðÆ®");
+		strcpy(pCharacter->ID, "ì•„ì´ìŠ¤ ìžì´ì–¸íŠ¸");
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -131,7 +131,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 	case 457:
 		OpenMonsterModel(148);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+148, PosX, PosY);
-		strcpy(pCharacter->ID, "Äð·¯Æ¾");
+		strcpy(pCharacter->ID, "ì¿¨ëŸ¬í‹´");
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -140,7 +140,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 	case 458:
 		OpenMonsterModel(149);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+149, PosX, PosY);
-		strcpy(pCharacter->ID, "¾ÆÀÌ¾ð ³ªÀÌÆ®");
+		strcpy(pCharacter->ID, "ì•„ì´ì–¸ ë‚˜ì´íŠ¸");
 		pCharacter->Object.Scale = 1.5f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -150,7 +150,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(150);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+150, PosX, PosY);
-			strcpy(pCharacter->ID, "¼¼·çÆÇ");
+			strcpy(pCharacter->ID, "ì„¸ë£¨íŒ");
 			pCharacter->Object.Scale = 2.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -166,7 +166,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(151);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+151, PosX, PosY);
-			strcpy(pCharacter->ID, "°Å´ë °Å¹Ì¾Ë");
+			strcpy(pCharacter->ID, "ê±°ëŒ€ ê±°ë¯¸ì•Œ");
 			pCharacter->Object.Scale = 0.3f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -178,7 +178,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(152);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+152, PosX, PosY);
-			strcpy(pCharacter->ID, "°Å´ë °Å¹Ì¾Ë");
+			strcpy(pCharacter->ID, "ê±°ëŒ€ ê±°ë¯¸ì•Œ");
 			pCharacter->Object.Scale = 0.3f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -190,7 +190,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(153);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+153, PosX, PosY);
-			strcpy(pCharacter->ID, "°Å´ë °Å¹Ì¾Ë");
+			strcpy(pCharacter->ID, "ê±°ëŒ€ ê±°ë¯¸ì•Œ");
 			pCharacter->Object.Scale = 0.3f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -203,7 +203,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(205);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+205, PosX, PosY);
-			strcpy(pCharacter->ID, "´Å© ÀÚÀÌ¾ðÆ® ¸Å¸Óµå");
+			strcpy(pCharacter->ID, "ëŠš?ìžì´ì–¸íŠ¸ ë§¤ë¨¸ë“œ");
 			//pCharacter->Object.Scale = 1.7f;
 			pCharacter->Object.Scale = 1.9f;
 			pCharacter->Weapon[0].Type = -1;
@@ -220,7 +220,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(206);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+206, PosX, PosY);
-			strcpy(pCharacter->ID, "´Å© ÀÚÀÌ¾ðÆ®");
+			strcpy(pCharacter->ID, "ëŠš?ìžì´ì–¸íŠ¸");
 			//pCharacter->Object.Scale = 1.0f;
 			pCharacter->Object.Scale = 1.1f;
 			pCharacter->Weapon[0].Type = -1;
@@ -233,7 +233,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(207);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+207, PosX, PosY);
-			strcpy(pCharacter->ID, "´Å© Äð·¯Æ¾");
+			strcpy(pCharacter->ID, "ëŠš?ì¿¨ëŸ¬í‹´");
 			//pCharacter->Object.Scale = 1.0f;
 			pCharacter->Object.Scale = 1.3f;
 			pCharacter->Weapon[0].Type = -1;
@@ -244,7 +244,7 @@ CHARACTER* CGM_Raklion::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(208);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+208, PosX, PosY);
-			strcpy(pCharacter->ID, "´Å© ¾ÆÀÌ¾ð ³ªÀÌÆ®");
+			strcpy(pCharacter->ID, "ëŠš?ì•„ì´ì–¸ ë‚˜ì´íŠ¸");
 			//pCharacter->Object.Scale = 1.5f;
 			pCharacter->Object.Scale = 1.8f;
 			pCharacter->Weapon[0].Type = -1;
@@ -321,7 +321,7 @@ bool CGM_Raklion::MoveMonsterVisual(OBJECT* o, BMD* b)
 							v3Pos[0] = v3BasisPos[0] + ( v3Dir[0] * OFFSETLEN );
 							v3Pos[1] = v3BasisPos[1] + ( v3Dir[1] * OFFSETLEN );
 							v3Pos[2] = v3BasisPos[2] + ( v3Dir[2] * OFFSETLEN ); // POS_HEIGHT;
-							v3Pos[2] = v3BasisPos[2] + POS_HEIGHT;				// Position º¸Á¤ 
+							v3Pos[2] = v3BasisPos[2] + POS_HEIGHT;				// Position ë³´ì • 
 						*/
 
 						VectorCopy( o->Angle, v3Ang_ );
@@ -1241,13 +1241,13 @@ bool CGM_Raklion::RenderObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 			Vector(0, 0, 0, vRelativePos);
 			Vector ( 1.f, 1.f, 1.f, vLight );
 			
-			// ¸Ó¸®
+			// ë¨¸ë¦¬
 			b->TransformPosition(BoneTransform[5],vRelativePos,vWorldPos,false);
 			CreateParticle ( BITMAP_WATERFALL_3, vWorldPos, o->Angle, vLight, 8, 2.f );
 			
 			if(o->AnimationFrame <= 8)
 			{
-				// ¸Ó¸®
+				// ë¨¸ë¦¬
 				b->TransformPosition(BoneTransform[6],vRelativePos,vWorldPos,false);
 				CreateParticle ( BITMAP_WATERFALL_3, vWorldPos, o->Angle, vLight, 8, 1.5f );
 				CreateParticle ( BITMAP_WATERFALL_5, vWorldPos, o->Angle, vLight, 7, 0.1f );
@@ -1256,7 +1256,7 @@ bool CGM_Raklion::RenderObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 			
 			if(o->AnimationFrame >= 12)
 			{
-				// ÀÔ°¡
+				// ìž…ê°€
 				b->TransformPosition(BoneTransform[6],vRelativePos,vWorldPos,false);
 				CreateParticle ( BITMAP_WATERFALL_3, vWorldPos, o->Angle, vLight, 8, 2.f );
 				CreateParticle ( BITMAP_WATERFALL_5, vWorldPos, o->Angle, vLight, 7, 0.1f );
@@ -1264,7 +1264,7 @@ bool CGM_Raklion::RenderObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 			
 			if(o->AnimationFrame <= 15)
 			{
-				// ³¯°³
+				// ë‚ ê°œ
 				b->TransformPosition(BoneTransform[8],vRelativePos,vWorldPos,false);
 				CreateParticle ( BITMAP_WATERFALL_3, vWorldPos, o->Angle, vLight, 9, 2.f );
 				CreateParticle ( BITMAP_WATERFALL_5, vWorldPos, o->Angle, vLight, 7, 0.1f );
@@ -1291,7 +1291,7 @@ bool CGM_Raklion::RenderObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 	}
 	else if(o->Type == 21)
 	{
-		// ¾óÀ½ ±ú´Â ¿¡´Ï¸ÞÀÌ¼Ç µ¿ÀÛÀÌ°í
+		// ì–¼ìŒ ê¹¨ëŠ” ì—ë‹ˆë©”ì´ì…˜ ë™ìž‘ì´ê³ 
 		if(o->CurrentAction == 0)
 		{
 			if(o->AnimationFrame >= 4 && o->AnimationFrame <= 8)
@@ -1299,14 +1299,14 @@ bool CGM_Raklion::RenderObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 				vec3_t vRelativePos, vWorldPos, vLight;
 				Vector(0, 0, 0, vRelativePos);
 				Vector(1.f, 1.f, 1.f, vLight);
-				// ÀÔ¾Õ º» 
+				// ìž…ì•ž ë³¸ 
 				b->TransformPosition(BoneTransform[7],vRelativePos,vWorldPos,false);
-				// ¹° ÀÌÆåÆ®
+				// ë¬¼ ì´íŽ™íŠ¸
 				CreateParticle ( BITMAP_WATERFALL_3, vWorldPos, o->Angle, vLight, 9, 0.5f );
 				CreateParticle ( BITMAP_WATERFALL_5, vWorldPos, o->Angle, vLight, 7 );
 				
 				// 7, 16, 17, 21, 22
-				// ¿¬±â ÀÌÆåÆ®
+				// ì—°ê¸° ì´íŽ™íŠ¸
 				b->TransformPosition(BoneTransform[7],vRelativePos,vWorldPos,false);
 				CreateParticle(BITMAP_WATERFALL_2, vWorldPos, o->Angle, vLight, 5, 1.f);
 				b->TransformPosition(BoneTransform[16],vRelativePos,vWorldPos,false);

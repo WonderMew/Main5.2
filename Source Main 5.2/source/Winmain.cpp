@@ -109,7 +109,7 @@ CErrorReport g_ErrorReport;
 BOOL g_bMinimizedEnabled = FALSE;
 int g_iScreenSaverOldValue = 60*15;
 
-extern float g_fScreenRate_x;	// ¡Ø
+extern float g_fScreenRate_x;	// â€»
 extern float g_fScreenRate_y;
 
 #if defined USER_WINDOW_MODE || (defined WINDOWMODE)
@@ -1153,7 +1153,7 @@ BOOL OpenInitFile()
 	case 4:WindowWidth=1600;WindowHeight=1200;break;
 	}
 	
-	g_fScreenRate_x = (float)WindowWidth / 640;		// ¡Ø
+	g_fScreenRate_x = (float)WindowWidth / 640;		// â€»
 	g_fScreenRate_y = (float)WindowHeight / 480;
 
 	return TRUE;
@@ -1178,7 +1178,7 @@ BOOL Util_CheckOption( char *lpszCommandLine, unsigned char cOption, char *lpszS
 	{
 		lpFound = ( unsigned char*)strchr( ( char*)( lpFound + 1), nFind);
 		if ( lpFound && ( *( lpFound + 1) == cComp[0] || *( lpFound + 1) == cComp[1]))
-		{	// ¹ß°ß
+		{	// ë°œê²¬
 			if ( lpszString)
 			{
 				int nCount = 0;
@@ -1205,7 +1205,7 @@ BOOL UpdateFile( char *lpszOld, char *lpszNew)
 	DWORD dwStartTickCount = ::GetTickCount();
 	while(::GetTickCount() - dwStartTickCount < 5000) {
 		if ( CopyFile( lpszOld, lpszNew, FALSE))
-		{	// ¼º°ø
+		{	// ì„±ê³µ
 			DeleteFile( lpszOld);
 			return ( TRUE);
 		}
@@ -1592,10 +1592,10 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR szCmdLin
 	if (g_bUseWindowMode == FALSE)
 	{
 #endif	// ACTIVE_FOCUS_OUT
-		int nOldVal; // °ªÀÌ µé¾î°¥ ÇÊ¿ä°¡ ¾øÀ½
-		SystemParametersInfo(SPI_SCREENSAVERRUNNING, 1, &nOldVal, 0);  // ´ÜÃàÅ°¸¦ ¸ø¾²°Ô ÇÔ
-		SystemParametersInfo(SPI_GETSCREENSAVETIMEOUT, 0, &g_iScreenSaverOldValue, 0);  // ½ºÅ©¸°¼¼ÀÌ¹ö Â÷´Ü
-		SystemParametersInfo(SPI_SETSCREENSAVETIMEOUT, 300*60, NULL, 0);  // ½ºÅ©¸°¼¼ÀÌ¹ö Â÷´Ü
+		int nOldVal; // ê°’ì´ ë“¤ì–´ê°ˆ í•„ìš”ê°€ ì—†ìŒ
+		SystemParametersInfo(SPI_SCREENSAVERRUNNING, 1, &nOldVal, 0);  // ë‹¨ì¶•í‚¤ë¥¼ ëª»ì“°ê²Œ í•¨
+		SystemParametersInfo(SPI_GETSCREENSAVETIMEOUT, 0, &g_iScreenSaverOldValue, 0);  // ìŠ¤í¬ë¦°ì„¸ì´ë²„ ì°¨ë‹¨
+		SystemParametersInfo(SPI_SETSCREENSAVETIMEOUT, 300*60, NULL, 0);  // ìŠ¤í¬ë¦°ì„¸ì´ë²„ ì°¨ë‹¨
 #ifdef ACTIVE_FOCUS_OUT
 	}
 #endif	// ACTIVE_FOCUS_OUT

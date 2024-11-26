@@ -64,7 +64,7 @@ ITEM* SEASON3B::CNewUIItemMng::CreateItem(BYTE byType, BYTE bySubType, BYTE byLe
 	if (pbySocketOptions == NULL)
 	{
 		pNewItem->SocketCount = 0;
-		assert(!"©╘╠Б╥н ©ю╢б ╟Ф©Л©║ ╪рдо ©и╪г ╟Э╥ц х╝юн гй©Д");
+		assert(!"Л≈╛Й╦╟К║° Л≤╓К┼■ Й╡╫Л ╟Л≈░ Л├▄Л╪⌠ Л≤╣Л┘≤ Й╢─К═╗ М≥∙Л²╦ М∙└Л ■");
 	}
 	else
 	{

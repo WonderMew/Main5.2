@@ -652,7 +652,7 @@ bool GMNewTown::RenderObjectVisual(OBJECT* pObject, BMD* pModel)
 			}
 			else
 			{
-				assert(!"°ø°Ýµ¿ÀÛÀÌ ¾ø´?");
+				assert(!"ê³µê²©ë™ìž‘ì´ ì—†?");
 			}
 			pObject->Owner = pNewObject;
 		}
@@ -785,7 +785,7 @@ bool GMNewTown::RenderObject(OBJECT* pObject, BMD* pModel,bool ExtraMon)
 		return g_EmpireGuardian4.RenderObjectMesh(pObject, pModel, ExtraMon);
 #endif //PJH_NEW_SERVER_SELECT_MAP
 
-	// ¹è°æ
+	// ë°°ê²½
 	if ((pObject->Type>=5 && pObject->Type<=14) || pObject->Type == 4 || pObject->Type == 129)
 	{
 		Mesh_t *m = NULL;
@@ -951,7 +951,7 @@ void GMNewTown::RenderObjectAfterCharacter(OBJECT* pObject, BMD* pModel,bool Ext
 	}
 #endif //PJH_NEW_SERVER_SELECT_MAP
 
-	if(pObject->Type == 2 || pObject->Type == 53 || pObject->Type == 55 || pObject->Type == 89 || pObject->Type == 125 || pObject->Type == 128)	// ÆøÆ÷¹°1,2, ¼ö·Î, È¸¿À¸®, ºû
+	if(pObject->Type == 2 || pObject->Type == 53 || pObject->Type == 55 || pObject->Type == 89 || pObject->Type == 125 || pObject->Type == 128)	// í­í¬ë¬¼1,2, ìˆ˜ë¡œ, íšŒì˜¤ë¦¬, ë¹›
 	{
 		pModel->RenderBody(RENDER_TEXTURE,pObject->Alpha,pObject->BlendMesh,pObject->BlendMeshLight,pObject->BlendMeshTexCoordU,pObject->BlendMeshTexCoordV,pObject->HiddenMesh);
 	}
@@ -999,14 +999,14 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 415:
    		OpenNpc(MODEL_ELBELAND_SILVIA);
 		pCharacter = CreateCharacter(Key,MODEL_ELBELAND_SILVIA,PosX,PosY);
-		strcpy(pCharacter->ID,"½Çºñ¾Æ");
+		strcpy(pCharacter->ID,"ì‹¤ë¹„ì•„");
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Object.m_fEdgeScale = 1.2f;
 		break;
 	case 416:
    		OpenNpc(MODEL_ELBELAND_RHEA);
 		pCharacter = CreateCharacter(Key,MODEL_ELBELAND_RHEA,PosX,PosY);
-		strcpy(pCharacter->ID,"·¹¾Æ");
+		strcpy(pCharacter->ID, "ë ˆì•„");
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Object.m_fEdgeScale = 1.1f;
 		Models[MODEL_ELBELAND_RHEA].Actions[0].PlaySpeed = 0.2f;
@@ -1015,14 +1015,14 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 417:
    		OpenNpc(MODEL_ELBELAND_MARCE);
 		pCharacter = CreateCharacter(Key,MODEL_ELBELAND_MARCE,PosX,PosY);
-		strcpy(pCharacter->ID,"¸¶¸£¼¼");
+		strcpy(pCharacter->ID, "ë§ˆë¥´ì„¸");
 		pCharacter->Object.Scale = 1.05f;
 		pCharacter->Object.m_fEdgeScale = 1.2f;
 		break;
 	case 418:
 		OpenMonsterModel(128);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+128,PosX,PosY);
-		strcpy(pCharacter->ID,"±â±«ÇÑ Åä³¢");
+		strcpy(pCharacter->ID, "ê¸°ê´´í•œ í† ë¼");
 		pCharacter->Object.Scale = 1.0f * 0.95f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -1030,7 +1030,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 419:
 		OpenMonsterModel(129);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+129,PosX,PosY);
-		strcpy(pCharacter->ID,"ÈäÃøÇÑ Åä³¢");
+		strcpy(pCharacter->ID, "í‰ì¸¡í•œ í† ë¼");
 		pCharacter->Object.Scale = 0.8f * 0.95f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -1038,7 +1038,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 420:
 		OpenMonsterModel(130);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+130,PosX,PosY);
-		strcpy(pCharacter->ID,"´Á´ëÀÎ°£");
+		strcpy(pCharacter->ID, "ëŠ‘ëŒ€ì¸ê°„");
 		pCharacter->Object.Scale = 1.0f * 0.95f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -1046,7 +1046,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 421:
 		OpenMonsterModel(131);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+131,PosX,PosY);
-		strcpy(pCharacter->ID,"¿À¿°µÈ ³ªºñ");
+		strcpy(pCharacter->ID, "ì˜¤ì—¼ëœ ë‚˜ë¹„");
 		pCharacter->Object.Scale = 0.8f * 1.1f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -1054,7 +1054,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 422:
 		OpenMonsterModel(132);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+132,PosX,PosY);
-		strcpy(pCharacter->ID,"ÀúÁÖ¹ÞÀº¸®Ä¡");
+		strcpy(pCharacter->ID, "ì €ì£¼ë°›ì€ë¦¬ì¹˜");
 		pCharacter->Object.Scale = 1.0f * 0.95f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -1062,7 +1062,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 423:
 		OpenMonsterModel(133);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+133,PosX,PosY);
-		strcpy(pCharacter->ID,"ÅäÅÛ°ñ·½");
+		strcpy(pCharacter->ID, "í† í…œê³¨ë ˜");
 		pCharacter->Object.Scale = 0.17f * 0.95f;
 		pCharacter->Object.ShadowScale = 0.01f;
 		pCharacter->Object.m_fEdgeScale = 1.05f;
@@ -1073,7 +1073,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 424:
 		OpenMonsterModel(134);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+134,PosX,PosY);
-		strcpy(pCharacter->ID,"±«¼ö ¿ì¾¾");
+		strcpy(pCharacter->ID, "ê´´ìˆ˜ ìš°ì”¨");
 		pCharacter->Object.Scale = 1.2f * 0.95f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -1081,7 +1081,7 @@ CHARACTER* GMNewTown::CreateNewTownMonster(int iType, int PosX, int PosY, int Ke
 	case 425:
 		OpenMonsterModel(135);
 		pCharacter = CreateCharacter(Key,MODEL_MONSTER01+135,PosX,PosY);
-		strcpy(pCharacter->ID,"±«¼ö ¿ì¾¾ ´ëÀå");
+		strcpy(pCharacter->ID, "ê´´ìˆ˜ ìš°ì”¨ ëŒ€ìž¥");
 		pCharacter->Object.Scale = 1.3f * 0.95f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;

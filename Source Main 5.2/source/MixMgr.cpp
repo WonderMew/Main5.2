@@ -598,7 +598,7 @@ BOOL CMixRecipes::GetRecipeName(MIX_RECIPE * pRecipe, unicode::t_char * pszNameO
 			}
 			return FALSE;
 		}
-		assert(optionTextlist.size() == 2 && "¿É¼ÇÀº 2°³¿©¾ß ÇÔ");
+		assert(optionTextlist.size() == 2 && "ì˜µì…˜ì€ 2ê°œì—¬ì•¼ í•¨");
 		if (iNameLine == 1)
 		{
 			unicode::_strcpy(pszNameOut, optionTextlist[0].c_str());
@@ -1153,7 +1153,7 @@ void CMixRecipeMgr::OpenRecipeFile(const unicode::t_char * szFileName)
 
 int CMixRecipeMgr::GetMixInventoryType()
 {
-	assert(m_iMixType >= MIXTYPE_GOBLIN_NORMAL && m_iMixType < MAX_MIX_TYPES && "Á¤ÀÇµÇÁö ¾ÊÀº Á¶ÇÕÃ¢");
+	assert(m_iMixType >= MIXTYPE_GOBLIN_NORMAL && m_iMixType < MAX_MIX_TYPES && "ì •ì˜ë˜ì§€ ì•Šì€ ì¡°í•©ì°½");
 	return m_iMixType;
 }
 

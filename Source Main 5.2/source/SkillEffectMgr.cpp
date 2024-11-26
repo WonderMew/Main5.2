@@ -97,7 +97,7 @@ OBJECT * CSkillEffectMgr::CreateEffect()
 		}
 	}
 
-	assert(!"½ºÅ³ÀÌÆåÆ® ÇÑ°è µµ´Ş!");
+	assert(!"ìŠ¤í‚¬ì´í™íŠ¸ í•œê³„ ë„ë‹¬!");
 	return &m_SkillEffects[MAX_SKILL_EFFECTS - 1];
 }
 

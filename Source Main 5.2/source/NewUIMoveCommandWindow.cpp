@@ -734,7 +734,7 @@ void SEASON3B::CNewUIMoveCommandWindow::RenderFrame()
 	{
 		RenderImage(IMAGE_MOVECOMMAND_SCROLL_MIDDLE, m_ScrollBarPos.x, 
 			m_ScrollBarPos.y+MOVECOMMAND_SCROLLBAR_TOP_HEIGHT+(icntText*MOVECOMMAND_SCROLLBAR_MIDDLE_HEIGHT),
-			MOVECOMMAND_SCROLLBAR_TOP_WIDTH, m_iScrollBarMiddleRemainderPixel );	// MIDDLE ≥™∏”¡ˆ
+			MOVECOMMAND_SCROLLBAR_TOP_WIDTH, m_iScrollBarMiddleRemainderPixel );	// MIDDLE ¬≥¬™¬∏√ì√Å√∂
 	}
 
 	RenderImage(IMAGE_MOVECOMMAND_SCROLL_BOTTOM, m_ScrollBarPos.x, m_ScrollBarPos.y+m_iScrollBarHeightPixel-MOVECOMMAND_SCROLLBAR_TOP_HEIGHT,

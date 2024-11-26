@@ -93,7 +93,7 @@ void CPortalMgr::GetPortalPositionText(char * pszOut)
 
 	if (m_iPortalWorld == -1)
 	{
-		assert(!"ÀÌµ¿ À§Ä¡°¡ ÁöÁ¤µÇÁö ¾ÊÀº »óÅÂÀÓ");
+		assert(!"ì´ë™ ìœ„ì¹˜ê°€ ì§€ì •ë˜ì§€ ì•Šì€ ìƒíƒœì„");
 	}
 	else
 	{
@@ -107,7 +107,7 @@ void CPortalMgr::GetRevivePositionText(char * pszOut)
 
 	if (m_iReviveWorld == -1)
 	{
-		assert(!"ÀÌµ¿ À§Ä¡°¡ ÁöÁ¤µÇÁö ¾ÊÀº »óÅÂÀÓ");
+		assert(!"ì´ë™ ìœ„ì¹˜ê°€ ì§€ì •ë˜ì§€ ì•Šì€ ìƒíƒœì„");
 	}
 	else
 	{

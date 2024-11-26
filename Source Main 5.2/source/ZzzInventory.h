@@ -53,7 +53,7 @@ const enum SKILL_TOOLTIP_RENDER_POINT
 	STRP_BOOTOMRIGHT
 };
 
-// ¼¼À²Á¤º¸
+// ì„¸ìœ¨ì •ë³´
 
 extern int		g_nTaxRate;
 extern int		g_nChaosTaxRate;
@@ -77,7 +77,7 @@ extern int			GuildTotalScore;
 extern int AllRepairGold;
 
 //////////////////////////////////////////////////////////////////////////
-// text °ü·Ã
+// text ê´€ë ¨
 //////////////////////////////////////////////////////////////////////////
 extern char TextList[30][100];
 extern int TextListColor[30];

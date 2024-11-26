@@ -525,7 +525,7 @@ bool MoveBug ( OBJECT* o, bool bForceRender )
 #endif //PBG_ADD_NEWCHAR_MONK_ANI
                )
 			{
-                //  Æä°¡¼ö½º.
+                //  íŽ˜ê°€ìˆ˜ìŠ¤.
                 if ( o->Type==MODEL_PEGASUS )
                 {
                     if ( gMapManager.WorldActive==WD_8TARKAN || gMapManager.WorldActive==WD_10HEAVEN || g_Direction.m_CKanturu.IsMayaScene() )

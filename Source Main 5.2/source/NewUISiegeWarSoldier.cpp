@@ -55,7 +55,7 @@ bool SEASON3B::CNewUISiegeWarSoldier::OnRender()
 	g_pRenderText->SetTextColor( 255, 255, 255, 255 );
 	g_pRenderText->SetBgColor( 0, 0, 0, 0 );
 
-	// ¸ğµç Ä³¸¯ÅÍÀÇ À§Ä¡
+	// ëª¨ë“  ìºë¦­í„°ì˜ ìœ„ì¹˜
 	RenderCharPosInMiniMap();
 
 	DisableAlphaBlend();
@@ -63,7 +63,7 @@ bool SEASON3B::CNewUISiegeWarSoldier::OnRender()
 	EnableAlphaTest ();
 	glColor4f( 1.f, 1.f, 1.f, m_fMiniMapAlpha );
 
-	// Áöµµ»óÀÇ ¸í·É Icon
+	// ì§€ë„ìƒì˜ ëª…ë ¹ Icon
 	RenderCmdIconInMiniMap();
 
 	DisableAlphaBlend();
@@ -80,12 +80,12 @@ void SEASON3B::CNewUISiegeWarSoldier::OnSetPos( int x, int y )
 
 //---------------------------------------------------------------------------------------------
 // RenderCharPosInMiniMap
-// ¹Ì´Ï¸Ê¿¡ ¸ğµç Ä³¸¯ÅÍ¸¦ ·»´õ
+// ë¯¸ë‹ˆë§µì— ëª¨ë“  ìºë¦­í„°ë¥¼ ë Œë”
 void SEASON3B::CNewUISiegeWarSoldier::RenderCharPosInMiniMap()
 {
 	float fPosX, fPosY;
 		
-	// ¹Ì´Ï¸ã¿¡ ÇÃ·¹ÀÌ¾î ·»´õ
+	// ë¯¸ë‹ˆë©¥ì— í”Œë ˆì´ì–´ ë Œë”
 	for ( int i=0; i<MAX_CHARACTERS_CLIENT; ++i )
     {
         CHARACTER* c = &CharactersClient[i];

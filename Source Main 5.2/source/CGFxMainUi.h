@@ -41,50 +41,50 @@ inline bool CanRegisterItemHotKey(int iType)
 {
 	switch(iType)
 	{
-	case ITEM_POTION+0:		// »ç°ú
-	case ITEM_POTION+1:		// ÀÛÀºÄ¡·á¹°¾à	
-	case ITEM_POTION+2:		// Áß°£Ä¡·á¹°¾à	
-	case ITEM_POTION+3:		// Å«Ä¡·á¹°¾à	
-	case ITEM_POTION+4:		// ÀÛÀº¸¶³ª¹°¾à	
-	case ITEM_POTION+5:		// Áß°£¸¶³ª¹°¾à	
-	case ITEM_POTION+6:		// Å«¸¶³ª¹°¾à		
-	case ITEM_POTION+7:		// °ø¼º¹°¾à(Ãàº¹ÀÇ¹°¾à, ¿µÈ¥ÀÇ¹°¾à)
-	case ITEM_POTION+8:		// ÇØµ¶¹°¾à
-	case ITEM_POTION+9:		// ¼ú
-	case ITEM_POTION+10:	// ¸¶À»±ÍÈ¯¹®¼­
-	case ITEM_POTION+20:	// »ç¶ûÀÇ ¹¦¾à
-	case ITEM_POTION+35:	// ÀÛÀºSDÈ¸º¹¹°¾à
-	case ITEM_POTION+36:	// Áß°£SDÈ¸º¹¹°¾à
-	case ITEM_POTION+37:	// Å«SDÈ¸º¹¹°¾à
-	case ITEM_POTION+38:	// ÀÛÀºº¹ÇÕ¹°¾à
-	case ITEM_POTION+39:	// Áß°£º¹ÇÕ¹°¾à
-	case ITEM_POTION+40:	// Å«º¹ÇÕ¹°¾à
-	case ITEM_POTION+46:	// Àè¿À·£ÅÏÀÇÃàº¹
-	case ITEM_POTION+47:	// Àè¿À·£ÅÏÀÇºÐ³ë
-	case ITEM_POTION+48:	// Àè¿À·£ÅÏÀÇ¿ÜÄ§
-	case ITEM_POTION+49:	// Àè¿À·£ÅÏÀÇÀ½½Ä
-	case ITEM_POTION+50:	// Àè¿À·£ÅÏÀÇÀ½·á
+	case ITEM_POTION+0:		// ì‚¬ê³¼
+	case ITEM_POTION+1:		// ìž‘ì€ì¹˜ë£Œë¬¼ì•½	
+	case ITEM_POTION+2:		// ì¤‘ê°„ì¹˜ë£Œë¬¼ì•½	
+	case ITEM_POTION+3:		// í°ì¹˜ë£Œë¬¼ì•½	
+	case ITEM_POTION+4:		// ìž‘ì€ë§ˆë‚˜ë¬¼ì•½	
+	case ITEM_POTION+5:		// ì¤‘ê°„ë§ˆë‚˜ë¬¼ì•½	
+	case ITEM_POTION+6:		// í°ë§ˆë‚˜ë¬¼ì•½		
+	case ITEM_POTION+7:		// ê³µì„±ë¬¼ì•½(ì¶•ë³µì˜ë¬¼ì•½, ì˜í˜¼ì˜ë¬¼ì•½)
+	case ITEM_POTION+8:		// í•´ë…ë¬¼ì•½
+	case ITEM_POTION+9:		// ìˆ 
+	case ITEM_POTION+10:	// ë§ˆì„ê·€í™˜ë¬¸ì„œ
+	case ITEM_POTION+20:	// ì‚¬ëž‘ì˜ ë¬˜ì•½
+	case ITEM_POTION+35:	// ìž‘ì€SDíšŒë³µë¬¼ì•½
+	case ITEM_POTION+36:	// ì¤‘ê°„SDíšŒë³µë¬¼ì•½
+	case ITEM_POTION+37:	// í°SDíšŒë³µë¬¼ì•½
+	case ITEM_POTION+38:	// ìž‘ì€ë³µí•©ë¬¼ì•½
+	case ITEM_POTION+39:	// ì¤‘ê°„ë³µí•©ë¬¼ì•½
+	case ITEM_POTION+40:	// í°ë³µí•©ë¬¼ì•½
+	case ITEM_POTION+46:	// ìž­ì˜¤ëžœí„´ì˜ì¶•ë³µ
+	case ITEM_POTION+47:	// ìž­ì˜¤ëžœí„´ì˜ë¶„ë…¸
+	case ITEM_POTION+48:	// ìž­ì˜¤ëžœí„´ì˜ì™¸ì¹¨
+	case ITEM_POTION+49:	// ìž­ì˜¤ëžœí„´ì˜ìŒì‹
+	case ITEM_POTION+50:	// ìž­ì˜¤ëžœí„´ì˜ìŒë£Œ
 #ifdef PSW_ELITE_ITEM
-	case ITEM_POTION+70:    // ºÎºÐÀ¯·áÈ­ ¿¤¸®Æ® Ã¼·Â ¹°¾à
-	case ITEM_POTION+71:    // ºÎºÐÀ¯·áÈ­ ¿¤¸®Æ® ¸¶³ª ¹°¾à
+	case ITEM_POTION+70:    // ë¶€ë¶„ìœ ë£Œí™” ì—˜ë¦¬íŠ¸ ì²´ë ¥ ë¬¼ì•½
+	case ITEM_POTION+71:    // ë¶€ë¶„ìœ ë£Œí™” ì—˜ë¦¬íŠ¸ ë§ˆë‚˜ ë¬¼ì•½
 #endif //PSW_ELITE_ITEM
 #ifdef PSW_ELITE_ITEM
-	case ITEM_POTION+78:    // ºÎºÐÀ¯·áÈ­ ÈûÀÇ ºñ¾à
-	case ITEM_POTION+79:    // ºÎºÐÀ¯·áÈ­ ¹ÎÃ¸ÀÇ ºñ¾à
-	case ITEM_POTION+80:    // ºÎºÐÀ¯·áÈ­ Ã¼·ÂÀÇ ºñ¾à
-	case ITEM_POTION+81:    // ºÎºÐÀ¯·áÈ­ ¿¡³ÊÁöÀÇ ºñ¾à
-	case ITEM_POTION+82:    // ºÎºÐÀ¯·áÈ­ Åë¼ÖÀÇ
+	case ITEM_POTION+78:    // ë¶€ë¶„ìœ ë£Œí™” íž˜ì˜ ë¹„ì•½
+	case ITEM_POTION+79:    // ë¶€ë¶„ìœ ë£Œí™” ë¯¼ì²©ì˜ ë¹„ì•½
+	case ITEM_POTION+80:    // ë¶€ë¶„ìœ ë£Œí™” ì²´ë ¥ì˜ ë¹„ì•½
+	case ITEM_POTION+81:    // ë¶€ë¶„ìœ ë£Œí™” ì—ë„ˆì§€ì˜ ë¹„ì•½
+	case ITEM_POTION+82:    // ë¶€ë¶„ìœ ë£Œí™” í†µì†”ì˜
 #endif //PSW_ELITE_ITEM
 #ifdef PSW_NEW_ELITE_ITEM
-	case ITEM_POTION+94:    // ºÎºÐÀ¯·áÈ­ ¿¤¸®Æ® Áß°£ Ã¼·Â ¹°¾à
+	case ITEM_POTION+94:    // ë¶€ë¶„ìœ ë£Œí™” ì—˜ë¦¬íŠ¸ ì¤‘ê°„ ì²´ë ¥ ë¬¼ì•½
 #endif //PSW_NEW_ELITE_ITEM
 #ifdef CSK_EVENT_CHERRYBLOSSOM
-	case ITEM_POTION+85:	// º¢²É¼ú
-	case ITEM_POTION+86:	// º¢²É°æ´Ü
-	case ITEM_POTION+87:	// º¢²ÉÀÙ
+	case ITEM_POTION+85:	// ë²šê½ƒìˆ 
+	case ITEM_POTION+86:	// ë²šê½ƒê²½ë‹¨
+	case ITEM_POTION+87:	// ë²šê½ƒìžŽ
 #endif //CSK_EVENT_CHERRYBLOSSOM
 #ifdef YDG_ADD_CS7_ELITE_SD_POTION
-	case ITEM_POTION+133:	// ¿¤¸®Æ®SDÈ¸º¹¹°¾à
+	case ITEM_POTION+133:	// ì—˜ë¦¬íŠ¸SDíšŒë³µë¬¼ì•½
 #endif	// YDG_ADD_CS7_ELITE_SD_POTION
 		return true;
 	}
@@ -175,7 +175,7 @@ private:
 
 	bool GetSkillNumber(int skillType, int *outSkillNum, int *outTextureNum);
 	bool GetSkillDisable(int slotNum, int* _array);
-	void GetSkillDelay(int skillType, int* _array); //Â÷ÈÄ ÀÛ¾÷¿ë
+	void GetSkillDelay(int skillType, int* _array); //ì°¨í›„ ìž‘ì—…ìš©
 
 	bool GetAttackDamage ( int* iMinDamage, int* iMaxDamage );
 
@@ -226,14 +226,14 @@ private:
 	//skill
 	int m_iHotKeySkillIndex[MAX_SKILL_HOT_KEY];
 	bool m_isHotKeySkillCantUse[MAX_SKILL_HOT_KEY];
-	int m_iHotKeySkillType[MAX_SKILL_HOT_KEY];		//¸¶½ºÅÍ½ºÅ³ º¯°æ½Ã È®ÀÎ¿ë º¯¼ö
+	int m_iHotKeySkillType[MAX_SKILL_HOT_KEY];		//ë§ˆìŠ¤í„°ìŠ¤í‚¬ ë³€ê²½ì‹œ í™•ì¸ìš© ë³€ìˆ˜
 
 	bool m_isSkillSlotVisible;
 	int m_iSkillSlotCount;
 	int m_iPetSlotCount;
 	int m_iSkillSlotIndex[MAX_MAGIC];
 	bool m_isSkillSlotCantUse[MAX_MAGIC];
-	int m_iSkillSlotType[MAX_MAGIC];		//¸¶½ºÅÍ½ºÅ³ º¯°æ½Ã È®ÀÎ¿ë º¯¼ö
+	int m_iSkillSlotType[MAX_MAGIC];		//ë§ˆìŠ¤í„°ìŠ¤í‚¬ ë³€ê²½ì‹œ í™•ì¸ìš© ë³€ìˆ˜
 
 };
 

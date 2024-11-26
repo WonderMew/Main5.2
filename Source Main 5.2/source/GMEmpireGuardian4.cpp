@@ -90,7 +90,7 @@ CHARACTER* GMEmpireGuardian4::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(164);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+164, PosX, PosY);
-			strcpy(pCharacter->ID, "°¡ÀÌ¿Â Ä«·¹ÀÎ");
+			strcpy(pCharacter->ID, "ê°€ì´ì˜¨ ì¹´ë ˆì¸");
 
 			gLoadData.AccessModel(MODEL_SWORDLEFT01_EMPIREGUARDIAN_BOSS_GAION_,	"Data\\Monster\\", "Boss_Karane_sword_left01");
 			gLoadData.AccessModel(MODEL_SWORDLEFT02_EMPIREGUARDIAN_BOSS_GAION_,	"Data\\Monster\\", "Boss_Karane_sword_left02");
@@ -114,7 +114,7 @@ CHARACTER* GMEmpireGuardian4::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(165);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+165, PosX, PosY);
-			strcpy(pCharacter->ID, "Á¦¸°Æ®");
+			strcpy(pCharacter->ID, "ì œë¦°íŠ¸");
 
 			pCharacter->Object.Scale = 1.45f;
 
@@ -125,7 +125,7 @@ CHARACTER* GMEmpireGuardian4::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(186);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+186, PosX, PosY);
-			strcpy(pCharacter->ID, "ÁÖ¸» Ã¢»ì ¼º¹®");
+			strcpy(pCharacter->ID, "ì£¼ë§ ì°½ì‚´ ì„±ë¬¸");
 			pCharacter->Object.m_bRenderShadow = false;
 			pCharacter->Object.Scale = 1.25f;
 		}
@@ -135,7 +135,7 @@ CHARACTER* GMEmpireGuardian4::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(187);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+187, PosX, PosY);
-			strcpy(pCharacter->ID, "ÁÖ¸» ¼º¹®");
+			strcpy(pCharacter->ID, "ì£¼ë§ ì„±ë¬¸");
 			pCharacter->Object.m_bRenderShadow = false;
 			pCharacter->Object.LifeTime = 100;
 			pCharacter->Object.Scale = 1.25f;

@@ -1923,7 +1923,7 @@ void CreateEffect(int Type,vec3_t Position,vec3_t Angle,vec3_t Light,int SubType
                 }
 				//. Create Effect
 				if(Type == MODEL_ARROW_NATURE && o->SubType == 1)
-				{	//. ≥Ïªˆ ∂Ï ª˝º∫
+				{	//. ¬≥√¨¬ª√∂ ¬∂√¨ ¬ª√Ω¬º¬∫
 					CreateJoint ( BITMAP_FLARE+1, o->Position, o->Position, o->Angle, 13, o, 20.f, 40 );
 //					CreateJoint ( BITMAP_FLARE+1, o->Position, o->Position, o->Angle, 6, o, 20.f, 40 );
 //					CheckTargetRange(o);
@@ -5653,7 +5653,7 @@ void CreateEffect(int Type,vec3_t Position,vec3_t Angle,vec3_t Light,int SubType
 						break;
 					case MODEL_SWORDRIGHT02_EMPIREGUARDIAN_BOSS_GAION_:
 						{
-							if ( o->SubType==1 )	// ¿œπ›∞¯∞› Animation
+							if ( o->SubType==1 )	// √Ä√è¬π√ù¬∞√∏¬∞√ù Animation
 							{
 								//const int	TOTAL_LIFETIME = 24;
 								const int	TOTAL_LIFETIME = 30;
@@ -6707,8 +6707,8 @@ void CreateBomb3(vec3_t vPos, int iSubType)
 	}
 // 	for (i = 0; i < 2; ++i)
 // 	{
-// 		Vector(1.0f,1.0f,1.0f,vLight);	// ø¨±‚ ∆„
-// 		CreateParticle(BITMAP_SMOKE,vBombPos,vAngle,vLight,7);	// ø¨±‚
+// 		Vector(1.0f,1.0f,1.0f,vLight);	// ¬ø¬¨¬±√¢ √Ü√£
+// 		CreateParticle(BITMAP_SMOKE,vBombPos,vAngle,vLight,7);	// ¬ø¬¨¬±√¢
 // 	}
 }
 
@@ -7865,7 +7865,7 @@ void MoveEffect( OBJECT *o, int iIndex)
 			VectorAdd(vPos, pObject->Position, o->Position);
 
 			if(pObject->Live)
-				o->LifeTime = 100.f; //π´«—
+				o->LifeTime = 100.f; //¬π¬´√á√ë
 
 			BMD * b = &Models[o->Type];
 			b->PlayAnimation( &o->AnimationFrame, &o->PriorAnimationFrame, &o->PriorAction, o->Velocity/5.f, o->Position, o->Angle );
@@ -9512,7 +9512,7 @@ void MoveEffect( OBJECT *o, int iIndex)
 					fScale = (float)(rand()%80+32)*0.01f*1.0f;
 					Vector(o->Position[0]+(rand()%70-35)*1.0f, o->Position[1]+(rand()%70-35)*1.0f,
 						o->Position[2]+(rand()%70-35)*1.0f, vPos);
-					CreateParticle(BITMAP_LIGHTNING_MEGA1+rand()%3,vPos,pObject->Angle,vLight,0, fScale);	// ¿¸±‚
+					CreateParticle(BITMAP_LIGHTNING_MEGA1+rand()%3,vPos,pObject->Angle,vLight,0, fScale);	// √Ä√º¬±√¢
 				}
 
 				vec34_t Matrix;
@@ -9531,7 +9531,7 @@ void MoveEffect( OBJECT *o, int iIndex)
 					VectorAdd(vPosition, o->Position, vPosition);
 					vPosition[2] = RequestTerrainHeight(vPosition[0],vPosition[1])+20;
 					
-					CreateParticle(BITMAP_LIGHTNING_MEGA1+rand()%3,vPosition,pObject->Angle,vLight,0, fScale);	// ¿¸±‚
+					CreateParticle(BITMAP_LIGHTNING_MEGA1+rand()%3,vPosition,pObject->Angle,vLight,0, fScale);	// √Ä√º¬±√¢
 				}
 
 				VectorCopy(o->Position, vPosition);
@@ -11787,7 +11787,7 @@ void MoveEffect( OBJECT *o, int iIndex)
         {
             Vector(1.f,1.f,1.f,Light);
             
-    		CreateJoint(BITMAP_JOINT_THUNDER,o->Position,o->Position,o->Angle,3,NULL,20.f,7); //  ¿¸±‚ 
+    		CreateJoint(BITMAP_JOINT_THUNDER,o->Position,o->Position,o->Angle,3,NULL,20.f,7); //  √Ä√º¬±√¢ 
             CreateSprite(BITMAP_SHINY+1,o->Position,(float)(rand()%8+8)*0.2f,Light,o,(float)(rand()%360));
         }
 
@@ -15685,7 +15685,7 @@ void MoveEffect( OBJECT *o, int iIndex)
 					VectorCopy( o->Position, v3Pos );
 					
 					CreateParticle ( BITMAP_WATERFALL_3, v3Pos, o->Angle, o->Light, 11, 0.6f );
-					// ø¨±‚
+					// ¬ø¬¨¬±√¢
 					CreateParticle ( BITMAP_SMOKE, v3Pos, o->Angle, o->Light, 52, 0.6f );
 					
 					
@@ -16636,10 +16636,10 @@ void MoveEffect( OBJECT *o, int iIndex)
 					o->m_Interpolates.GetAlphaCurrent(o->Alpha,fCurrentRate);
 				}
 				
-				// 13. APPEAR EFFECTµÈ
+				// 13. APPEAR EFFECT¬µ√©
 				if( fCurrentRate >= 0.0f && fCurrentRate <= 0.5f )
 				{
-					o->Visible = true;		// MoveEffect≠ CreateEffect
+					o->Visible = true;		// MoveEffect¬≠ CreateEffect
 					BMD*	b = &Models[o->Type];
 					vec3_t	*arrEachBonePos;
 					vec3_t	v3LightModify;
@@ -16741,7 +16741,7 @@ void MoveEffect( OBJECT *o, int iIndex)
 					o->m_Interpolates.GetAlphaCurrent(o->Alpha,fCurrentRate);
 				}
 				
-				// 3. APPEAR EFFECTµÈ
+				// 3. APPEAR EFFECT¬µ√©
 				if( fCurrentRate >= 0.0f && fCurrentRate <= 0.6f )
 				{
 					o->Visible = true;		// MoveEffect CreateEffect
@@ -17437,7 +17437,7 @@ void MoveEffect( OBJECT *o, int iIndex)
 							CreateEffect(MODEL_WINDFOCE, o->Position, o->Angle, vLight, 3, o, -1, 0, 0, 0, 1.0f);
 						}
 					}
-					else if(o->SubType == 1)		//¡ˆº”¿˚¿Œ∞≈ 
+					else if(o->SubType == 1)		//√Å√∂¬º√ì√Ä√ª√Ä√é¬∞√Ö 
 					{
 						if(o->Owner!=NULL && o->Owner->Live==true 
 						&& (g_isCharacterBuff(o->Owner, eBuff_Att_up_Ourforces)
@@ -19001,7 +19001,7 @@ void RenderEffects ( bool bRenderBlendMesh )
 							
 							Vector(0.0f, 0.0f, 0.0f, vLight);
 							
-							// 2-2. ±‚∫ª Jewel Effect // 
+							// 2-2. ¬±√¢¬∫¬ª Jewel Effect // 
 							Vector( fLumi1 * 1.0f, fLumi1 * 0.4f, fLumi1 * 0.1f, vLight );
 							
 							//			if( MODEL_MONSTER01+164 == o->Owner->Type )	// 2-3-1.
@@ -19009,7 +19009,7 @@ void RenderEffects ( bool bRenderBlendMesh )
 								VectorCopy( arrEachBoneTranslations[iBoneIdx_SwordEffectMain01] , vPos_SwordEffectRed01 );
 								VectorCopy( arrEachBoneTranslations[iBoneIdx_SwordEffectMain02] , vPos_SwordEffectRed02 );
 							}
-							// 			else // 2-3-1. Effect∏¶ ≈Î«— ∑ª¥ı¿« ∞ÊøÏ.
+							// 			else // 2-3-1. Effect¬∏¬¶ √Ö√´√á√ë ¬∑¬ª¬¥√µ√Ä√á ¬∞√¶¬ø√¨.
 							// 			{			
 							// 				pBMDSwordModel->TransformByObjectBone(vPos_SwordEffectRed01, o, iBoneIdx_SwordEffectMain01, vRelative);
 							// 				pBMDSwordModel->TransformByObjectBone(vPos_SwordEffectRed02, o, iBoneIdx_SwordEffectMain02, vRelative);
@@ -19017,9 +19017,9 @@ void RenderEffects ( bool bRenderBlendMesh )
 							
 							CreateSprite(BITMAP_LIGHT_RED, vPos_SwordEffectRed01, 1.3f, vLight, o);
 							CreateSprite(BITMAP_LIGHT_RED, vPos_SwordEffectRed02, 1.3f, vLight, o);
-							// 2-2. ±‚∫ª Jewel Effect // 
+							// 2-2. ¬±√¢¬∫¬ª Jewel Effect // 
 							
-							// 2-3. ±‚∫ª Edge Effect
+							// 2-3. ¬±√¢¬∫¬ª Edge Effect
 							{
 								VectorCopy( arrEachBoneTranslations[iBoneIdx_SwordEffectEdge01] , vPos_SwordEffectEdge01 );
 								VectorCopy( arrEachBoneTranslations[iBoneIdx_SwordEffectEdge02] , vPos_SwordEffectEdge02 );

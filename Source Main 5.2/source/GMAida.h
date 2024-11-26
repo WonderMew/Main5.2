@@ -8,13 +8,13 @@ namespace M33Aida {
 	bool IsInAida();
 	bool IsInAidaSection2(const vec3_t Position);
 
-	//. ø¿∫Í¡ß∆Æ
+	//. Ïò§Î∏åÏ†ùÌä∏
 	bool CreateAidaObject(OBJECT* pObject);
 	bool MoveAidaObject(OBJECT* pObject);
 	bool RenderAidaObjectVisual(OBJECT* pObject, BMD* pModel);
 	bool RenderAidaObjectMesh(OBJECT* pObject, BMD* pModel,bool ExtraMon = 0);
 	
-	//. ∏ÛΩ∫≈Õ
+	//. Î™¨Ïä§ÌÑ∞
 	CHARACTER* CreateAidaMonster(int iType, int PosX, int PosY, int Key);
 
 	bool MoveAidaMonsterVisual(OBJECT* pObject, BMD* pModel);
@@ -26,7 +26,7 @@ namespace M33Aida {
 	bool SetCurrentActionAidaMonster(CHARACTER* pCharacter, OBJECT* pObject);
 	
 	
-	//. »≠∏È √≥∏Æ
+	//. ÌôîÎ©¥ Ï≤òÎ¶¨
 	bool CreateMist(PARTICLE* pParticleObj);
 }
 

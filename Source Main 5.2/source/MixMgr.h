@@ -207,14 +207,14 @@ namespace SEASON3A
 #endif //LJH_MOD_CANNOT_USE_CHARMITEM_AND_CHAOSCHARMITEM_SIMULTANEOUSLY
 
 	protected:
-		bool IsOptionItem(MIX_RECIPE_ITEM & rItem) { return (rItem.m_iCountMin == 0); }	// ¿É¼Ç(¾È³Ö¾îµµ µÇ´Â) ¾ÆÀÌÅÛÀÎ°¡
+		bool IsOptionItem(MIX_RECIPE_ITEM & rItem) { return (rItem.m_iCountMin == 0); }	// ì˜µì…˜(ì•ˆë„£ì–´ë„ ë˜ëŠ”) ì•„ì´í…œì¸ê°€
 		BOOL CheckRecipeSub(std::vector<MIX_RECIPE *>::iterator iter, int iNumMixItems, CMixItem * pMixItems);
-		int CheckRecipeSimilaritySub(std::vector<MIX_RECIPE *>::iterator iter, int iNumMixItems, CMixItem * pMixItems);	// À¯»çµµ ºñ±³
-		bool CheckItem(MIX_RECIPE_ITEM & rItem, CMixItem & rSource);	// °°Àº ¾ÆÀÌÅÛÀÎÁö ºñ±³
+		int CheckRecipeSimilaritySub(std::vector<MIX_RECIPE *>::iterator iter, int iNumMixItems, CMixItem * pMixItems);	// ìœ ì‚¬ë„ ë¹„êµ
+		bool CheckItem(MIX_RECIPE_ITEM & rItem, CMixItem & rSource);	// ê°™ì€ ì•„ì´í…œì¸ì§€ ë¹„êµ
 		void EvaluateMixItems(int iNumMixItems, CMixItem * pMixItems);
 		void CalcMixRate(int iNumMixItems, CMixItem * pMixItems);
 		void CalcMixReqZen(int iNumMixItems, CMixItem * pMixItems);
-		BOOL GetRecipeName(MIX_RECIPE * pRecipe, unicode::t_char * pszNameOut, int iNameLine, BOOL bSimilarRecipe);	// ÁÖ¾îÁø Á¶ÇÕ¹ıÀÇ ÀÌ¸§ ¾ò±â
+		BOOL GetRecipeName(MIX_RECIPE * pRecipe, unicode::t_char * pszNameOut, int iNameLine, BOOL bSimilarRecipe);	// ì£¼ì–´ì§„ ì¡°í•©ë²•ì˜ ì´ë¦„ ì–»ê¸°
 		BOOL IsChaosItem(CMixItem & rSource);
 		BOOL IsChaosJewel(CMixItem & rSource);
 		BOOL Is380AddedItem(CMixItem & rSource);

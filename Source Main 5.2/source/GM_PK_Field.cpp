@@ -55,7 +55,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(157);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+157, PosX, PosY);
-			strcpy(pCharacter->ID,"Á»ºñ Åõ»ç");
+			strcpy(pCharacter->ID,"ì¢€ë¹„ íˆ¬ì‚¬");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -66,7 +66,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(157);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+157, PosX, PosY);
-			strcpy(pCharacter->ID,"Á»ºñ Åõ»ç");
+			strcpy(pCharacter->ID,"ì¢€ë¹„ íˆ¬ì‚¬");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -77,7 +77,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(158);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+158, PosX, PosY);
-			strcpy(pCharacter->ID,"µÇ»ì¾Æ³­ °ËÅõ»ç");
+			strcpy(pCharacter->ID,"ë˜ì‚´ì•„ë‚œ ê²€íˆ¬ì‚¬");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -88,7 +88,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(158);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+158, PosX, PosY);
-			strcpy(pCharacter->ID,"µÇ»ì¾Æ³­ °ËÅõ»ç");
+			strcpy(pCharacter->ID,"ë˜ì‚´ì•„ë‚œ ê²€íˆ¬ì‚¬");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -99,7 +99,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(159);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+159, PosX, PosY);
-			strcpy(pCharacter->ID,"Àí´õ¹Ì µµ»ìÀÚ");
+			strcpy(pCharacter->ID,"ìž¿ë”ë¯¸ ë„ì‚´ìž");
 			pCharacter->Object.Scale = 0.7f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -110,7 +110,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(159);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+159, PosX, PosY);
-			strcpy(pCharacter->ID,"Àí´õ¹Ì µµ»ìÀÚ");
+			strcpy(pCharacter->ID,"ìž¿ë”ë¯¸ ë„ì‚´ìž");
 			pCharacter->Object.Scale = 0.7f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -121,7 +121,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(160);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+160, PosX, PosY);
-			strcpy(pCharacter->ID,"ÇÇÀÇ ¾Ï»ìÀÚ");
+			strcpy(pCharacter->ID,"í”¼ì˜ ì•”ì‚´ìž");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -133,7 +133,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(161);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+161, PosX, PosY);
-			strcpy(pCharacter->ID,"ÀÜÈ¤ÇÑ ÇÇÀÇ ¾Ï»ìÀÚ");
+			strcpy(pCharacter->ID,"ìž”í˜¹í•œ í”¼ì˜ ì•”ì‚´ìž");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -145,7 +145,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(161);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+161, PosX, PosY);
-			strcpy(pCharacter->ID,"ÀÜÈ¤ÇÑ ÇÇÀÇ ¾Ï»ìÀÚ");
+			strcpy(pCharacter->ID,"ìž”í˜¹í•œ í”¼ì˜ ì•”ì‚´ìž");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -157,7 +157,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(163);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+163, PosX, PosY);
-			strcpy(pCharacter->ID,"ºÒÅ¸´Â ¿ë¾Ï °ÅÀÎ");
+			strcpy(pCharacter->ID,"ë¶ˆíƒ€ëŠ” ìš©ì•” ê±°ì¸");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -168,7 +168,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(162);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+162, PosX, PosY);
-			strcpy(pCharacter->ID,"Æ÷¾ÇÇÑ ¿ë¾Ï °ÅÀÎ");
+			strcpy(pCharacter->ID,"í¬ì•…í•œ ìš©ì•” ê±°ì¸");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
@@ -179,7 +179,7 @@ CHARACTER* CGM_PK_Field::CreateMonster(int iType, int PosX, int PosY, int Key)
 		{
 			OpenMonsterModel(162);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+162, PosX, PosY);
-			strcpy(pCharacter->ID,"Æ÷¾ÇÇÑ ¿ë¾Ï °ÅÀÎ");
+			strcpy(pCharacter->ID,"í¬ì•…í•œ ìš©ì•” ê±°ì¸");
 			pCharacter->Object.Scale = 1.0f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;

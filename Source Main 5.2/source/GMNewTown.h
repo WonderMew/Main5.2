@@ -20,14 +20,14 @@ namespace SEASON3B
 		static bool IsNewMap73_74();
 #endif //PJH_NEW_SERVER_SELECT_MAP
 
-		//. ø¿∫Í¡ß∆Æ
+		//. Ïò§Î∏åÏ†ùÌä∏
 		static void CreateObject(OBJECT* pObject);
 		static bool MoveObject(OBJECT* pObject);
 		static bool RenderObjectVisual(OBJECT* pObject, BMD* pModel);
 		static bool RenderObject(OBJECT* pObject, BMD* pModel,bool ExtraMon = 0);
 		static void RenderObjectAfterCharacter(OBJECT* pObject, BMD* pModel,bool ExtraMon = 0);
 		
-		//. ∏ÛΩ∫≈Õ
+		//. Î™¨Ïä§ÌÑ∞
 		static CHARACTER* CreateNewTownMonster(int iType, int PosX, int PosY, int Key);
 
 		static bool MoveMonsterVisual(OBJECT* pObject, BMD* pModel);

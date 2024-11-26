@@ -48,7 +48,7 @@ CConsoleWindow::CConsoleWindow()
 	m_hWnd = NULL;
 	m_bActiveCloseButton = false;
 
-	m_LimitTimer.SetTimer(12000);	//. 12√ 
+	m_LimitTimer.SetTimer(12000);	//. 12√É√ä
 }
 CConsoleWindow::~CConsoleWindow() {}
 

@@ -374,7 +374,7 @@ void CNewUITrade::ConvertYourLevel(int& rnLevel, DWORD& rdwColor)
         rnLevel = 50;
         rdwColor = (255<<24)+(0<<16)+(150<<8)+(255);
     }
-    else							//  »¡°£»ö.
+    else							//  ë¹¨ê°„ìƒ‰.
     {
         rnLevel = 10;
         rdwColor = (255<<24)+(0<<16)+(0<<8)+(255);
@@ -634,7 +634,7 @@ void CNewUITrade::ProcessToReceiveTradeResult(LPPTRADE pTradeData)
         m_nYourGuildType = pTradeData->GuildKey;
         ::memcpy(m_szYourID, pTradeData->ID, MAX_ID_SIZE);
 		m_szYourID[MAX_ID_SIZE] = NULL;
-        m_nYourLevel = pTradeData->Level;   //  »ó´ë¹æ ·¹º§.
+        m_nYourLevel = pTradeData->Level;   //  ìƒëŒ€ë°© ë ˆë²¨.
 		break;
 	}
 }

@@ -17,7 +17,7 @@ GlobalPortalSystem::~GlobalPortalSystem()
 
 void GlobalPortalSystem::Initialize()
 {
-	g_ErrorReport.Write( "-- ±Û·Î¹úÆ÷Å» ÃÊ±âÈ­ -- \r\n" );
+	g_ErrorReport.Write( "-- ê¸€ë¡œë²Œí¬íƒˆ ì´ˆê¸°í™” -- \r\n" );
 	ZeroMemory(m_Id, sizeof(m_Id));
 
 	m_isAuthSet = FALSE;
@@ -40,7 +40,7 @@ bool GlobalPortalSystem::SetAuthInfo()
 	if( m_isAuthSet )
 	{
 		// error log
-		g_ErrorReport.Write( "-- Å°Á¤º¸ ¼³Á¤ ÇÔ¼ö Áßº¹ È£Ãâ -- \r\n" );
+		g_ErrorReport.Write( "-- í‚¤ì •ë³´ ì„¤ì • í•¨ìˆ˜ ì¤‘ë³µ í˜¸ì¶œ -- \r\n" );
 		return FALSE;
 	}
 
@@ -56,12 +56,12 @@ bool GlobalPortalSystem::SetAuthInfo()
 	int result = (sm.get())->ReadFromShareMemory(strGameName, &AuthInfo);
  	if( 0 != result )
   	{
-		g_ErrorReport.Write( "-- Å°Á¤º¸ ¼³Á¤ ½ÇÆÐ - %d -- \r\n", result );
+		g_ErrorReport.Write( "-- í‚¤ì •ë³´ ì„¤ì • ì‹¤íŒ¨ - %d -- \r\n", result );
   		return FALSE;
   	}
 
 	strcpy( m_Id, AuthInfo.id );
-	g_ErrorReport.Write("-- Å°Á¤º¸ id - %s -- ", AuthInfo.id);
+	g_ErrorReport.Write("-- í‚¤ì •ë³´ id - %s -- ", AuthInfo.id);
 
 	return TRUE;
 }

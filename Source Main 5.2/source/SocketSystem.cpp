@@ -266,7 +266,7 @@ int CSocketItemMgr::AttachToolTipForSocketItem(const ITEM* pItem, int iTextNum)
 		}
 		else
 		{
-			assert(!"¼ÒÄÏ ÀÎµ¦½º ¿¡·¯");
+			assert(!"ì†Œì¼“ ì¸ë±ìŠ¤ ì—ëŸ¬");
 		}
 
 		sprintf(TextList[iTextNum], GlobalText[2655], i + 1, szOptionText);

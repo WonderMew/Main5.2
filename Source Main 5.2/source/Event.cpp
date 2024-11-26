@@ -24,7 +24,7 @@
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-// Å©¸®½º¸¶½º ÀÌº¥Æ®
+// í¬ë¦¬ìŠ¤ë§ˆìŠ¤ ì´ë²¤íŠ¸
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CXmasEvent::CXmasEvent(void)
@@ -258,7 +258,7 @@ CHARACTER* CNewYearsDayEvent::CreateMonster(int iType, int iPosX, int iPosY, int
 		{
 			OpenMonsterModel(122);
 			pCharacter = CreateCharacter(iKey, MODEL_MONSTER01+122, iPosX, iPosY);
-			strcpy(pCharacter->ID, "º¹ÁÖ¸Ó´Ï");
+			strcpy(pCharacter->ID, "ë³µì£¼ë¨¸ë‹ˆ");
 			pCharacter->Object.Scale = 1.5f;
 		}
 		break;
@@ -373,7 +373,7 @@ bool CNewYearsDayEvent::MoveMonsterVisual(CHARACTER* c,OBJECT* o, BMD* b)
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-// Çà¿îÀÇ ÆÄ¶õ°¡¹æ ÀÌº¥Æ®
+// í–‰ìš´ì˜ íŒŒëž€ê°€ë°© ì´ë²¤íŠ¸
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef CSK_FIX_BLUELUCKYBAG_MOVECOMMAND
@@ -446,7 +446,7 @@ CHARACTER* C09SummerEvent::CreateMonster(int iType, int iPosX, int iPosY, int iK
 	{
 		OpenMonsterModel(154);
 		pCharacter = CreateCharacter(iKey, MODEL_MONSTER01+154, iPosX, iPosY);
-		strcpy(pCharacter->ID, "¿ì»ê");
+		strcpy(pCharacter->ID, "ìš°ì‚°");
 		pCharacter->Object.Scale = 0.8f;
 		pCharacter->Object.HiddenMesh = 2;
 		pCharacter->Object.m_iAnimation = 0;

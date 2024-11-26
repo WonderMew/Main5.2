@@ -176,7 +176,7 @@ void CButton::Update()
 		}
 	}
 
-//	CSprite::Update(dDeltaTick);	// ��ư Animation.
+//	CSprite::Update(dDeltaTick);	// ¹öÆ° Animation.
 }
 
 void CButton::Render()

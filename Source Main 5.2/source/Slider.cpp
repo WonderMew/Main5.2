@@ -259,7 +259,7 @@ void CSlider::Update(double dDeltaTick)
 			m_btnThumb.SetPosition(m_btnThumb.GetXPos(), nThumbPos);
 //			m_btnThumb.SetAction(BTN_HIGHLIGHT_DOWN, BTN_HIGHLIGHT_DOWN);
 
-		// m_nSlidePos ±¸ÇÏ±â.
+		// m_nSlidePos êµ¬í•˜ê¸°.
 			float fPixelPerPos = (float)m_nThumbRange / m_nSlideRange;
 			m_nSlidePos = int((float(m_btnThumb.GetYPos() - m_ptPos.y) + (fPixelPerPos / 2)) / fPixelPerPos);
 		}
@@ -286,7 +286,7 @@ void CSlider::Update(double dDeltaTick)
 			float fPixelPerPos = (float)m_nThumbRange / m_nSlideRange;
 			m_nSlidePos = int((float(m_btnThumb.GetXPos() - m_ptPos.x) + (fPixelPerPos / 2)) / fPixelPerPos);
 			m_pGaugeBar->SetValue(m_nSlidePos, m_nSlideRange);
-		}	// if (m_bVertical) else¹® ³¡.
+		}	// if (m_bVertical) elseë¬¸ ë.
 	}
 }
 

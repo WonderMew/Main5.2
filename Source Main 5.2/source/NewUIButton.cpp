@@ -969,7 +969,7 @@ void CNewUIRadioGroupButton::ChangeFrame( int buttonIndex )
 	}
 }
 
-// �߰� : Pruarin(07.09.03)
+// Ãß°¡ : Pruarin(07.09.03)
 void CNewUIRadioGroupButton::LockButtonindex( int buttonIndex )
 {
 	int i = 0;

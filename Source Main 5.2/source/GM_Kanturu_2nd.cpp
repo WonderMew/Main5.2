@@ -110,7 +110,7 @@ CHARACTER* M38Kanturu2nd::Create_Kanturu2nd_Monster(int iType, int PosX, int Pos
 		{
 			OpenNpc(MODEL_KANTURU2ND_ENTER_NPC);
 			pCharacter = CreateCharacter(Key, MODEL_KANTURU2ND_ENTER_NPC, PosX, PosY);
-			strcpy(pCharacter->ID, "ÃâÀÔ °ü¸® ÀåÄ¡");
+			strcpy(pCharacter->ID, "ì¶œìž… ê´€ë¦¬ ìž¥ì¹˜");
 			pCharacter->Object.Scale = 4.76f;
 			pCharacter->Object.Position[0] -= 20.0f;
 			pCharacter->Object.Position[1] -= 200.0f;

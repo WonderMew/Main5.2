@@ -837,7 +837,7 @@ void Draw_RenderObject(OBJECT *o,bool Translate,int Select, int ExtraMon)
 
 					Vector ( 1.0f, 0.0f, 0.0f, vLight );
 					Vector ( (float)(rand()%10-10)*0.5f, 0.f, (float)(rand()%40-20)*0.5f, vPos );
-					b->TransformPosition ( BoneTransform[14], vPos, vPosition, false );	// ÅÎ
+					b->TransformPosition ( BoneTransform[14], vPos, vPosition, false );	// í„±
 					CreateParticle(BITMAP_SPARK+1, vPosition, o->Angle, vLight, 15, 0.7f+(fLuminosity*0.05f));
 				}
 				b->StreamMesh = -1;
@@ -2297,7 +2297,7 @@ void Draw_RenderObject(OBJECT *o,bool Translate,int Select, int ExtraMon)
 				b->RenderMesh(2,RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
 				b->RenderMesh(3,RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
 				b->RenderMesh(4,RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
-				// ³¯°³
+				// ë‚ ê°œ
 				Vector(1.0f, 1.0f, 1.0f, b->BodyLight);
 				b->RenderMesh(5,RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
 				b->RenderMesh(5,RENDER_TEXTURE|RENDER_BRIGHT,o->Alpha,5,0.1f,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
@@ -6939,7 +6939,7 @@ void RenderPartObjectBody(BMD *b,OBJECT *o,int Type,float Alpha,int RenderType)
 		b->RenderMesh(1, RENDER_TEXTURE|RENDER_BRIGHT,o->Alpha,1,o->BlendMeshLight,fU,o->BlendMeshTexCoordV,o->HiddenMesh);
 		Vector(1.f, 1.f, 1.f, b->BodyLight);
 	}
-// 	else if( Type==MODEL_WING+37 )	// ½Ã°ø³¯°³(¹ý»ç)
+// 	else if( Type==MODEL_WING+37 )	// ì‹œê³µë‚ ê°œ(ë²•ì‚¬)
 //     {
 // 		Vector(1.f,1.f,1.f,b->BodyLight);
 // 		b->RenderBody(RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV,o->HiddenMesh);
@@ -7565,7 +7565,7 @@ void RenderPartObjectBody(BMD *b,OBJECT *o,int Type,float Alpha,int RenderType)
 		float Luminosity = sinf(WorldTime*0.0008f)*0.7f+0.5f;
 		b->RenderMesh(2,RENDER_TEXTURE,Alpha,2,Luminosity,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
 		b->RenderMesh(1,RENDER_TEXTURE,Alpha,1,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
-		//. ³¯
+		//. ë‚ 
 		glColor3f(0.43f,0.14f,0.6f);
 
 		b->RenderMesh(3,RENDER_BRIGHT|RENDER_CHROME,Alpha,3,o->BlendMeshLight,WorldTime*0.0001f,WorldTime*0.0005f);
@@ -8638,12 +8638,12 @@ void RenderPartObjectBody(BMD *b,OBJECT *o,int Type,float Alpha,int RenderType)
 		b->RenderBody(RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight, o->BlendMeshTexCoordU,o->BlendMeshTexCoordV,o->HiddenMesh);
 		b->RenderMesh(0,RENDER_BRIGHT|RENDER_CHROME,0.2f,0,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
 	}
-	else if( o->Type >= MODEL_HELPER+109 && o->Type <= MODEL_HELPER+112 )	// InGameShop ÀåÂø ¾ÆÀÌÅÛ : ¹ÝÁö (»çÆÄÀÌ¾î, ·çºñ, ÅäÆÄÁî, ÀÚ¼öÁ¤)
+	else if( o->Type >= MODEL_HELPER+109 && o->Type <= MODEL_HELPER+112 )	// InGameShop ìž¥ì°© ì•„ì´í…œ : ë°˜ì§€ (ì‚¬íŒŒì´ì–´, ë£¨ë¹„, í† íŒŒì¦ˆ, ìžìˆ˜ì •)
 	{	
 		b->RenderBody(RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight, o->BlendMeshTexCoordU,o->BlendMeshTexCoordV,o->HiddenMesh);
  		b->RenderMesh(1,RENDER_BRIGHT|RENDER_CHROME,o->Alpha,0,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);
 	}
-	else if( o->Type >= MODEL_HELPER+113 && o->Type <= MODEL_HELPER+115 )// InGameShop ÀåÂø ¾ÆÀÌÅÛ : ¸ñ°ÉÀÌ (»çÆÄÀÌ¾î, ·çºñ, ¿¡¸Þ¶öµå)
+	else if( o->Type >= MODEL_HELPER+113 && o->Type <= MODEL_HELPER+115 )// InGameShop ìž¥ì°© ì•„ì´í…œ : ëª©ê±¸ì´ (ì‚¬íŒŒì´ì–´, ë£¨ë¹„, ì—ë©”ëž„ë“œ)
 	{
 		b->RenderBody(RENDER_TEXTURE,o->Alpha,o->BlendMesh,o->BlendMeshLight, o->BlendMeshTexCoordU,o->BlendMeshTexCoordV,o->HiddenMesh);
  		b->RenderMesh(1,RENDER_BRIGHT|RENDER_CHROME,o->Alpha,0,o->BlendMeshLight,o->BlendMeshTexCoordU,o->BlendMeshTexCoordV);

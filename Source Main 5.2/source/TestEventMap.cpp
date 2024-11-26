@@ -28,67 +28,67 @@ TestEventMap::~TestEventMap()
 }
 
 
-// ¿ÀºêÁ§Æ® »ı¼º
+// ì˜¤ë¸Œì íŠ¸ ìƒì„±
 bool TestEventMap::CreateObject(OBJECT* o)
 {
 	return false;
 }
 
-// ¿ÀºêÁ§Æ® ÇÁ·Î¼¼¼­
+// ì˜¤ë¸Œì íŠ¸ í”„ë¡œì„¸ì„œ
 bool TestEventMap::MoveObject(OBJECT* o)
 {
 	return false;
 }
 
-// ¿ÀºêÁ§Æ® ÀÌÆåÆ®
+// ì˜¤ë¸Œì íŠ¸ ì´í™íŠ¸
 bool TestEventMap::RenderObjectVisual(OBJECT* o, BMD* b)
 {
 	return false;
 }
 
-// ¿ÀºêÁ§Æ® ¸Å½¬ ÀÌÆåÆ®
+// ì˜¤ë¸Œì íŠ¸ ë§¤ì‰¬ ì´í™íŠ¸
 bool TestEventMap::RenderObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 {
 	return false;
 }
 
-// ¸Ê °ü·Ã ¿ÀºêÁ§Æ® ÀÌÆåÆ®
+// ë§µ ê´€ë ¨ ì˜¤ë¸Œì íŠ¸ ì´í™íŠ¸
 void TestEventMap::RenderAfterObjectMesh(OBJECT* o, BMD* b, bool ExtraMon)
 {
 
 }
 
-// ¸ó½ºÅÍ »ı¼º
+// ëª¬ìŠ¤í„° ìƒì„±
 CHARACTER* TestEventMap::CreateMonster(int iType, int PosX, int PosY, int Key)
 {
 	CHARACTER* pCharacter = NULL;
 	return pCharacter;
 }
 
-// ¸ó½ºÅÍ(NPC) ÇÁ·Î¼¼¼­
+// ëª¬ìŠ¤í„°(NPC) í”„ë¡œì„¸ì„œ
 bool TestEventMap::MoveMonsterVisual(OBJECT* o, BMD* b)
 {
 	return false;
 }
-// ¸ó½ºÅÍ ½ºÅ³ ºí·¯ ÀÌÆåÆ®
+// ëª¬ìŠ¤í„° ìŠ¤í‚¬ ë¸”ëŸ¬ ì´í™íŠ¸
 void TestEventMap::MoveBlurEffect(CHARACTER* c, OBJECT* o, BMD* b)
 {
 
 }
 
-// ¸ó½ºÅÍ ÀÌÆåÆ® ( ÀÏ¹İ )	
+// ëª¬ìŠ¤í„° ì´í™íŠ¸ ( ì¼ë°˜ )	
 bool TestEventMap::RenderMonsterVisual(CHARACTER* c, OBJECT* o, BMD* b)
 {
 	return false;
 }
 
-// ¸ó½ºÅÍ ÀÌÆåÆ® ( ½ºÅ³ )
+// ëª¬ìŠ¤í„° ì´í™íŠ¸ ( ìŠ¤í‚¬ )
 bool TestEventMap::AttackEffectMonster(CHARACTER* c, OBJECT* o, BMD* b)
 {
 	return false;
 }
 
-// ½ºÅ³ ¾Ö´Ï¸ŞÀÌ¼Ç °ü·Ã ÇÔ¼ö
+// ìŠ¤í‚¬ ì• ë‹ˆë©”ì´ì…˜ ê´€ë ¨ í•¨ìˆ˜
 bool TestEventMap::SetCurrentActionMonster(CHARACTER* c, OBJECT* o)
 {
 	return false;

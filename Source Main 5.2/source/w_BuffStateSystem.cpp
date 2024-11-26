@@ -28,7 +28,7 @@ BuffStateSystem::~BuffStateSystem()
 
 void BuffStateSystem::Initialize()
 {
-	// ÀÓ½Ã ÄÚµå
+	// ìž„ì‹œ ì½”ë“œ
 	m_BuffInfo				= BuffScriptLoader::Make();
 	m_BuffTimeControl       = BuffTimeControl::Make();
 	m_BuffStateValueControl = BuffStateValueControl::Make();

@@ -2,7 +2,7 @@
 //  
 //  GuildCache.cpp
 //  
-//  ³»  ¿ë : ±æµåÁ¤º¸ Ä³½Ì
+//  ë‚´  ìš© : ê¸¸ë“œì •ë³´ ìºì‹±
 //  
 //////////////////////////////////////////////////////////////////////////
 
@@ -52,7 +52,7 @@ int CGuildCache::MakeGuildMarkIndex( int nGuildKey )
 {
 	if( m_dwCurrIndex >= MAX_MARKS )
 	{
-		assert( !"±æµå¸¶Å© ¹öÆÛÃÊ°ú" );
+		assert( !"ê¸¸ë“œë§ˆí¬ ë²„í¼ì´ˆê³¼" );
 		return -1;
 	}
 
@@ -78,7 +78,7 @@ int CGuildCache::SetGuildMark( int nGuildKey, BYTE* UnionName, BYTE* GuildName, 
 		}
 	}
 	else
-		assert( !"¾ø´Â ±æµå¸¶Å©" );
+		assert( !"ì—†ëŠ” ê¸¸ë“œë§ˆí¬" );
 
 	return nIndex;
 }

@@ -327,7 +327,7 @@ void leaf::GetCPUInfoString(OUT std::string& cpuinfo)
 		}
 	}	//. switch(iBrand)
 	
-	// �ӵ�
+	// ¼Óµµ
 	__int64 llFreq = GetCPUFrequency( 50) / 1000000;
 	char szFreq[24] = {0, };
 	if(llFreq > 1000) {

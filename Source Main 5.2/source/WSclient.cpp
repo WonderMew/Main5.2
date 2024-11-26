@@ -320,7 +320,7 @@ void ReceiveServerList( BYTE *ReceiveBuffer )
 		
 	g_ConsoleDebug->Write(MCD_RECEIVE, "0xF4 [ReceiveServerList]");
 }
-void ReceiveServerConnect(BYTE* ReceiveBuffer) //Recebe informação do ConnectServer sobre a sala e envia a conexão para a sala escolhida
+void ReceiveServerConnect(BYTE* ReceiveBuffer) //Recebe informaÃ§Ã£o do ConnectServer sobre a sala e envia a conexÃ£o para a sala escolhida
 {
 	LPPRECEIVE_SERVER_ADDRESS Data = (LPPRECEIVE_SERVER_ADDRESS)ReceiveBuffer;
 	char IP[16];
@@ -1556,7 +1556,7 @@ void ReceiveChatKey( BYTE *ReceiveBuffer )
 	int Key = ((int)(Data->KeyH)<<8) + Data->KeyL;
 	int Index = FindCharacterIndex(Key);
 	
-	if( Hero->GuildStatus == G_MASTER && !strcmp( CharactersClient[Index].ID, "±æµå ¸¶½ºÅÍ" ) )
+	if( Hero->GuildStatus == G_MASTER && !strcmp( CharactersClient[Index].ID, "Â±Ã¦ÂµÃ¥ Â¸Â¶Â½ÂºÃ…Ã" ) )
 	{
 		g_pNewUISystem->Show(SEASON3B::INTERFACE_NPCGUILDMASTER);
 		
@@ -3515,7 +3515,7 @@ void ReceiveMagicFinish( BYTE *ReceiveBuffer )
 	case AT_SKILL_BLAST_FREEZE:
 		UnRegisterBuff( eDeBuff_Freeze, o);
 		break;
-        //  ¸ó½ºÅÍ.
+        //  Â¸Ã³Â½ÂºÃ…Ã.
     case AT_SKILL_MONSTER_MAGIC_DEF:
         SetActionDestroy_Def ( o );
 		UnRegisterBuff( eBuff_Defense, o);
@@ -3952,7 +3952,7 @@ BOOL ReceiveMagic(BYTE *ReceiveBuffer,int Size, BOOL bEncrypted)
 				PlayBuffer(SOUND_SKILL_SWORD4);
 				break;
 				
-			case AT_SKILL_SWORD5://º£±â
+			case AT_SKILL_SWORD5://ÂºÂ£Â±Ã¢
 				if(sc->SwordCount%2==0)
 				{
 					SetAction(so,PLAYER_ATTACK_SKILL_SWORD1+MagicNumber-AT_SKILL_SWORD1);
@@ -3977,7 +3977,7 @@ BOOL ReceiveMagic(BYTE *ReceiveBuffer,int Size, BOOL bEncrypted)
 				PlayBuffer( SOUND_SKILL_SWORD4 );
 				break;
 				
-			case AT_SKILL_SPEAR:	// Ã¢Âî¸£±â
+			case AT_SKILL_SPEAR:	// ÃƒÂ¢Ã‚Ã®Â¸Â£Â±Ã¢
 				if(sc->Helper.Type == MODEL_HELPER+37)
 					SetAction(so, PLAYER_FENRIR_ATTACK_SPEAR);
 				else
@@ -5843,9 +5843,9 @@ BOOL ReceiveTalk(BYTE *ReceiveBuffer, BOOL bEncrypted)
 		g_MixRecipeMgr.SetMixType(SEASON3A::MIXTYPE_GOBLIN_NORMAL);
 		g_pNewUISystem->Show(SEASON3B::INTERFACE_MIXINVENTORY);
 		//BYTE *pbyChaosRate = ( &Data->Value) + 1;
-		//int iDummyRate[6];	// ±¤ÀåÇ¥ È®·üÀ» ¼­¹ö¿¡¼­ ¹ŞÀ¸³ª »ç¿ëÇÏÁö ¾Ê°í ¹ö¸²
+		//int iDummyRate[6];	// Â±Â¤Ã€Ã¥Ã‡Â¥ ÃˆÂ®Â·Ã¼Ã€Â» Â¼Â­Â¹Ã¶Â¿Â¡Â¼Â­ Â¹ÃÃ€Â¸Â³Âª Â»Ã§Â¿Ã«Ã‡ÃÃÃ¶ Â¾ÃŠÂ°Ã­ Â¹Ã¶Â¸Â²
 		//for ( int i = 0; i < 6; ++i)
-		//	iDummyRate[i] = ( int)pbyChaosRate[i];	// ±¤ÀåÇ¥ È®·üÀ» ¼­¹ö¿¡¼­ ¹ŞÀ¸³ª »ç¿ëÇÏÁö ¾Ê°í ¹ö¸²(½ºÅ©¸³Æ®»ç¿ë)
+		//	iDummyRate[i] = ( int)pbyChaosRate[i];	// Â±Â¤Ã€Ã¥Ã‡Â¥ ÃˆÂ®Â·Ã¼Ã€Â» Â¼Â­Â¹Ã¶Â¿Â¡Â¼Â­ Â¹ÃÃ€Â¸Â³Âª Â»Ã§Â¿Ã«Ã‡ÃÃÃ¶ Â¾ÃŠÂ°Ã­ Â¹Ã¶Â¸Â²(Â½ÂºÃ…Â©Â¸Â³Ã†Â®Â»Ã§Â¿Ã«)
 		break;
 		
 	case 4:
@@ -6967,7 +6967,7 @@ void ReceiveGuildInfo( BYTE *ReceiveBuffer )
 	int Index = g_GuildCache.SetGuildMark( Data->GuildKey, Data->UnionName, Data->GuildName, Data->Mark );
 }
 
-// ±æµåÁ÷Ã¥À» ÀÓ¸í/º¯°æ/ÇØÁ¦ °á°ú
+// Â±Ã¦ÂµÃ¥ÃÃ·ÃƒÂ¥Ã€Â» Ã€Ã“Â¸Ã­/ÂºÂ¯Â°Ã¦/Ã‡Ã˜ÃÂ¦ Â°Ã¡Â°Ãº
 void ReceiveGuildAssign( BYTE *ReceiveBuffer )
 {
 	char szTemp[MAX_GLOBAL_TEXT_STRING] = "Invalid GuildAssign";
@@ -7660,7 +7660,7 @@ void ReceiveMix( BYTE *ReceiveBuffer )
 				g_pChatListBox->AddText("", szText, SEASON3B::TYPE_ERROR_MESSAGE);
 				break;
 				// 			case SEASON3A::MIXTYPE_TRAINER:
-				// 				unicode::_sprintf(szText, GlobalText[1208]);	// ºÎÈ° ½ÇÆĞ
+				// 				unicode::_sprintf(szText, GlobalText[1208]);	// ÂºÃÃˆÂ° Â½Ã‡Ã†Ã
 				// 				g_pChatListBox->AddText("", szText, SEASON3B::TYPE_ERROR_MESSAGE);
 				// 				break;
 			case SEASON3A::MIXTYPE_OSBOURNE:
@@ -8804,7 +8804,7 @@ void ReceiveFriendList(BYTE* ReceiveBuffer)
 	g_pFriendList->Sort(1);
 	g_pWindowMgr->RefreshMainWndPalList();
 	
-	// Ã¤ÆÃ ¼­¹ö »ì¾Æ³²
+	// ÃƒÂ¤Ã†Ãƒ Â¼Â­Â¹Ã¶ Â»Ã¬Â¾Ã†Â³Â²
 	g_pWindowMgr->SetServerEnable(TRUE);
 	if (g_iChatInputType == 0) SendRequestChangeState(2);
 	

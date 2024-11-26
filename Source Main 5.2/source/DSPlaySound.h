@@ -715,7 +715,7 @@ enum
 	SOUND_EMPIREGUARDIAN_PRIEST_STOP,					// Priest_stay.wav
 
 #ifdef PBG_ADD_NEWCHAR_MONK
-	SOUND_RAGESKILL_THRUST,								// ╥╧юлаЖ фдюлем╫╨еЁ ╩Г©Н╣Е
+	SOUND_RAGESKILL_THRUST,								// К═┬Л²╢Л╖─ М▄▄Л²╢М└╟Л┼╓М┌╛ Л┌╛Л ╢К⌠°
 	SOUND_RAGESKILL_THRUST_ATTACK,
 	SOUND_RAGESKILL_STAMP,
 	SOUND_RAGESKILL_STAMP_ATTACK,

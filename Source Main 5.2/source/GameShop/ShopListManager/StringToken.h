@@ -10,16 +10,16 @@ public:
 	virtual ~CStringToken();
 	CStringToken(const std::string& dataLine, const std::string& delim);
 	
-	size_t countTokens();						//ÅäÅ«ÀÇ °¹¼ö 
-	bool hasMoreTokens();						//ÅäÅ«ÀÌ Á¸ÀçÇÏ´ÂÁö È®ÀÎ 
-	std::string nextToken();					//´ÙÀ½ ÅäÅ« 
+	size_t countTokens();						//í† í°ì˜ ê°¯ìˆ˜ 
+	bool hasMoreTokens();						//í† í°ì´ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸ 
+	std::string nextToken();					//ë‹¤ìŒ í† í° 
 
 private: 
 	std::string data;
-	std::string delimiter;						//µ¥ÀÌÅÍ, ±¸ºĞÀÚ 
-	std::vector<std::string> tokens;			//ÅäÅ«À» º¤ÅÍ¿¡ ÀúÀå 
-	std::vector<std::string>::iterator index;	//º¤ÅÍ¿¡ ´ëÇÑ ¹İº¹ÀÚ 
+	std::string delimiter;						//ë°ì´í„°, êµ¬ë¶„ì 
+	std::vector<std::string> tokens;			//í† í°ì„ ë²¡í„°ì— ì €ì¥ 
+	std::vector<std::string>::iterator index;	//ë²¡í„°ì— ëŒ€í•œ ë°˜ë³µì 
 
-	void split();								//½ºÆ®¸µÀ» ±¸ºĞÀÚ·Î ³ª´²¼­ º¤ÅÍ¿¡ ÀúÀå 
-	void IsNullString(std::string::size_type pos);						//ÅäÅ«¿¡ ³ÎÀÌ ÀÖÀ¸¸é º¤ÅÍ¿¡ ³Î°ª ³Ö¾îÁÖ±â
+	void split();								//ìŠ¤íŠ¸ë§ì„ êµ¬ë¶„ìë¡œ ë‚˜ëˆ ì„œ ë²¡í„°ì— ì €ì¥ 
+	void IsNullString(std::string::size_type pos);						//í† í°ì— ë„ì´ ìˆìœ¼ë©´ ë²¡í„°ì— ë„ê°’ ë„£ì–´ì£¼ê¸°
 };

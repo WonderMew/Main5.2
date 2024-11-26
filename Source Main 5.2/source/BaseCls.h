@@ -373,7 +373,7 @@ T& CList<T>::GetData( CNode<T>* pNode)
 {
 	if ( m_pHead == pNode || m_pTail == pNode)
 	{
-		T NullData;	// NULL ¸®ÅÏ¿¡ ÇÊ¿äÇÑ °ª
+		T NullData;	// NULL ë¦¬í„´ì— í•„ìš”í•œ ê°’
 		memset( &NullData, 0, sizeof( T));
 
 		return ( NullData);
@@ -414,7 +414,7 @@ template <class T>
 BOOL CQueue<T>::Insert( T NewElement)
 {
 	if ( NULL == AddTail( NewElement))
-	{	// ½ÇÆĞÇÏ¸é
+	{	// ì‹¤íŒ¨í•˜ë©´
 		return ( FALSE);
 	}
 
@@ -437,7 +437,7 @@ template <class T>
 BOOL CQueue<T>::Find( T Element)
 {
 	if ( NULL == FindNode( Element))
-	{	// Ã£Áö ¸øÇÏ¸é
+	{	// ì°¾ì§€ ëª»í•˜ë©´
 		return ( FALSE);
 	}
 
@@ -471,7 +471,7 @@ class CBNode
 		CBNode( T Data, S CompValue);
 		~CBNode();
 
-		// µ¥ÀÌÅÍ Ã³¸®
+		// ë°ì´í„° ì²˜ë¦¬
 		void SetData( T Data)	{ m_Data = Data; }
 		void SetValue( S CompValue)	{ m_CompValue = CompValue; }
 		T& GetData( void)		{ return ( m_Data);	}

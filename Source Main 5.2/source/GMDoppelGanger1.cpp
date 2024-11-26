@@ -66,19 +66,19 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 	case 529:
 		OpenMonsterModel(190);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+190, PosX, PosY);
-		strcpy(pCharacter->ID, "µµ»ìÀÚ");
+		strcpy(pCharacter->ID, "ë„ì‚´ìž");
 		pCharacter->Object.Scale = 1.0f;
 		break;
 	case 530:
 		OpenMonsterModel(189);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+189, PosX, PosY);
-		strcpy(pCharacter->ID, "ºÐ³ëÇÑ µµ»ìÀÚ");
+		strcpy(pCharacter->ID, "ë¶„ë…¸í•œ ë„ì‚´ìž");
 		pCharacter->Object.Scale = 0.8f;
 		break;
 	case 531:
 		OpenMonsterModel(145);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+145, PosX, PosY);
-		strcpy(pCharacter->ID, "¾ÆÀÌ½º ¿öÄ¿");
+		strcpy(pCharacter->ID, "ì•„ì´ìŠ¤ ì›Œì»¤");
 		pCharacter->Object.Scale = 1.2f;
 		pCharacter->Weapon[0].Type = -1;
 		pCharacter->Weapon[1].Type = -1;
@@ -86,13 +86,13 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 	case 532:
     	OpenMonsterModel(6);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+6, PosX, PosY);
-		strcpy(pCharacter->ID, "À¯Ãæ");
+		strcpy(pCharacter->ID, "ìœ ì¶©");
 		pCharacter->Object.Scale = 0.6f;
 		break;
 	case 533:
 		OpenMonsterModel(191);
 		pCharacter = CreateCharacter(Key, MODEL_MONSTER01+191, PosX, PosY);
-		strcpy(pCharacter->ID, "µµÇÃ°»¾î");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´");
 		pCharacter->Object.Scale = 1.1f;
 		pCharacter->Object.m_bRenderShadow = false;
 		break;
@@ -100,7 +100,7 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 		pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Class = CLASS_ELF;
-		strcpy(pCharacter->ID,"µµÇÃ°»¾î¿äÁ¤");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´ìš”ì •");
 		pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_HELM  +13;
 		pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +13;
 		pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +13;
@@ -113,7 +113,7 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 		pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Class = CLASS_KNIGHT;
-		strcpy(pCharacter->ID,"µµÇÃ°»¾î±â»ç");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´ê¸°ì‚¬");
 		pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_HELM  +1;
 		pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +1;
 		pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +1;
@@ -126,7 +126,7 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 		pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Class = CLASS_WIZARD;
-		strcpy(pCharacter->ID,"µµÇÃ°»¾î¸¶¹ý»ç");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´ë§ˆë²•ì‚¬");
 		pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_HELM  +18;
 		pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +18;
 		pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +18;
@@ -139,7 +139,7 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 		pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Class = CLASS_DARK;
-		strcpy(pCharacter->ID,"µµÇÃ°»¾î¸¶°Ë»ç");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´ë§ˆê²€ì‚¬");
 		pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_BODY_HELM+15;
 		pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +15;
 		pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +15;
@@ -152,7 +152,7 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 		pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Class = CLASS_DARK_LORD;
-		strcpy(pCharacter->ID,"µµÇÃ°»¾î´Å©·Îµå");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´ëŠšãˆ†ç¯?");
 		pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_HELM  +27;
 		pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +27;
 		pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +27;
@@ -167,7 +167,7 @@ CHARACTER* CGMDoppelGanger1::CreateMonster(int iType, int PosX, int PosY, int Ke
 		pCharacter = CreateCharacter(Key,MODEL_PLAYER,PosX,PosY);
 		pCharacter->Object.Scale = 1.0f;
 		pCharacter->Class = CLASS_SUMMONER;
-		strcpy(pCharacter->ID,"µµÇÃ°»¾î¼ÒÈ¯¼ú»ç");
+		strcpy(pCharacter->ID, "ë„í”Œê°±ì–´ì†Œí™˜ìˆ ì‚¬");
 		pCharacter->BodyPart[BODYPART_HELM  ].Type = MODEL_HELM  +40;
 		pCharacter->BodyPart[BODYPART_ARMOR ].Type = MODEL_ARMOR +40;
 		pCharacter->BodyPart[BODYPART_PANTS ].Type = MODEL_PANTS +40;

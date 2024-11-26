@@ -127,7 +127,7 @@ void SEASON3B::CNewUIMessageBoxBase::RenderMsgBackColor(bool _bRender)
 		EnableAlphaTest();
 		//glColor4f(0.2f, 0.2f, 0.2f, m_fOpacityAlpha);
 		glColor4f(m_vColor[0], m_vColor[1], m_vColor[2], m_fOpacityAlpha);
-		// ¸ŞÀÎÇÁ·¹ÀÓ¿¡¼­ ³ôÀÌ°ªÀ» 51À» Àâ°íÀÖÀ½
+		// ë©”ì¸í”„ë ˆì„ì—ì„œ ë†’ì´ê°’ì„ 51ì„ ì¡ê³ ìˆìŒ
 		RenderColor(_fPosX, _fPosY, _fWidth, _fHeight-50.0f);
 		glEnable(GL_TEXTURE_2D);
 		

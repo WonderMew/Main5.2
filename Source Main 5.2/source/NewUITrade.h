@@ -2,7 +2,7 @@
 // File: NewUITrade.h
 //
 // Desc: interface for the CNewUITrade class.
-//		 °Å·¡Ã¢ Å¬·¡½º.
+//		 ê±°ë˜ì°½ í´ë˜ìŠ¤.
 //
 // producer: Ahn Sang-Kyu
 //*****************************************************************************
@@ -55,29 +55,29 @@ namespace SEASON3B
 
 		enum TRADE_BUTTON
 		{
-			BTN_CLOSE = 0,			// Ã¢ ´İ±â.
-			BTN_ZEN_INPUT,			// Á¨ ÀÔ·Â.
+			BTN_CLOSE = 0,			// ì°½ ë‹«ê¸°.
+			BTN_ZEN_INPUT,			// ì   ì…ë ¥.
 			MAX_BTN
 		};
 
-		CNewUIManager*			m_pNewUIMng;			// UI ¸Å´ÏÀú.
-		POINT					m_Pos;					// Ã¢ÀÇ À§Ä¡.
-		CNewUIButton			m_abtn[MAX_BTN];		// ¹öÆ°.
-		POINT					m_posMyConfirm;			// ³» È®Á¤ ¹öÆ° À§Ä¡.
-		CNewUIInventoryCtrl*	m_pYourInvenCtrl;		// »ó´ë¹æ ¹°Ç° ÄÁÆ®·Ñ.
-		CNewUIInventoryCtrl*	m_pMyInvenCtrl;			// ³» ¹°Ç° ÄÁÆ®·Ñ.
-		ITEM					m_aYourInvenBackUp[MAX_TRADE_INVEN];// »ó´ë¹æ ¹°Ç° ¹é¾÷.
+		CNewUIManager*			m_pNewUIMng;			// UI ë§¤ë‹ˆì €.
+		POINT					m_Pos;					// ì°½ì˜ ìœ„ì¹˜.
+		CNewUIButton			m_abtn[MAX_BTN];		// ë²„íŠ¼.
+		POINT					m_posMyConfirm;			// ë‚´ í™•ì • ë²„íŠ¼ ìœ„ì¹˜.
+		CNewUIInventoryCtrl*	m_pYourInvenCtrl;		// ìƒëŒ€ë°© ë¬¼í’ˆ ì»¨íŠ¸ë¡¤.
+		CNewUIInventoryCtrl*	m_pMyInvenCtrl;			// ë‚´ ë¬¼í’ˆ ì»¨íŠ¸ë¡¤.
+		ITEM					m_aYourInvenBackUp[MAX_TRADE_INVEN];// ìƒëŒ€ë°© ë¬¼í’ˆ ë°±ì—….
 
-		char					m_szYourID[MAX_ID_SIZE+1];// °Å·¡ »ç¿ëÀÚÀÇ ¾ÆÀÌµğ.
-		int						m_nYourLevel;			// °Å·¡ »ç¿ëÀÚÀÇ ·¹º§.
-		int						m_nYourGuildType;		// »ó´ë¹æ ±æµå Å¸ÀÔ.
-		int						m_nYourTradeGold;		// »ó´ë¹æ °Å·¡ÇÒ µ·.
-		int						m_nMyTradeGold;			// ÀÚ½ÅÀÇ °Å·¡ÇÒ µ·.
-		int						m_nTempMyTradeGold;		// ÀÚ½ÅÀÇ °Å·¡ÇÒ µ· ÀÓ½Ã °ø°£.
-		bool					m_bYourConfirm;			// »ó´ë¹æ °Å·¡ °áÁ¤ »óÅÂ.
-		bool					m_bMyConfirm;			// ÀÚ½ÅÀÇ °Å·¡ °áÁ¤ »óÅÂ.
-		int						m_nMyTradeWait;			// ÀÚ½ÅÀÇ °Å·¡ °áÁ¤ ¹öÆ° ¸ø ´©¸£°Ô ÇÏ´Â ´ë±â ½Ã°£.
-		bool					m_bTradeAlert;			// °Å·¡½Ã °æ°í.
+		char					m_szYourID[MAX_ID_SIZE+1];// ê±°ë˜ ì‚¬ìš©ìì˜ ì•„ì´ë””.
+		int						m_nYourLevel;			// ê±°ë˜ ì‚¬ìš©ìì˜ ë ˆë²¨.
+		int						m_nYourGuildType;		// ìƒëŒ€ë°© ê¸¸ë“œ íƒ€ì….
+		int						m_nYourTradeGold;		// ìƒëŒ€ë°© ê±°ë˜í•  ëˆ.
+		int						m_nMyTradeGold;			// ìì‹ ì˜ ê±°ë˜í•  ëˆ.
+		int						m_nTempMyTradeGold;		// ìì‹ ì˜ ê±°ë˜í•  ëˆ ì„ì‹œ ê³µê°„.
+		bool					m_bYourConfirm;			// ìƒëŒ€ë°© ê±°ë˜ ê²°ì • ìƒíƒœ.
+		bool					m_bMyConfirm;			// ìì‹ ì˜ ê±°ë˜ ê²°ì • ìƒíƒœ.
+		int						m_nMyTradeWait;			// ìì‹ ì˜ ê±°ë˜ ê²°ì • ë²„íŠ¼ ëª» ëˆ„ë¥´ê²Œ í•˜ëŠ” ëŒ€ê¸° ì‹œê°„.
+		bool					m_bTradeAlert;			// ê±°ë˜ì‹œ ê²½ê³ .
 
 	public:
 		CNewUITrade();
@@ -97,10 +97,10 @@ namespace SEASON3B
 
 		static void UI2DEffectCallback(LPVOID pClass, DWORD dwParamA, DWORD dwParamB);
 		
-		// (°İÀÚ ¸ğ¾çÀÇ) »ó´ëÆí °Å·¡ ¼ÒÁöÇ° ÄÁÆ®·ÑÀ» ¾òÀ½.
+		// (ê²©ì ëª¨ì–‘ì˜) ìƒëŒ€í¸ ê±°ë˜ ì†Œì§€í’ˆ ì»¨íŠ¸ë¡¤ì„ ì–»ìŒ.
 		CNewUIInventoryCtrl* GetYourInvenCtrl() const
 		{ return m_pYourInvenCtrl; }
-		// (°İÀÚ ¸ğ¾çÀÇ) ÀÚ½ÅÀÇ °Å·¡ ¼ÒÁöÇ° ÄÁÆ®·ÑÀ» ¾òÀ½.
+		// (ê²©ì ëª¨ì–‘ì˜) ìì‹ ì˜ ê±°ë˜ ì†Œì§€í’ˆ ì»¨íŠ¸ë¡¤ì„ ì–»ìŒ.
 		CNewUIInventoryCtrl* GetMyInvenCtrl() const
 		{ return m_pMyInvenCtrl; }
 

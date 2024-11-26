@@ -84,7 +84,7 @@ CHARACTER* GMEmpireGuardian3::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(170);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+170, PosX, PosY);
-			strcpy(pCharacter->ID, "Ä«Åä");
+			strcpy(pCharacter->ID, "ì¹´í† ");
 			pCharacter->Object.Scale = 1.35f;
 			
 			m_bCurrentIsRage_Kato = false;
@@ -94,7 +94,7 @@ CHARACTER* GMEmpireGuardian3::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(176);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+176, PosX, PosY);
-			strcpy(pCharacter->ID, "¾Ï»ì´ÜÀå");
+			strcpy(pCharacter->ID, "ì•”ì‚´ë‹¨ìž¥");
 			pCharacter->Object.Scale = 1.55f;
 		}
 		break;
@@ -102,7 +102,7 @@ CHARACTER* GMEmpireGuardian3::CreateMonster(int iType, int PosX, int PosY, int K
 		{
 			OpenMonsterModel(177);
 			pCharacter = CreateCharacter(Key, MODEL_MONSTER01+177, PosX, PosY);
-			strcpy(pCharacter->ID, "±â¸¶´ÜÀå");
+			strcpy(pCharacter->ID, "ê¸°ë§ˆë‹¨ìž¥");
 			pCharacter->Object.Scale = 1.25f;
 		}
 		break;
@@ -676,7 +676,7 @@ void GMEmpireGuardian3::MoveBlurEffect(CHARACTER* c, OBJECT* o, BMD* b)
 								b->TransformPosition(BoneTransform[44], vRelative, vPosition, false);
 								CreateParticle(BITMAP_SMOKELINE2,vPosition,o->Angle,vLight__,3);
 							}
-						} // °Ë±â 
+						} // ê²€ê¸° 
 					}
 				}
 			}

@@ -170,7 +170,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 		{
     		OpenNpc(MODEL_CURSEDTEMPLE_STATUE);
 			pCharacter = CreateCharacter(iKey,MODEL_CURSEDTEMPLE_STATUE,iPosX,iPosY);
-			strcpy(pCharacter->ID,"¼®»ó");
+			strcpy(pCharacter->ID,"ì„ìƒ");
 			pCharacter->Object.EnableShadow = false;
 			pCharacter->Object.m_bRenderShadow = false;
 			pCharacter->Object.m_fEdgeScale = 1.03f;
@@ -197,7 +197,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 		{
     		OpenNpc(MODEL_CURSEDTEMPLE_ALLIED_BASKET);
 			pCharacter = CreateCharacter(iKey,MODEL_CURSEDTEMPLE_ALLIED_BASKET,iPosX,iPosY);
-			strcpy(pCharacter->ID,"¿¬ÇÕ±º ¼º¹°º¸°üÇÔ");
+			strcpy(pCharacter->ID,"ì—°í•©êµ° ì„±ë¬¼ë³´ê´€í•¨");
 			pCharacter->Object.Scale = 1.8f;
 			pCharacter->Object.m_fEdgeScale = 1.03f;
 			m_ShowAlliedPointEffect = false;
@@ -207,7 +207,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 		{
     		OpenNpc(MODEL_CURSEDTEMPLE_ILLUSION__BASKET);
 			pCharacter = CreateCharacter(iKey,MODEL_CURSEDTEMPLE_ILLUSION__BASKET,iPosX,iPosY);
-			strcpy(pCharacter->ID,"È¯¿µ±³´Ü ¼º¹°º¸°üÇÔ");
+			strcpy(pCharacter->ID,"í™˜ì˜êµë‹¨ ì„±ë¬¼ë³´ê´€í•¨");
 			pCharacter->Object.Scale = 1.5f;
 			pCharacter->Object.m_fEdgeScale = 1.03f;
 			m_ShowIllusionPointEffect = false;
@@ -230,7 +230,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 		{
 			OpenMonsterModel(123);
 			pCharacter = CreateCharacter(iKey, MODEL_MONSTER01+123, iPosX, iPosY);
-			strcpy(pCharacter->ID, "È¯¿µ±³´ÜÀÇ ¸Á·É(¹ø°³)");
+			strcpy(pCharacter->ID, "í™˜ì˜êµë‹¨ì˜ ë§ë ¹(ë²ˆê°œ)");
 			pCharacter->Object.Scale = 1.0f;
 		    pCharacter->Weapon[0].Type = -1;
 		    pCharacter->Weapon[1].Type = -1;
@@ -245,7 +245,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 		{
 			OpenMonsterModel(124);
 			pCharacter = CreateCharacter(iKey, MODEL_MONSTER01+124, iPosX, iPosY);
-			strcpy(pCharacter->ID, "È¯¿µ±³´ÜÀÇ ¸Á·É(¾óÀ½)");
+			strcpy(pCharacter->ID, "í™˜ì˜êµë‹¨ì˜ ë§ë ¹(ì–¼ìŒ)");
 			pCharacter->Object.Scale = 1.0f;
 		    pCharacter->Weapon[0].Type = -1;
 		    pCharacter->Weapon[1].Type = -1;
@@ -260,7 +260,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 		{
 			OpenMonsterModel(125);
 			pCharacter = CreateCharacter(iKey, MODEL_MONSTER01+125, iPosX, iPosY);
-			strcpy(pCharacter->ID, "È¯¿µ±³´ÜÀÇ ¸Á·É(µ¶)");
+			strcpy(pCharacter->ID, "í™˜ì˜êµë‹¨ì˜ ë§ë ¹(ë…)");
 			pCharacter->Object.Scale = 1.0f;
 		    pCharacter->Weapon[0].Type = -1;
 		    pCharacter->Weapon[1].Type = -1;
@@ -269,7 +269,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 	case 404:
 		{
 			pCharacter = CreateCharacter(iKey,MODEL_PLAYER,iPosX,iPosY);
-			strcpy(pCharacter->ID,"¹Â¿¬ÇÕ");
+			strcpy(pCharacter->ID,"ë®¤ì—°í•©");
 			pCharacter->Object.Scale = 1.f;
 			pCharacter->Object.SubType = MODEL_CURSEDTEMPLE_ALLIED_PLAYER;
 		}
@@ -277,7 +277,7 @@ CHARACTER* CursedTemple::CreateCharacters(int iType, int iPosX, int iPosY, int i
 	case 405:
 		{
 			pCharacter = CreateCharacter(iKey,MODEL_PLAYER,iPosX,iPosY);
-			strcpy(pCharacter->ID,"È¯¿µ±³´Ü");
+			strcpy(pCharacter->ID,"í™˜ì˜êµë‹¨");
 			pCharacter->Object.Scale = 1.f;
 			pCharacter->Object.SubType = MODEL_CURSEDTEMPLE_ILLUSION_PLAYER;
 		}

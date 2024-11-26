@@ -3999,7 +3999,7 @@ void MoveJoint( JOINT *o, int iIndex)
 			vec3_t Position;
 			VectorCopy(o->Position,Position);
 			
-			o->Angle[0] = (float)o->LifeTime;	// ÀÓ½Ã·Î -_-
+			o->Angle[0] = (float)o->LifeTime;	// ìž„ì‹œë¡œ -_-
 			CreateParticle(BITMAP_FIRE+1,Position,o->Angle,Light,5,0.9f);
 			if (rand()%200 == 0)
 			{
@@ -4262,7 +4262,7 @@ void MoveJoint( JOINT *o, int iIndex)
 		VectorRotate(Position,Matrix,p);
 		VectorAdd(o->Position,p,o->Position);
 		break;
-	case MODEL_SPEARSKILL:	// ¹æ¾î¸·
+	case MODEL_SPEARSKILL:	// ë°©ì–´ë§‰
 		CHARACTER* c;
 		if(o->m_iChaIndex != -1)
 		{
@@ -4569,11 +4569,11 @@ void MoveJoint( JOINT *o, int iIndex)
 				
 				Vector( 0.2f, 0.2f, 0.4f + 0.2f*fSinAdd, o->Light);
 				break;
-			case 14:	// ¼ÒÈ¯ ¼Õ¸ñ¸µ
+			case 14:	// ì†Œí™˜ ì†ëª©ë§
 				if (o->Target != NULL)
 				{
 					if(o->Target->Live)
-						o->LifeTime = 100.f; //¹«ÇÑ
+						o->LifeTime = 100.f; //ë¬´í•œ
 					else
 					{
 						DeleteJoint(MODEL_SPEARSKILL, o->Target, 14);
@@ -4901,7 +4901,7 @@ void MoveJoint( JOINT *o, int iIndex)
 					}
 					else
 					{
-						assert(!"µð¹ö±ë");
+						assert(!"ë””ë²„ê¹…");
 					}
 				}
 				break;
@@ -5112,7 +5112,7 @@ void MoveJoint( JOINT *o, int iIndex)
                 o->Light[2] -= 10.12f;
             }
         }
-        else if ( o->SubType==1 || o->SubType==2 || o->SubType==3 || o->SubType==5 || o->SubType==6	|| o->SubType == 7 ) //  À§¿¡¼­ ¾Æ·¡·Î ³»·Á¿À´Â ¹ø°³.
+        else if ( o->SubType==1 || o->SubType==2 || o->SubType==3 || o->SubType==5 || o->SubType==6	|| o->SubType == 7 ) //  ìœ„ì—ì„œ ì•„ëž˜ë¡œ ë‚´ë ¤ì˜¤ëŠ” ë²ˆê°œ.
 			
         {
             VectorCopy ( o->StartPosition, o->Position );
@@ -5690,7 +5690,7 @@ void MoveJoint( JOINT *o, int iIndex)
             else
             {
 				if ( fLife < 10.f)
-				{	// ³¡
+				{	// ë
 					fPos = fLife * 7.0f;
 				}
 				else
@@ -5913,7 +5913,7 @@ void MoveJoint( JOINT *o, int iIndex)
 		{
 			if(o->Target->Live)
 			{
-				o->LifeTime = 100.f; //¹«ÇÑ
+				o->LifeTime = 100.f; //ë¬´í•œ
 				
 				if(rand()%3 == 0)
 				{
@@ -6074,10 +6074,10 @@ void MoveJoint( JOINT *o, int iIndex)
                 Position[2] += 150.f;
 				Distance = MoveHumming ( o->Position, o->Angle, Position, o->Velocity );
 				
-				//¹ÚÁ¾ÈÆÅ×½ºÆ®
+				//ë°•ì¢…í›ˆí…ŒìŠ¤íŠ¸
 				//					CreateParticle(BITMAP_SMOKE, o->Position, o->Angle, o->Light, 34, 1.0f);
 				//					CreateParticle(BITMAP_SMOKE, o->Position, o->Angle, o->Light, 35, 1.0f);
-				//¹ÚÁ¾ÈÆÅ×½ºÆ®
+				//ë°•ì¢…í›ˆí…ŒìŠ¤íŠ¸
 				if ( Distance <= 70.0f && fabs( fOldAngle - o->Angle[2]) > 20.0f)
 				{
 					if(o->Velocity >= 20.f)
@@ -6383,8 +6383,8 @@ void MoveJoint( JOINT *o, int iIndex)
                             CreateParticle(BITMAP_FIRE,o->Position,o->Angle,o->Light,0);
                         }
                         
-                        CreateJoint(BITMAP_JOINT_THUNDER,Light,o->Position,o->Angle,3,NULL,rand()%10+5.f,5,10); //  Àü±â 
-                        CreateJoint(BITMAP_JOINT_THUNDER,Light,o->Position,o->Angle,3,NULL,rand()%8+4.f,5,10); //  Àü±â 
+                        CreateJoint(BITMAP_JOINT_THUNDER,Light,o->Position,o->Angle,3,NULL,rand()%10+5.f,5,10); //  ì „ê¸° 
+                        CreateJoint(BITMAP_JOINT_THUNDER,Light,o->Position,o->Angle,3,NULL,rand()%8+4.f,5,10); //  ì „ê¸° 
                     }
                 }
                 if ( o->SubType==0 )
@@ -7158,7 +7158,7 @@ void RenderJoints( BYTE bRenderOneMore )
 					Light2 -= Scroll;
 				}
                 if ( o->Type==BITMAP_FLARE_FORCE && o->SubType>=0 && o->SubType<=4 
-					|| (o->SubType >= 11 && o->SubType <= 13)	//^ Ææ¸± ½ºÅ³ °ü·Ã
+					|| (o->SubType >= 11 && o->SubType <= 13)	//^ íŽœë¦´ ìŠ¤í‚¬ ê´€ë ¨
 					)
                 {
 					Light1 = (o->NumTails-(j  ))/(float)((o->MaxTails-1)/2);

@@ -110,10 +110,10 @@ void SEASON3B::CNewUIBattleSoccerScore::RenderContents()
 			g_pRenderText->SetTextColor(0, 150, 255, 255);
 
 		unicode::_sprintf(szTemp, "%d", GuildWarScore[0]);
-		g_pRenderText->RenderText(nX, nY, szTemp);				// Á¡¼ö
+		g_pRenderText->RenderText(nX, nY, szTemp);				// ì ìˆ˜
         ::CreateGuildMark(Hero->GuildMarkIndex);
-        ::RenderBitmap(BITMAP_GUILD, float(nX+21), float(nY), 8, 8);// ±æµå ¸¶Å©
-		g_pRenderText->RenderText(nX+33, nY, GuildMark[Hero->GuildMarkIndex].GuildName);// ±æµå¸í
+        ::RenderBitmap(BITMAP_GUILD, float(nX+21), float(nY), 8, 8);// ê¸¸ë“œ ë§ˆí¬
+		g_pRenderText->RenderText(nX+33, nY, GuildMark[Hero->GuildMarkIndex].GuildName);// ê¸¸ë“œëª…
 
 		if (HeroSoccerTeam == 0)
 			g_pRenderText->SetTextColor(0, 150, 255, 255);
@@ -121,10 +121,10 @@ void SEASON3B::CNewUIBattleSoccerScore::RenderContents()
 			g_pRenderText->SetTextColor(255, 60, 0, 255);
 
 		unicode::_sprintf(szTemp, "%d", GuildWarScore[1]);
-		g_pRenderText->RenderText(nX, nY+22, szTemp);			// Á¡¼ö
+		g_pRenderText->RenderText(nX, nY+22, szTemp);			// ì ìˆ˜
         ::CreateGuildMark(FindGuildMark(GuildWarName));
-        ::RenderBitmap(BITMAP_GUILD, float(nX+21), float(nY+22), 8, 8);// ±æµå ¸¶Å©
-		g_pRenderText->RenderText(nX+33, nY+22, GuildWarName);	// ±æµå¸í
+        ::RenderBitmap(BITMAP_GUILD, float(nX+21), float(nY+22), 8, 8);// ê¸¸ë“œ ë§ˆí¬
+		g_pRenderText->RenderText(nX+33, nY+22, GuildWarName);	// ê¸¸ë“œëª…
 	}
 	else if (SoccerObserver)
 	{

@@ -60,7 +60,7 @@ enum KeyModifiers
 	KM_Scroll  = 0x20
 };
 
-// member Class  µî·Ï Å¸ÀÔ
+// member Class  ë“±ë¡ íƒ€ì…
 enum GFxRegistType
 {
 	eGFxRegist_NONE = 0,
@@ -128,7 +128,7 @@ public:
 
 	void GFxProcessEvent(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam, bool *pbNoFurtherProcessing);
 
-	//ÇÖÅ° µî·Ï
+	//í•«í‚¤ ë“±ë¡
 	//skill
 	void SetSkillClearHotKey();
 	void SetSkillHotKey(int iHotKey, int _skillType);
@@ -145,13 +145,13 @@ public:
 	int GetUISelect() { return m_iUISelection; }
 
 private:
-	//ÆùÆ® ·Îµù
+	//í°íŠ¸ ë¡œë”©
 	void LoadFontConfigs(ConfigParser *parser);
 	int GetFontConfigIndexByName(const char* pname);
 	FontConfig* GetCurrentFontConfig();
 	bool LoadDefaultFontConfigFromPath( const GString& path );
 
-	//scene °ü¸®
+	//scene ê´€ë¦¬
 	void GFxSceneInit_LogIn(GFxRegistType _type, CGFXBase* _gfx);
 	void GFxSceneInit_Char(GFxRegistType _type, CGFXBase* _gfx);
 	void GFxSceneInit_Main(GFxRegistType _type, CGFXBase* _gfx);
@@ -166,14 +166,14 @@ private:
 
 	int m_iNowSceneFlag;
 
-	//ÇØ»óµµ Á¤º¸
+	//í•´ìƒë„ ì •ë³´
 	int m_iWidth;
 	int m_iHeight;
 
 	//ui = 0 : old ui / ui = 1 : new ui
 	int m_iUISelection;
 
-	//ÆùÆ® °ü·Ã º¯¼öµî
+	//í°íŠ¸ ê´€ë ¨ ë³€ìˆ˜ë“±
 	bool m_bNoFontConfig;
 	// FontConfigFile
 	GString		m_FontConfigFilePath;
@@ -248,7 +248,7 @@ inline void OnKey(GFxMovieView *pMovie, GFxKey::Code keyCode, unsigned char asci
 	if(pMovie == NULL)
 		return;
 
-	//Á¦ÇÑÀûÀÎ Å°»ç¿ëÀ» ¿øÇÑ´Ù¸é ....
+	//ì œí•œì ì¸ í‚¤ì‚¬ìš©ì„ ì›í•œë‹¤ë©´ ....
 // 	// See if CTRL is held down. If the event is the acual CTRL key going
 // 	// up or down, ignore it.
 // 	bool ctrl = mods & KM_Control;
@@ -268,7 +268,7 @@ inline void OnKey(GFxMovieView *pMovie, GFxKey::Code keyCode, unsigned char asci
 // 			KeyEvent(pMovie, (GFxKey::Code)keyCode, asciiCode, wcharCode, mods, downFlag);
 // 	}
 
-	//¸ğµçÅ° »ç¿ë°¡´É
+	//ëª¨ë“ í‚¤ ì‚¬ìš©ê°€ëŠ¥
 	KeyEvent(pMovie, (GFxKey::Code)keyCode, asciiCode, wcharCode, mods, downFlag);
 
 }

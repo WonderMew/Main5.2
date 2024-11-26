@@ -71,7 +71,7 @@ namespace SEASON3B
 		void OpenningProcess();
 		void ClosingProcess();
 		void OpenMasterLevel( const char* filename );
-		CNewUIButton m_BtnToolTip;	// ÅøÆÁÁ¤º¸....
+		CNewUIButton m_BtnToolTip;	// â‰ˆÂ¯âˆ†Â¡Â¡Â§âˆ«âˆ....
 
 	private:
 		void LoadImages();

@@ -400,7 +400,7 @@ bool M39Kanturu3rd::RenderKanturu3rdObjectMesh(OBJECT* o, BMD* b,bool ExtraMon)
 	{
 		switch(o->Type) 
 		{
-		case 0: // ¸¶¾ß
+		case 0: // Â¸Â¶Â¾ÃŸ
 			{
 				if(g_Direction.m_CKanturu.GetMayaExplotion())
 				{

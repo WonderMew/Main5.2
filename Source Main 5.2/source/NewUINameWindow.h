@@ -11,7 +11,7 @@
 
 namespace SEASON3B
 {
-	// ¾ÆÀÌÅÛ ÀÌ¸§
+	// ì•„ì´í…œ ì´ë¦„
 	class CNewUINameWindow  : public CNewUIObj  
 	{
 	public:
@@ -33,8 +33,8 @@ namespace SEASON3B
 	private:
 		void RenderName();
 
-		CNewUIManager* m_pNewUIMng;		// UI ¸Å´ÏÀú.
-		POINT m_Pos;					// Ã¢ÀÇ À§Ä¡.
+		CNewUIManager* m_pNewUIMng;		// UI ë§¤ë‹ˆì €.
+		POINT m_Pos;					// ì°½ì˜ ìœ„ì¹˜.
 
 		bool m_bShowItemName;
 	};

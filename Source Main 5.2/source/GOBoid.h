@@ -15,7 +15,7 @@ void RenderBugs ( void );
 void RenderDarkHorseSkill ( OBJECT* o, BMD* b );
 void RenderSkillEarthQuake ( CHARACTER* c, OBJECT* o, BMD* b, int iMaxSkill = 30);
 void DeleteBug(OBJECT *Owner);
-// ¾ÆÀÌÅÛÀÌ Æê ¾ÆÀÌÅÛÀÎ°¡?
+// ì•„ì´í…œì´ í« ì•„ì´í…œì¸ê°€?
 bool IsBug(ITEM* pItem);	
 
 void MoveBoids ( void );            

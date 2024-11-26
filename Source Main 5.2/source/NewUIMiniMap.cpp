@@ -47,7 +47,7 @@ bool SEASON3B::CNewUIMiniMap::Create(CNewUIManager* pNewUIMng, int x, int y)
 
 	m_BtnExit.ChangeButtonImgState( true, IMAGE_MINIMAP_INTERFACE + 6, false );
 	m_BtnExit.ChangeButtonInfo( m_Pos.x+610, 3, 85, 85 );		
-	m_BtnExit.ChangeToolTipText( GlobalText[1002], true );	// 1002 "�ݱ�"
+	m_BtnExit.ChangeToolTipText( GlobalText[1002], true );	// 1002 "´Ý±â"
 
 	SetPos(x, y);
 

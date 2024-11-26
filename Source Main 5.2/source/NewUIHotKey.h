@@ -33,7 +33,7 @@ namespace SEASON3B
 		bool CanUpdateKeyEvent();
 		bool CanUpdateKeyEventRelatedMyInventory();
 
-		void SetStateGameOver( bool bGameOver );	// °ÔÀÓ¿À¹öÁßÀÎ »óÅÂ
+		void SetStateGameOver( bool bGameOver );	// ê²Œì„ì˜¤ë²„ì¤‘ì¸ ìƒíƒœ
 		bool IsStateGameOver( );
 		
 		bool AutoGetItem();

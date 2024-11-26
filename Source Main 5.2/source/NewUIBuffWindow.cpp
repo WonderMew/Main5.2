@@ -231,7 +231,7 @@ void SEASON3B::CNewUIBuffWindow::RenderBuffStatus( BUFF_RENDER renderstate )
 		}
 		else if( renderstate == BUFF_RENDER_TOOLTIP )
 		{
-			// ¹öÇÁ ÅøÆÁ ·»´õ¸µ
+			// Â¹Ã¶Ã‡Ã Ã…Ã¸Ã†Ã Â·Â»Â´ÃµÂ¸Âµ
 			if(SEASON3B::CheckMouseIn(x, y, BUFF_IMG_WIDTH, BUFF_IMG_HEIGHT)) {
 				float fTooltip_x = x + (BUFF_IMG_WIDTH / 2);
 				float fTooltip_y = y + BUFF_IMG_WIDTH;

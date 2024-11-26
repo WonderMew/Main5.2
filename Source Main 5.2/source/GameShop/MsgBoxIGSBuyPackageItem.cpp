@@ -187,7 +187,7 @@ void CMsgBoxIGSBuyPackageItem::RenderTexts()
 	g_pRenderText->SetTextColor(255, 0, 0, 255);
 	if( m_wItemCode == 65535 )
 	{
-		sprintf(szText, "¾ÆÀÌÅÛÄÚµå°¡ ¾ø½À´Ï´Ù.");
+		sprintf(szText, "ì•„ì´í…œì½”ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 	}
 	else
 	{

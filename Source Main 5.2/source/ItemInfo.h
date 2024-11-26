@@ -54,7 +54,7 @@ void info::ItemInfo::clear()
 inline
 const info::Script_Item* info::ItemInfo::GetData( int index ) const
 {
-	//¿¹¿Ü Ã³¸® ÇØµÑ°Í.
+	//ì˜ˆì™¸ ì²˜ë¦¬ í•´ë‘˜ê²ƒ.
 	if( index >= ITEM_ETC+MAX_ITEM_INDEX ) {
 		assert(0);
 	}

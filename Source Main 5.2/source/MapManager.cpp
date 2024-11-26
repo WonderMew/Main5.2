@@ -554,7 +554,7 @@ void CMapManager::Load() // OK
 	case WD_41CHANGEUP3RD_1ST:
 		LoadBitmap("Effect\\clouds.jpg" , BITMAP_CLOUD, GL_LINEAR, GL_CLAMP_TO_EDGE);
 		LoadBitmap("Effect\\firered.jpg" , BITMAP_FIRE_RED, GL_LINEAR, GL_CLAMP_TO_EDGE);
-		LoadBitmap("Effect\\FireSnuff.jpg", BITMAP_FIRE_SNUFF, GL_LINEAR, GL_CLAMP_TO_EDGE);      //  ∫“ææ.
+		LoadBitmap("Effect\\FireSnuff.jpg", BITMAP_FIRE_SNUFF, GL_LINEAR, GL_CLAMP_TO_EDGE);      //  Î∂àÏî®.
 		
 		LoadWaveFile(SOUND_3RD_CHANGE_UP_BG_CAGE1,			"Data\\Sound\\w42\\cage01.wav", 1);
 		LoadWaveFile(SOUND_3RD_CHANGE_UP_BG_CAGE2,			"Data\\Sound\\w42\\cage02.wav", 1);
@@ -598,7 +598,7 @@ void CMapManager::Load() // OK
 			LoadBitmap("Logo\\MU-logo.tga"         ,BITMAP_LOG_IN+16, GL_LINEAR);
 			LoadBitmap("Logo\\MU-logo_g.jpg", BITMAP_LOG_IN+17, GL_LINEAR);
 
-			// ∏ÛΩ∫≈Õ πÃ∏Æ ¿–æÓ≥ı±‚
+			// Î™¨Ïä§ÌÑ∞ ÎØ∏Î¶¨ ÏùΩÏñ¥ÎÜìÍ∏∞
 			OpenMonsterModel(129);
 			OpenMonsterModel(130);
 			OpenMonsterModel(131);

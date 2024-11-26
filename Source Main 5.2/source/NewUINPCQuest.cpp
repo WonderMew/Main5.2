@@ -201,7 +201,7 @@ bool CNewUINPCQuest::Render()
 	}
 	else if (QUEST_NO == byCurQuestState)
 	{
-	// ÇÊ¿ä Á¨.
+	// Ã‡ÃŠÂ¿Ã¤ ÃÂ¨.
 		RenderImage(IMAGE_NPCQUEST_ZEN, m_Pos.x+11, m_Pos.y+361, 170.f, 24.f);
 
 		g_pRenderText->SetFont(g_hFontBold);

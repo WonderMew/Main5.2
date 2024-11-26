@@ -1,8 +1,8 @@
 /*******************************************************************************
-*	ÀÛ ¼º ÀÚ : ÁøÇıÁø
-*	ÀÛ ¼º ÀÏ : 2009.06.10
-*	³»    ¿ë : FileDownloader
-*				File ´ÜÀ§ ´Ù¿î·Îµå ±â´É Á¦°ø
+*	ì‘ ì„± ì : ì§„í˜œì§„
+*	ì‘ ì„± ì¼ : 2009.06.10
+*	ë‚´    ìš© : FileDownloader
+*				File ë‹¨ìœ„ ë‹¤ìš´ë¡œë“œ ê¸°ëŠ¥ ì œê³µ
 *******************************************************************************/
 
 #pragma once
@@ -23,70 +23,70 @@ public:
 
 // public Function
 
-	//					´Ù¿î·Îµå ÁßÁö
+	//					ë‹¤ìš´ë¡œë“œ ì¤‘ì§€
 	void				Break();
-	//					ÁöÁ¤ÇÑ ÆÄÀÏ ´Ù¿î·Îµå ½ÇÇà : ¼¼¼Ç, Ä¿³¼Æ®, ÆÄÀÏ ¿ÀÇÂ ¸ğµÎ Ã³¸®
+	//					ì§€ì •í•œ íŒŒì¼ ë‹¤ìš´ë¡œë“œ ì‹¤í–‰ : ì„¸ì…˜, ì»¤ë‚µíŠ¸, íŒŒì¼ ì˜¤í”ˆ ëª¨ë‘ ì²˜ë¦¬
 	WZResult			DownloadFile();
 
 
 private:
 // private Function
 	
-	//					ÁøÇà ¿©ºÎ
+	//					ì§„í–‰ ì—¬ë¶€
 	BOOL				CanBeContinue();
-	//					¸±¸®Áî
+	//					ë¦´ë¦¬ì¦ˆ
 	void				Release();
 
-	//					Ä¿³ØÅÍ »ı¼º
+	//					ì»¤ë„¥í„° ìƒì„±
 	IConnecter *		CreateConnecter();
-	//					Á¢¼Ó Ã³¸®
+	//					ì ‘ì† ì²˜ë¦¬
 	WZResult 			CreateConnection();
 	static unsigned int __stdcall RunConnectThread(LPVOID pParam);
 	WZResult 			Connection();
 
-	//					Àü¼Û Ã³¸®
+	//					ì „ì†¡ ì²˜ë¦¬
 	WZResult 			TransferRemoteFile();
 
-	//					·ÎÄÃ ÆÄÀÏ »ı¼º
+	//					ë¡œì»¬ íŒŒì¼ ìƒì„±
 	WZResult 			CreateLocalFile();
-	//					´Ù¿î·Îµå ÆÄÀÏ ÀĞ±â
+	//					ë‹¤ìš´ë¡œë“œ íŒŒì¼ ì½ê¸°
 	WZResult 			ReadRemoteFile(BYTE* byReadBuffer, DWORD* dwBytesRead);
-	//					·ÎÄÃ ÆÄÀÏ ¾²±â
+	//					ë¡œì»¬ íŒŒì¼ ì“°ê¸°
 	WZResult 			WriteLocalFile(BYTE* byReadBuffer, DWORD dwBytesRead);
 
-	//					´Ù¿î·Îµå ½ÃÀÛ ÀÌº¥Æ® º¸³»±â
+	//					ë‹¤ìš´ë¡œë“œ ì‹œì‘ ì´ë²¤íŠ¸ ë³´ë‚´ê¸°
 	void				SendStartedDownloadFileEvent(ULONGLONG nFileLength);
-	//					´Ù¿î·Îµå ¿Ï·á ÀÌº¥Æ® º¸³»±â
+	//					ë‹¤ìš´ë¡œë“œ ì™„ë£Œ ì´ë²¤íŠ¸ ë³´ë‚´ê¸°
 	void				SendCompletedDownloadFileEvent(WZResult wzResult);
-	//					´Ù¿î·Îµå ÁøÇà »óÈ² ÀÌº¥Æ® º¸³»±â : ÆĞÅ¶ ´ÜÀ§
+	//					ë‹¤ìš´ë¡œë“œ ì§„í–‰ ìƒí™© ì´ë²¤íŠ¸ ë³´ë‚´ê¸° : íŒ¨í‚· ë‹¨ìœ„
 	void				SendProgressDownloadFileEvent(ULONGLONG nTotalBytesRead);
 
 
 // Member Object
 
-	//							´Ù¿î·Îµå ÁßÁö ÇÃ·¡±×
+	//							ë‹¤ìš´ë¡œë“œ ì¤‘ì§€ í”Œë˜ê·¸
 	volatile BOOL				m_bBreak;
-	//							°á°ú..
+	//							ê²°ê³¼..
 	WZResult 					m_Result;
 
-	//							´Ù¿î·Îµå »óÅÂ ÀÌº¥Æ® ¹ŞÀ» °´Ã¼
+	//							ë‹¤ìš´ë¡œë“œ ìƒíƒœ ì´ë²¤íŠ¸ ë°›ì„ ê°ì²´
 	IDownloaderStateEvent *		m_pStateEvent;
-	//							´Ù¿î·Îµå ¼­¹ö Á¤º¸ °´Ã¼
+	//							ë‹¤ìš´ë¡œë“œ ì„œë²„ ì •ë³´ ê°ì²´
 	DownloadServerInfo *		m_pServerInfo;
-	//							´Ù¿î·Îµå ÆÄÀÏ Á¤º¸ °´Ã¼
+	//							ë‹¤ìš´ë¡œë“œ íŒŒì¼ ì •ë³´ ê°ì²´
 	DownloadFileInfo *			m_pFileInfo;
-	//							Ä¿³ØÅÍ
+	//							ì»¤ë„¥í„°
 	IConnecter *				m_pConnecter;
 
-	//							WinINet ¼¼¼Ç ÇÚµé
+	//							WinINet ì„¸ì…˜ í•¸ë“¤
 	HINTERNET					m_hSession;
-	//							WinINet Ä¿³¼¼Ç ÇÚµé
+	//							WinINet ì»¤ë‚µì…˜ í•¸ë“¤
 	HINTERNET					m_hConnection;
-	//							¼­¹ö ÆÄÀÏ ÇÚµé
+	//							ì„œë²„ íŒŒì¼ í•¸ë“¤
 	HINTERNET					m_hRemoteFile;
-	//							·ÎÄÃ ÆÄÀÏ ÇÚµé
+	//							ë¡œì»¬ íŒŒì¼ í•¸ë“¤
 	HANDLE						m_hLocalFile;
-	//							ÆÄÀÏ »çÀÌÁî
+	//							íŒŒì¼ ì‚¬ì´ì¦ˆ
 	ULONGLONG					m_nFileLength;
 };
 

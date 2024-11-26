@@ -58,7 +58,7 @@ bool CGFxInfoPopup::OnCreateDevice(SInt bufw, SInt bufh, SInt left, SInt top, SI
 
 	m_pUIMovie->SetViewport(bufw, bufh, left, top, w, h, flags);
 
-	//ÇØ»óµµº° ¼³Á¤ÇÏ±â
+	//í•´ìƒë„ë³„ ì„¤ì •í•˜ê¸°
 	if(bufw == 800 && bufh == 600)
 	{
 		m_iViewType = 1;
@@ -80,7 +80,7 @@ bool CGFxInfoPopup::OnCreateDevice(SInt bufw, SInt bufh, SInt left, SInt top, SI
 
 bool CGFxInfoPopup::OnResetDevice()
 {
-	// openGL »ó¿¡¼­ resetDevice ÇÏ´Â ¹æ¹ı ¸ğ¸£°ÚÀ½
+	// openGL ìƒì—ì„œ resetDevice í•˜ëŠ” ë°©ë²• ëª¨ë¥´ê² ìŒ
 	//this->InitGFx();
 	return TRUE;
 }
@@ -174,7 +174,7 @@ bool CGFxInfoPopup::InitGFx(const char* _pfilename, UInt _loadConstants, UPInt _
 	return TRUE;
 }
 
-// Ä³¸¯ÅÍ ¼±ÅÃÃ¢¿¡¼­ ³Ñ¾î¿Ã¶§ È£Ãâ
+// ìºë¦­í„° ì„ íƒì°½ì—ì„œ ë„˜ì–´ì˜¬ë•Œ í˜¸ì¶œ
 bool CGFxInfoPopup::Init()
 {
 	return TRUE;
@@ -216,7 +216,7 @@ bool CGFxInfoPopup::Render()
 	if(!m_pUIMovie)
 		return FALSE;
 
-	//·£´õ¸µ
+	//ëœë”ë§
 	if(m_bWireFrame)
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 

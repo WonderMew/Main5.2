@@ -130,19 +130,19 @@ namespace SEASON3B
 		POINT					m_Pos;
 		CNewUIButton			m_Button[CURSEDTEMPLERESULT_MAXBUTTONCOUNT];
 		//EventTime
-		DWORD				m_EventMapTime;             // ÀÌº¥Æ® ÀüÃ¼ ½Ã°£
+		DWORD				m_EventMapTime;             // ì´ë²¤íŠ¸ ì „ì²´ ì‹œê°„
 		//MiniMap
-		WORD				m_HolyItemPlayerIndex;		// ¼º¹°À» °¡Áö°í ÀÖ´Â »ç¿ëÀÚ ÀÎµ¦½º
-		WORD				m_HolyItemPlayerPosX;		// ¼º¹° À§Ä¡ X
-		WORD				m_HolyItemPlayerPosY;		// ¼º¹° À§Ä¡ Y
+		WORD				m_HolyItemPlayerIndex;		// ì„±ë¬¼ì„ ê°€ì§€ê³  ìˆëŠ” ì‚¬ìš©ì ì¸ë±ìŠ¤
+		WORD				m_HolyItemPlayerPosX;		// ì„±ë¬¼ ìœ„ì¹˜ X
+		WORD				m_HolyItemPlayerPosY;		// ì„±ë¬¼ ìœ„ì¹˜ Y
 		char				m_HolyItemPlayerName[MAX_ID_SIZE];
 
 		float				m_Scale;
 		float				m_Alph;
 
 		//HolyItemCount
-		WORD				m_AlliedPoint;				// ¿¬ÇÕ±ºÃø Á¡¼ö
-		WORD				m_IllusionPoint;			// È¯¿µ±³´ÜÃø Á¡¼ö
+		WORD				m_AlliedPoint;				// ì—°í•©êµ°ì¸¡ ì ìˆ˜
+		WORD				m_IllusionPoint;			// í™˜ì˜êµë‹¨ì¸¡ ì ìˆ˜
 
 		WORD							m_CursedTempleMyTeamCount;
 		PMSG_CURSED_TAMPLE_PARTY_POS	m_CursedTempleMyTeam[MAX_PARTYS];

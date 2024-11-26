@@ -1,7 +1,7 @@
 #ifndef _WSCTLC_ADDON_H_
 #define _WSCTLC_ADDON_H_
 
-// - ÀÌÇö
+// - ì´í˜„
 
 #define MAX_SENDBUF		8192
 #define MAX_RECVBUF		8192
@@ -13,7 +13,7 @@ class CPacket{
 public:
 	CPacket(BYTE* byBuf, int size) {
 		memcpy(m_byBuffer, byBuf, size);
-		m_byBuffer[size] = 0xFD;	//. ¸Ş¸ğ¸® ºí·°Ç¥½Ã
+		m_byBuffer[size] = 0xFD;	//. ë©”ëª¨ë¦¬ ë¸”ëŸ­í‘œì‹œ
 		m_size = size;
 	}
 	~CPacket(){}
@@ -47,7 +47,7 @@ class CPacketQueue
 				std::list<CPacket*>::iterator li = m_listGarbage.begin();
 				for(; li != m_listGarbage.end(); li++){
 #ifdef _DEBUG
-					if(m_bCheckIntegrity){	//. ¸Ş¸ğ¸® ¹«°á¼º °Ë»ç
+					if(m_bCheckIntegrity){	//. ë©”ëª¨ë¦¬ ë¬´ê²°ì„± ê²€ì‚¬
 						BYTE MemBlock = *((*li)->GetBuffer()+(*li)->GetSize());
 						assert(MemBlock == 0xFD);
 					}

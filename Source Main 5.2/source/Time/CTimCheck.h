@@ -5,9 +5,9 @@
 
 struct TimeCheck
 {
-	int		iIndex;			// ½Ã°£ °ü·Ã ¹øÈ£
-	int		iBackupTime;	// ½Ã°£ °ü·Ã ¹é¾÷
-	bool	bTimeCheck;		// ½Ã°£ °ü·Ã Ã¼Å©	
+	int		iIndex;			// ì‹œê°„ ê´€ë ¨ ë²ˆí˜¸
+	int		iBackupTime;	// ì‹œê°„ ê´€ë ¨ ë°±ì—…
+	bool	bTimeCheck;		// ì‹œê°„ ê´€ë ¨ ì²´í¬	
 };
 
 class CTimeCheck : public Singleton <CTimeCheck>

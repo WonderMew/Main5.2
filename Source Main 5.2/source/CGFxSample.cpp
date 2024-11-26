@@ -131,7 +131,7 @@ bool GFxSample::OnCreateDevice(SInt bufw, SInt bufh, SInt left, SInt top, SInt w
 
 bool GFxSample::OnResetDevice()
 {
-	// openGL »ó¿¡¼­ resetDevice ÇÏ´Â ¹æ¹ý ¸ð¸£°ÚÀ½
+	// openGL ìƒì—ì„œ resetDevice í•˜ëŠ” ë°©ë²• ëª¨ë¥´ê² ìŒ
 	//this->InitGFx();
 	return TRUE;
 }

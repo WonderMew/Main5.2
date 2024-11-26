@@ -18,9 +18,9 @@ CMsgBoxIGSDeleteItemConfirm::CMsgBoxIGSDeleteItemConfirm()
 {
 	m_iMiddleCount = 4;
 
-	m_iStorageSeq = 0;			// º¸°üÇÔ ¼ø¹ø
-	m_iStorageItemSeq = 0;		// º¸°üÇÔ »óÇ° ¼ø¹ø
-	m_szItemType = '\0';		// »óÇ°±¸ºĞ (C : Ä³½Ã, P : »óÇ°)
+	m_iStorageSeq = 0;			// ë³´ê´€í•¨ ìˆœë²ˆ
+	m_iStorageItemSeq = 0;		// ë³´ê´€í•¨ ìƒí’ˆ ìˆœë²ˆ
+	m_szItemType = '\0';		// ìƒí’ˆêµ¬ë¶„ (C : ìºì‹œ, P : ìƒí’ˆ)
 
 	for(int i=0 ; i<UIMAX_TEXT_LINE ; i++)
 	{
@@ -162,12 +162,12 @@ void CMsgBoxIGSDeleteItemConfirm::SetAddCallbackFunc()
 // SetButtonInfo
 void CMsgBoxIGSDeleteItemConfirm::SetButtonInfo()
 {
-	// È®ÀÎ ¹öÆ°
+	// í™•ì¸ ë²„íŠ¼
 	m_BtnDelete.SetInfo(IMAGE_IGS_BUTTON, GetPos().x+IGS_BTN_DEL_POS_X, GetPos().y+IGS_BTN_POS_Y, 
 						IMAGE_IGS_BTN_WIDTH, IMAGE_IGS_BTN_HEIGHT);
 	m_BtnDelete.SetText(GlobalText[2932]);	
 	
-	// Ãë¼Ò ¹öÆ°
+	// ì·¨ì†Œ ë²„íŠ¼
 	m_BtnCancel.SetInfo(IMAGE_IGS_BUTTON, GetPos().x+IGS_BTN_CANCEL_POS_X, GetPos().y+IGS_BTN_POS_Y, 
 						IMAGE_IGS_BTN_WIDTH, IMAGE_IGS_BTN_HEIGHT);
 	m_BtnCancel.SetText(GlobalText[229]);	
@@ -202,7 +202,7 @@ void CMsgBoxIGSDeleteItemConfirm::RenderTexts()
 	g_pRenderText->SetTextColor(255, 255, 255, 255);
 	g_pRenderText->SetFont(g_hFontBold);
 
-	// Title - "¾ÆÀÌÅÛ »èÁ¦"
+	// Title - "ì•„ì´í…œ ì‚­ì œ"
 	g_pRenderText->RenderText(GetPos().x, GetPos().y+IGS_TEXT_TITLE_Y, GlobalText[2930], IMAGE_IGS_FRAME_WIDTH, 0, RT3_SORT_CENTER);
 
 	g_pRenderText->SetFont(g_hFont);

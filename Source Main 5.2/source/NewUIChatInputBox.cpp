@@ -688,33 +688,33 @@ bool SEASON3B::CNewUIChatInputBox::RenderFrame()
 
 void SEASON3B::CNewUIChatInputBox::RenderButtons()
 {
-	// Ã¤ÆÃ Å¸ÀÔ ¹öÆ°
+	// ì±„íŒ… íƒ€ì… ë²„íŠ¼
 	RenderImage(IMAGE_INPUTBOX_NORMAL_ON+m_iInputMsgType, m_WndPos.x+27*m_iInputMsgType, m_WndPos.y, 27, 26);
 
-	// ±Ó¼Ó¸» Â÷´Ü On/Off
+	// ê·“ì†ë§ ì°¨ë‹¨ On/Off
 	if(m_bBlockWhisper)
 	{
 		RenderImage(IMAGE_INPUTBOX_WHISPER_ON, m_WndPos.x+87, m_WndPos.y, 27, 26);
 	}
 
-	// Ã¤ÆÃ ·Î±× Ãâ·Â On/Off
+	// ì±„íŒ… ë¡œê·¸ ì¶œë ¥ On/Off
 	if(m_bShowChatLog)
 	{
 		RenderImage(IMAGE_INPUTBOX_CHATLOG_ON, m_WndPos.x+141, m_WndPos.y, 27, 26);
 
-		// ½Ã½ºÅÛ ¸Ş¼¼Áö¸¸ Ãâ·Â On/Off
+		// ì‹œìŠ¤í…œ ë©”ì„¸ì§€ë§Œ ì¶œë ¥ On/Off
 		if(m_bOnlySystemMessage)
 		{
 			RenderImage(IMAGE_INPUTBOX_SYSTEM_ON, m_WndPos.x+114, m_WndPos.y, 27, 26);
 		}
 	}
 
-	// Ã¤ÆÃ ·Î±× Ãâ·Â On/Off
+	// ì±„íŒ… ë¡œê·¸ ì¶œë ¥ On/Off
 	if(m_pNewUIChatLogWnd->IsShowFrame())
 	{
 		RenderImage(IMAGE_INPUTBOX_FRAME_ON, m_WndPos.x+173, m_WndPos.y, 27, 26);
 
-		// »çÀÌÁî º¯°æ, Åõ¸íµµ Á¶Àı ¹öÆ°
+		// ì‚¬ì´ì¦ˆ ë³€ê²½, íˆ¬ëª…ë„ ì¡°ì ˆ ë²„íŠ¼
 		m_BtnSize.Render();
 		m_BtnTransparency.Render();
 	}

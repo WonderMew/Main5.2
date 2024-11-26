@@ -1,10 +1,10 @@
 
 /**************************************************************************************************
 
-»óÇ°(¼Ó¼º) °´Ã¼
+ìƒí’ˆ(ì†ì„±) ê°ì²´
 
-ÇöÀç »óÇ°ÀÇ ±âº» Á¤º¸¿Í ÇÑ °¡Áö ¼Ó¼º Á¤º¸¸¦ °¡Áö°í ÀÖ´Ù.
-»óÇ° ¹øÈ£°¡ µ¿ÀÏÇÑ ¿©·¯ ¼Ó¼ºÀ» Á¶ÇÕÇÏ¿© ÇÑ °¡Áö »óÇ°À» Ç¥ÇöÇØ¾ß ÇÑ´Ù.
+í˜„ìž¬ ìƒí’ˆì˜ ê¸°ë³¸ ì •ë³´ì™€ í•œ ê°€ì§€ ì†ì„± ì •ë³´ë¥¼ ê°€ì§€ê³  ìžˆë‹¤.
+ìƒí’ˆ ë²ˆí˜¸ê°€ ë™ì¼í•œ ì—¬ëŸ¬ ì†ì„±ì„ ì¡°í•©í•˜ì—¬ í•œ ê°€ì§€ ìƒí’ˆì„ í‘œí˜„í•´ì•¼ í•œë‹¤.
 
 **************************************************************************************************/
 
@@ -22,21 +22,21 @@ public:
 	bool SetProduct(std::string strdata);
 
 public:	
-	int		ProductSeq;											//  1. »óÇ° ¹øÈ£
-	char	ProductName[SHOPLIST_LENGTH_PRODUCTNAME];			//  2. »óÇ° ¸í
-	char	PropertyName[SHOPLIST_LENGTH_PRODUCTPROPERTYNAME];	//  3. ¼Ó¼º ¸í
-	char	Value[SHOPLIST_LENGTH_PRODUCTVALUE];				//  4. ¼Ó¼º °ª
-	char	UnitName[SHOPLIST_LENGTH_PRODUCTUNITNAME];			//  5. ¼Ó¼º ´ÜÀ§ ¸í
-	int		Price;												//  6. »óÇ° °¡°Ý
-	int		PriceSeq;											//  7. »óÇ° °¡°Ý ¹øÈ£
-	int		PropertyType;										//  8. ¼Ó¼º À¯Çü (141:¾ÆÀÌÅÛ ¼Ó¼º, 142:°¡°Ý ¼Ó¼º)
-	int		MustFlag;											//  9. ÇÊ¼ö ¿©ºÎ (145:ÇÊ¼ö, 146:¼±ÅÃ)
-	int		vOrder;												// 10. ¸ÞÀÎ ¼Ó¼º ±¸ºÐ (1:¸ÞÀÎ ¼Ó¼º, 9:¼­ºê ¼Ó¼º)
-	int		DeleteFlag;											// 11. »èÁ¦ ¿©ºÎ (143: »èÁ¦, 144: È°¼º)
-	int		StorageGroup;										// 12. º¸°üÇÔ ±×·ì À¯Çü
-	int		ShareFlag;											// 13. ServerType(¼­¹ö À¯Çü) º° º¸°üÇÔ ³ëÃâ °øÀ¯ Ç×¸ñ ¿©ºÎ
-	char	InGamePackageID[SHOPLIST_LENGTH_INGAMEPACKAGEID];	// 14. ¾ÆÀÌÅÛ ÄÚµå
-	int		PropertySeq;										// 15. ¼Ó¼º ÄÚµå
-	int		ProductType;										// 16. »óÇ° À¯Çü ÄÚµå
-	int		UnitType;											// 17. ´ÜÀ§ ÄÚµå
+	int		ProductSeq;											//  1. ìƒí’ˆ ë²ˆí˜¸
+	char	ProductName[SHOPLIST_LENGTH_PRODUCTNAME];			//  2. ìƒí’ˆ ëª…
+	char	PropertyName[SHOPLIST_LENGTH_PRODUCTPROPERTYNAME];	//  3. ì†ì„± ëª…
+	char	Value[SHOPLIST_LENGTH_PRODUCTVALUE];				//  4. ì†ì„± ê°’
+	char	UnitName[SHOPLIST_LENGTH_PRODUCTUNITNAME];			//  5. ì†ì„± ë‹¨ìœ„ ëª…
+	int		Price;												//  6. ìƒí’ˆ ê°€ê²©
+	int		PriceSeq;											//  7. ìƒí’ˆ ê°€ê²© ë²ˆí˜¸
+	int		PropertyType;										//  8. ì†ì„± ìœ í˜• (141:ì•„ì´í…œ ì†ì„±, 142:ê°€ê²© ì†ì„±)
+	int		MustFlag;											//  9. í•„ìˆ˜ ì—¬ë¶€ (145:í•„ìˆ˜, 146:ì„ íƒ)
+	int		vOrder;												// 10. ë©”ì¸ ì†ì„± êµ¬ë¶„ (1:ë©”ì¸ ì†ì„±, 9:ì„œë¸Œ ì†ì„±)
+	int		DeleteFlag;											// 11. ì‚­ì œ ì—¬ë¶€ (143: ì‚­ì œ, 144: í™œì„±)
+	int		StorageGroup;										// 12. ë³´ê´€í•¨ ê·¸ë£¹ ìœ í˜•
+	int		ShareFlag;											// 13. ServerType(ì„œë²„ ìœ í˜•) ë³„ ë³´ê´€í•¨ ë…¸ì¶œ ê³µìœ  í•­ëª© ì—¬ë¶€
+	char	InGamePackageID[SHOPLIST_LENGTH_INGAMEPACKAGEID];	// 14. ì•„ì´í…œ ì½”ë“œ
+	int		PropertySeq;										// 15. ì†ì„± ì½”ë“œ
+	int		ProductType;										// 16. ìƒí’ˆ ìœ í˜• ì½”ë“œ
+	int		UnitType;											// 17. ë‹¨ìœ„ ì½”ë“œ
 };

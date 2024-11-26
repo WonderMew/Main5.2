@@ -41,7 +41,7 @@ void DebugAngel_HexWrite( char *lpszFileName, void *pBuffer, int iSize)
 		lpszStr[0] = '\0';
 		int iShow = min( iSize - i, 16);
 
-		// Hex Ãâ·Â
+		// Hex ÃƒÃ¢Â·Ã‚
 		for ( int j = 0; j < iShow; j++, pbySeek++)
 		{
 			char lpszTemp[16];

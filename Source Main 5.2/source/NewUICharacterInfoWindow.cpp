@@ -1052,7 +1052,7 @@ void SEASON3B::CNewUICharacterInfoWindow::RenderAttribute()
 				unicode::_sprintf(strBlocking, GlobalText[208],t_adjdef + maxdefense + iChangeRingAddDefense,CharacterAttribute->SuccessfulBlocking);
 			}
 #else //PBG_ADD_NEWCHAR_MONK_SKILL
-			// 208 "¹æ¾î·Â(À²): %d (%d)"
+			// 208 "ë°©ì–´ë ¥(ìœ¨): %d (%d)"
           	unicode::_sprintf(strBlocking, GlobalText[208],
 				t_adjdef + maxdefense + iChangeRingAddDefense,
 				CharacterAttribute->SuccessfulBlocking
@@ -1226,7 +1226,7 @@ void SEASON3B::CNewUICharacterInfoWindow::RenderAttribute()
 	if(iBaseClass==CLASS_RAGEFIGHTER)
 	{
 		iY += 13;
-		//¹°¸®°ø°Ý·Â
+		//ë¬¼ë¦¬ê³µê²©ë ¥
 		unicode::_sprintf(strVitality, GlobalText[3155], 50+(wVitality/10));
 		g_pRenderText->RenderText(m_Pos.x+20, m_Pos.y+iY, strVitality);
 	}
@@ -1557,11 +1557,11 @@ void SEASON3B::CNewUICharacterInfoWindow::RenderAttribute()
 #ifdef PBG_ADD_NEWCHAR_MONK
 	if(iBaseClass==CLASS_RAGEFIGHTER)
 	{
-		//¸¶¹ý°ø°Ý·Â
+		//ë§ˆë²•ê³µê²©ë ¥
 		unicode::_sprintf(strEnergy, GlobalText[3156], 50+(wEnergy/10));
 		g_pRenderText->RenderText(m_Pos.x + 20, m_Pos.y + iY, strEnergy);
 		iY += 13;
-		//¹üÀ§°ø°Ý·Â
+		//ë²”ìœ„ê³µê²©ë ¥
 		unicode::_sprintf(strEnergy, GlobalText[3157], 100+(wDexterity/8+wEnergy/10));
 		g_pRenderText->RenderText(m_Pos.x + 20, m_Pos.y + iY, strEnergy);
 	}

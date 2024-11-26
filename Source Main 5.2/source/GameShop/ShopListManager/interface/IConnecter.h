@@ -1,7 +1,7 @@
 /*******************************************************************************
-*	ÀÛ ¼º ÀÚ : ÁøÇıÁø
-*	ÀÛ ¼º ÀÏ : 2009.07.07
-*	³»    ¿ë : Connecter Interface
+*	ì‘ ì„± ì : ì§„í˜œì§„
+*	ì‘ ì„± ì¼ : 2009.07.07
+*	ë‚´    ìš© : Connecter Interface
 *******************************************************************************/
 
 #pragma once
@@ -24,16 +24,16 @@ public:
 
 // abstract Function
 	
-	//						¼¼¼Ç
+	//						ì„¸ì…˜
 	virtual WZResult		CreateSession(HINTERNET& hSession) = 0;
-	//						Ä¿³¼Æ®
+	//						ì»¤ë‚µíŠ¸
 	virtual WZResult		CreateConnection(HINTERNET& hSession, 
 											 HINTERNET& hConnection) = 0;
-	//						´Ù¿î·Îµå ÆÄÀÏ ¿ÀÇÂ & »çÀÌÁî °¡Á®¿À±â
+	//						ë‹¤ìš´ë¡œë“œ íŒŒì¼ ì˜¤í”ˆ & ì‚¬ì´ì¦ˆ ê°€ì ¸ì˜¤ê¸°
 	virtual WZResult		OpenRemoteFile(HINTERNET& hConnection, 
 										   HINTERNET& hRemoteFile, 
 										   ULONGLONG& nFileLength) = 0;
-	//						¸®¸ğÆ® ÆÄÀÏ ÀĞ±â
+	//						ë¦¬ëª¨íŠ¸ íŒŒì¼ ì½ê¸°
 	virtual WZResult		ReadRemoteFile(HINTERNET& hRemoteFile, 
 										   BYTE* byReadBuffer, 
 										   DWORD* dwBytesRead) = 0;
@@ -42,11 +42,11 @@ public:
 protected:
 // Member Object
 
-	//						°á°ú..
+	//						ê²°ê³¼..
 	WZResult 				m_Result;
-	//						´Ù¿î·Îµå ¼­¹ö Á¤º¸ °´Ã¼
+	//						ë‹¤ìš´ë¡œë“œ ì„œë²„ ì •ë³´ ê°ì²´
 	DownloadServerInfo *	m_pServerInfo;
-	//						´Ù¿î·Îµå ÆÄÀÏ Á¤º¸ °´Ã¼
+	//						ë‹¤ìš´ë¡œë“œ íŒŒì¼ ì •ë³´ ê°ì²´
 	DownloadFileInfo *		m_pFileInfo;
 };
 

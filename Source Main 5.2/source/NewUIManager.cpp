@@ -287,7 +287,7 @@ bool SEASON3B::CNewUIManager::CompareKeyEventOrder(INewUIBase* pObj1,INewUIBase*
 int SEASON3B::CNewUIManager::GetShowUICnt()
 {
 	int m_nShowUICnt=0;
-	// ÀÏºÎ Æ¯Á¤ ÀÎÅÍÆäÀÌ½º°¡ ¸î°³ ¿­·ÁÀÖ´ÂÁö
+	// ì¼ë¶€ íŠ¹ì • ì¸í„°í˜ì´ìŠ¤ê°€ ëª‡ê°œ ì—´ë ¤ìˆëŠ”ì§€
 	for(int i=INTERFACE_PARTY; i<INTERFACE_CHARACTER+1; ++i)
 	{
 		if(IsInterfaceVisible(i))

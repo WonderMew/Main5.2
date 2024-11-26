@@ -22,19 +22,19 @@ public:
 	
 	enum IMAGESIZE_IGS_SEND_GIFT
 	{
-		IMAGE_IGS_WINDOW_WIDTH	= 640,	// ÀÎ°ÔÀÓ¼¥ ¹è°æ »çÀÌÁî
+		IMAGE_IGS_WINDOW_WIDTH	= 640,	// ì¸ê²Œìž„ìƒµ ë°°ê²½ ì‚¬ì´ì¦ˆ
 		IMAGE_IGS_WINDOW_HEIGHT = 429,
-		IMAGE_IGS_FRAME_WIDTH	= 210,	// ¸Þ¼¼Áö¹Ú½º Size
+		IMAGE_IGS_FRAME_WIDTH	= 210,	// ë©”ì„¸ì§€ë°•ìŠ¤ Size
 		IMAGE_IGS_FRAME_HEIGHT	= 267,
 		IMAGE_IGS_DECO_WIDTH	= 17,	// Deco
 		IMAGE_IGS_DECO_HEIGHT	= 19,
 		IMAGE_IGS_ID_INPUT_BOX_WIDTH	= 76,	// Input TextBox
 		IMAGE_IGS_ID_INPUT_BOX_HEIGHT	= 17,
-		IMAGE_IGS_BTN_WIDTH		= 52,	// ¹öÆ° Size
+		IMAGE_IGS_BTN_WIDTH		= 52,	// ë²„íŠ¼ Size
 		IMAGE_IGS_BTN_HEIGHT	= 26,	
 	};
 	
-	// ¸Þ¼¼Áö¹Ú½º»óÀÇ »ó´ëÁÂÇ¥
+	// ë©”ì„¸ì§€ë°•ìŠ¤ìƒì˜ ìƒëŒ€ì¢Œí‘œ
 	enum IGS_SEND_GIFT_POS
 	{
 		IMAGE_IGS_DECO_POS_X			= 10,	// Deco

@@ -93,7 +93,7 @@ void CMsgWin::SetCtrlPosition()
 		m_sprInput.SetPosition(nBaseXPos + 32, nBtnYPos + 4);
 		m_aBtn[MW_OK].SetPosition(nBaseXPos + 209, nBtnYPos);
 		m_aBtn[MW_CANCEL].SetPosition(nBaseXPos + 264, nBtnYPos);
-		// ÀÔ·Â ÅØ½ºÆ® À§Ä¡ ÁöÁ¤.
+		// ìž…ë ¥ í…ìŠ¤íŠ¸ ìœ„ì¹˜ ì§€ì •.
 		if (m_nMsgCode == MESSAGE_DELETE_CHARACTER_RESIDENT)
 			if (g_iChatInputType == 1)
 				g_pSinglePasswdInputBox->SetPosition(

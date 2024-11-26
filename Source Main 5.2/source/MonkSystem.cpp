@@ -301,7 +301,7 @@ bool CMonkSystem::RageEquipmentWeapon(int _Index, short _ItemType)
 {
 	int _OtherEquip = (_Index == EQUIPMENT_WEAPON_LEFT) ? EQUIPMENT_WEAPON_RIGHT : EQUIPMENT_WEAPON_LEFT;
 	ITEM *pOtherHand = &CharacterMachine->Equipment[_OtherEquip];
-	//±Û·¯ºêÇü ¹«±â´Â ±Û·¯ºêÇü¹«±âÇÏ°í¸¸ Âø¿ë°¡´É
+	//ê¸€ëŸ¬ë¸Œí˜• ë¬´ê¸°ëŠ” ê¸€ëŸ¬ë¸Œí˜•ë¬´ê¸°í•˜ê³ ë§Œ ì°©ìš©ê°€ëŠ¥
 	if(g_CMonkSystem.IsSwordformGlovesItemType(_ItemType))
 	{	
 		if(pOtherHand->Type == -1)
@@ -435,7 +435,7 @@ bool CMonkSystem::SendAttackPacket(CHARACTER* _pCha, int _nMoveTarget, int _nSki
 			SendPosition(CharPosX, CharPosY);
 
 		VectorCopy(CharactersClient[_nMoveTarget].Object.Position, _pCha->TargetPosition);
-		//¸ó½ºÅÍÀÇ ³Ë¹éÈ¿°úÀÇ ÀÇÇØ ÀÌÆåÆ®°¡ È¥¶õ½º·¯¿ò ¹æÁö
+		//ëª¬ìŠ¤í„°ì˜ ë„‰ë°±íš¨ê³¼ì˜ ì˜í•´ ì´í™íŠ¸ê°€ í˜¼ë€ìŠ¤ëŸ¬ì›€ ë°©ì§€
 		if(!(pObj->CurrentAction == PLAYER_SKILL_GIANTSWING && m_btAttState == FRAME_SECONDATT))
 			pObj->Angle[2] = CreateAngle(pObj->Position[0], pObj->Position[1], _pCha->TargetPosition[0], _pCha->TargetPosition[1]);
 
@@ -912,7 +912,7 @@ void CMonkSystem::RenderRepeatedly(int _Key, OBJECT *pObj)
 		float scale = 15.0f;
 
 		switch(m_arrRepeatedly[_index].m_DamageType)
-		{	//µ¥¹ÌÁöÅ¸ÀÔ¿¡ µû¸¥ÄÃ·¯
+		{	//ë°ë¯¸ì§€íƒ€ì…ì— ë”°ë¥¸ì»¬ëŸ¬
 		case 0:
 			if(_Key == HeroKey)
 			{
@@ -950,7 +950,7 @@ void CMonkSystem::RenderRepeatedly(int _Key, OBJECT *pObj)
 		}
 	
 		if(m_arrRepeatedly[_index].m_Double)
-		{	// ´õºíµ¥¹ÌÁö
+		{	// ë”ë¸”ë°ë¯¸ì§€
 			Position[2] += 10.f;
 			Vector(Light[0]-0.2f,Light[1]-0.2f,Light[2]-0.2f,Light2);
 			CreatePoint(Position,Damage,Light2, scale+5.f, true);
@@ -967,7 +967,7 @@ bool CMonkSystem::IsRideNotUseSkill(int _nSkill, short _Type)
 	if(_Type != MODEL_HELPER+37 && _Type != MODEL_HELPER+2 && _Type != MODEL_HELPER+3)
 		return false;
 
-	// Å»°ÍÅ¸°í ÀÖÀ» °æ¿ì »ç¿ë ºÒ°¡´ÉÇÑ ½ºÅ³
+	// íƒˆê²ƒíƒ€ê³  ìˆì„ ê²½ìš° ì‚¬ìš© ë¶ˆê°€ëŠ¥í•œ ìŠ¤í‚¬
 	switch(_nSkill)
 	{
 	case AT_SKILL_THRUST:
@@ -986,7 +986,7 @@ bool CMonkSystem::IsSwordformGlovesUseSkill(int _nSkill)
 {
 	switch(_nSkill)
 	{
-	case AT_SKILL_GIANTSWING:	//¿©±â ½ºÅ³µéÀº Àå°©Çü ¹«±â¸¦ Âø¿ë½Ã¿¡¸¸ »ç¿ë°¡´É
+	case AT_SKILL_GIANTSWING:	//ì—¬ê¸° ìŠ¤í‚¬ë“¤ì€ ì¥ê°‘í˜• ë¬´ê¸°ë¥¼ ì°©ìš©ì‹œì—ë§Œ ì‚¬ìš©ê°€ëŠ¥
 	case AT_SKILL_DRAGON_LOWER:
 	case AT_SKILL_DRAGON_KICK:
 		{

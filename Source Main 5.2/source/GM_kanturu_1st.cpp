@@ -449,7 +449,7 @@ CHARACTER* M37Kanturu1st::CreateKanturu1stMonster(int iType, int PosX, int PosY,
 			pCharacter->Weapon[1].Type = -1;
 			BoneManager::RegisterBone(pCharacter, "SPL_WOLF_EYE_26", 16);
 			BoneManager::RegisterBone(pCharacter, "SPL_WOLF_EYE_25", 17);
-			strcpy( pCharacter->ID, "½ºÇÃ¸°ÅÍ ¿ïÇÁ" );
+			strcpy( pCharacter->ID, "ìŠ¤í”Œë¦°í„° ìš¸í”„" );
 
 			OBJECT* o = &pCharacter->Object;
 			BMD* b = &Models[o->Type];
@@ -472,7 +472,7 @@ CHARACTER* M37Kanturu1st::CreateKanturu1stMonster(int iType, int PosX, int PosY,
 			BoneManager::RegisterBone(pCharacter, "IRON_RIDER_BOW_6", 42);
 			BoneManager::RegisterBone(pCharacter, "IRON_RIDER_BOW_15", 52);
 			BoneManager::RegisterBone(pCharacter, "IRON_RIDER_BOW_16", 47);
-			strcpy( pCharacter->ID, "¾ÆÀÌ¾ð ¶óÀÌ´õ" );	
+			strcpy( pCharacter->ID, "ì•„ì´ì–¸ ë¼ì´ë”" );	
 		}
 		break;
 	case 354:
@@ -488,7 +488,7 @@ CHARACTER* M37Kanturu1st::CreateKanturu1stMonster(int iType, int PosX, int PosY,
 			BoneManager::RegisterBone(pCharacter, "BLADE_L_HAND", 12);
 			BoneManager::RegisterBone(pCharacter, "BOX1", 54);
 			BoneManager::RegisterBone(pCharacter, "BOX2", 55);
-			strcpy( pCharacter->ID, "ºí·¹ÀÌµå ÇåÅÍ" );	
+			strcpy( pCharacter->ID, "ë¸”ë ˆì´ë“œ í—Œí„°" );	
 		}
 		break;
 	case 353:
@@ -498,7 +498,7 @@ CHARACTER* M37Kanturu1st::CreateKanturu1stMonster(int iType, int PosX, int PosY,
 			pCharacter->Object.Scale = 1.3f;
 			pCharacter->Weapon[0].Type = -1;
 			pCharacter->Weapon[1].Type = -1;
-			strcpy( pCharacter->ID, "»çÆ¼·Î½º" );	
+			strcpy( pCharacter->ID, "ì‚¬í‹°ë¡œìŠ¤" );	
 		}
 		break;
 	case 355:
@@ -522,7 +522,7 @@ CHARACTER* M37Kanturu1st::CreateKanturu1stMonster(int iType, int PosX, int PosY,
 			BoneManager::RegisterBone(pCharacter, "KENTAUROS_BIP_SPAIN_1",4 );
 			BoneManager::RegisterBone(pCharacter, "KENTAUROS_BIP_SPAIN_2",5 );
 			BoneManager::RegisterBone(pCharacter, "KENTAUROS_BIP_SPAIN_3", 6);
-			strcpy( pCharacter->ID, "ÄËÅ¸¿ì·Î½º" );	
+			strcpy( pCharacter->ID, "ì¼„íƒ€ìš°ë¡œìŠ¤" );	
 		}
 		break;
 	case 553:
@@ -558,7 +558,7 @@ CHARACTER* M37Kanturu1st::CreateKanturu1stMonster(int iType, int PosX, int PosY,
 			BoneManager::RegisterBone(pCharacter, "KENTAUROS_BIP_SPAIN_1",4 );
 			BoneManager::RegisterBone(pCharacter, "KENTAUROS_BIP_SPAIN_2",5 );
 			BoneManager::RegisterBone(pCharacter, "KENTAUROS_BIP_SPAIN_3", 6);
-			strcpy( pCharacter->ID, "ÄËÅ¸¿ì·Î½º¿ö¸®¾î" );	
+			strcpy( pCharacter->ID, "ì¼„íƒ€ìš°ë¡œìŠ¤ì›Œë¦¬ì–´" );	
 		}
 		break;
 	case 555:

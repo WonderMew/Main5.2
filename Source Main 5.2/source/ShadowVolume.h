@@ -25,31 +25,31 @@ public:
 
 	void Clear( void);
 
-	// a) ÃÖÁ¾ »ı¼ºµÈ ¼¨µµ¿ì º¼·ı Á¤º¸
+	// a) ìµœì¢… ìƒì„±ëœ ì„€ë„ìš° ë³¼ë¥¨ ì •ë³´
 protected:
-	short	m_nNumVertices;	// Á¡ °³¼ö
-	vec3_t	*m_pVertices;	// Á¡µé
+	short	m_nNumVertices;	// ì  ê°œìˆ˜
+	vec3_t	*m_pVertices;	// ì ë“¤
 protected:
-	BOOL GetReadyToCreate( vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES], BMD *b, OBJECT *o, bool SkipTga=true);	// »ı¼º
+	BOOL GetReadyToCreate( vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES], BMD *b, OBJECT *o, bool SkipTga=true);	// ìƒì„±
 public:
-	virtual void Create( vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES], BMD *b, OBJECT *o, bool SkipTga=true);	// »ı¼º
-	virtual void Destroy( void);	// Á¦°Å
-	void RenderAsFrame( void);	// ¼¨µµ¿ì º¼·ıÀ» frame À¸·Î ±×¸®±â
-	void Shade( void);	// ¹öÆÛ¿¡ ±×¸²ÀÚ ±×¸®±â
+	virtual void Create( vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES], BMD *b, OBJECT *o, bool SkipTga=true);	// ìƒì„±
+	virtual void Destroy( void);	// ì œê±°
+	void RenderAsFrame( void);	// ì„€ë„ìš° ë³¼ë¥¨ì„ frame ìœ¼ë¡œ ê·¸ë¦¬ê¸°
+	void Shade( void);	// ë²„í¼ì— ê·¸ë¦¼ì ê·¸ë¦¬ê¸°
 
-	// b) Áß°£ °úÁ¤
+	// b) ì¤‘ê°„ ê³¼ì •
 protected:
-	vec3_t m_vLight;	// ºû
-	int m_iNumEdge;		// °¡ÀåÀÚ¸® °³¼ö
-	St_Edges *m_pEdges;	// °¡ÀåÀÚ¸®
-	void DeterminateSilhouette( short nMesh, vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES], short nNumTriangles, Triangle_t *pTriangles, bool Tga);	// Mesh º° °¡ÀåÀÚ¸® µû±â
-	void AddEdge( short nV1, short nV2, short nMesh);	// °¡ÀåÀÚ¸® Ãß°¡
-	void AddEdgeFast( short nV1, short nV2, short nMesh, int iTriangle, int Edge, Triangle_t *pTriangles);	// °¡ÀåÀÚ¸® Ãß°¡
-	void GenerateSidePolygon( vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES]);	// °¡ÀåÀÚ¸®¸¦ ÀÌ¿ëÇÑ Æú¸®°ï »ı¼º
+	vec3_t m_vLight;	// ë¹›
+	int m_iNumEdge;		// ê°€ì¥ìë¦¬ ê°œìˆ˜
+	St_Edges *m_pEdges;	// ê°€ì¥ìë¦¬
+	void DeterminateSilhouette( short nMesh, vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES], short nNumTriangles, Triangle_t *pTriangles, bool Tga);	// Mesh ë³„ ê°€ì¥ìë¦¬ ë”°ê¸°
+	void AddEdge( short nV1, short nV2, short nMesh);	// ê°€ì¥ìë¦¬ ì¶”ê°€
+	void AddEdgeFast( short nV1, short nV2, short nMesh, int iTriangle, int Edge, Triangle_t *pTriangles);	// ê°€ì¥ìë¦¬ ì¶”ê°€
+	void GenerateSidePolygon( vec3_t ppVertexTransformed[MAX_MESH][MAX_VERTICES]);	// ê°€ì¥ìë¦¬ë¥¼ ì´ìš©í•œ í´ë¦¬ê³¤ ìƒì„±
 
-	// c) Ç¥Çö
+	// c) í‘œí˜„
 protected:
-	void RenderShadowVolume( void);	// ¼¨µµ¿ì º¼·ıÀ» ÁöÁ¤µÈ ¹æ½ÄÀ¸·Î ±×¸®±â
+	void RenderShadowVolume( void);	// ì„€ë„ìš° ë³¼ë¥¨ì„ ì§€ì •ëœ ë°©ì‹ìœ¼ë¡œ ê·¸ë¦¬ê¸°
 };
 
 
