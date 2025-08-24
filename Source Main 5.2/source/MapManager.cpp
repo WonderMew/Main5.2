@@ -1675,16 +1675,14 @@ bool CMapManager::InDevilSquare()
 
 bool CMapManager::InHellas(int iMap) 
 { 
-	if (iMap == -1) return false;
+	//if (iMap == -1) return false;
 
-	return ((this->WorldActive>=WD_24HELLAS && this->WorldActive<=WD_24HELLAS_END) || (this->WorldActive==WD_24HELLAS_7)); 
+	return ((this->WorldActive >= WD_24HELLAS && this->WorldActive <= WD_24HELLAS_END) || (this->WorldActive == WD_24HELLAS_7));
 }
 
 bool CMapManager::InHiddenHellas(int iMap) 
 { 
-	if (iMap == -1) return false;
-
-	return (this->WorldActive==WD_24HELLAS_7) ? true : false; 
+	return (this->WorldActive == WD_24HELLAS_7);
 }
 
 bool CMapManager::IsPKField()
