@@ -1,4 +1,5 @@
 
+#include "stdafx.h"
 #include "MD5.h"
 #include "MD5_KEYVAL.h"
 

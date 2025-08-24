@@ -1,6 +1,6 @@
 #pragma once
 #if(NEW_PROTOCOL_SYSTEM==1)
-#include "olcPGEX_Network.h"
+#include "Time/include/olcPGEX_Network.h"
 #include "SocketManagerEnum.h"
 
 class CSocketConnection : public olc::net::server_interface<ProtocolHead>

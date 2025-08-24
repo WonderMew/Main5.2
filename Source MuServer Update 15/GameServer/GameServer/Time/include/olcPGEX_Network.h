@@ -51,7 +51,7 @@
 
 	Author
 	~~~~~~
-	David Barr, aka javidx9, ©OneLoneCoder 2019, 2020, 2021
+	David Barr, aka javidx9, „é°neLoneCoder 2019, 2020, 2021
 
 */
 
@@ -78,9 +78,9 @@
 
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define ASIO_STANDALONE
-#include <asio.hpp>  
-#include <asio/ts/buffer.hpp>
-#include <asio/ts/internet.hpp>
+#include <boost/asio.hpp>  
+#include <boost/asio/ts/buffer.hpp>
+#include <boost/asio/ts/internet.hpp>
 
 namespace olc
 {
@@ -990,7 +990,8 @@ namespace olc
 			// Called when a client appears to have disconnected
 			virtual void OnClientDisconnect(std::shared_ptr<connection<T>> client)
 			{
-				std::remove(m_deqConnections.begin(),m_deqConnections.end(),client);
+				auto new_end = std::remove(m_deqConnections.begin(),m_deqConnections.end(),client);
+				m_deqConnections.erase(new_end, m_deqConnections.end());
 			}
 
 		protected:

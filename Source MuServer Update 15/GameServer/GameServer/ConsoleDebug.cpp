@@ -58,7 +58,7 @@ void CmuConsoleDebug::Write(int iType, const char* pStr, ...)
 		va_list	pArguments;
 
 		va_start(pArguments, pStr);
-		vsprintf(szBuffer, pStr, pArguments);
+		vsprintf_s(szBuffer, pStr, pArguments);
 		va_end(pArguments);
 
 		std::cout << szBuffer << std::endl;

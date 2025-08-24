@@ -33,8 +33,8 @@ bool CSocketManagerModern::CheckPortUse(unsigned short port)
 	using namespace boost::asio;
 	using ip::tcp;
 
-	io_service svc;
-	tcp::acceptor a(svc);
+	boost::asio::io_context ioc;
+	tcp::acceptor a(ioc);
 
 	boost::system::error_code ec;
 	a.open(tcp::v4(), ec) || a.bind({ tcp::v4(), port }, ec);
