@@ -174,12 +174,16 @@ void SaveScreen()
 		strcat( GrabFileName, lpszFileName);
 	}*/
 
-	unsigned char *Buffer = new unsigned char [(int)WindowWidth*(int)WindowHeight*3];
-	glReadPixels(0,0,(int)WindowWidth,(int)WindowHeight,GL_RGB,GL_UNSIGNED_BYTE,Buffer);
-	WriteJpeg(GrabFileName,(int)WindowWidth,(int)WindowHeight,Buffer,100);
+
+	unsigned char* Buffer = new unsigned char[(int)WindowWidth * (int)WindowHeight * 3];
+	glReadPixels(0, 0, (int)WindowWidth, (int)WindowHeight, GL_RGB, GL_UNSIGNED_BYTE, Buffer);
+	char GrabFullPath[MAX_PATH]; // Masio
+	strcpy(GrabFullPath, "Screenshots\\"); // Masio
+	strcat(GrabFullPath, GrabFileName); // Masio
+	WriteJpeg(GrabFullPath, (int)WindowWidth, (int)WindowHeight, Buffer, 100);
 
 	SAFE_DELETE_ARRAY(Buffer);
-	
+
 	GrabScreen++;
 	GrabScreen %= 10000;
 }
