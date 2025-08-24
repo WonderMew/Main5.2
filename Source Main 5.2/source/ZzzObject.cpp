@@ -3488,7 +3488,7 @@ void RenderObjects()
 									int Level;
 									if ( gCharacterManager.GetBaseClass(Hero->Class)==CLASS_DARK || gCharacterManager.GetBaseClass(Hero->Class)==CLASS_DARK_LORD 
 #ifdef PBG_ADD_NEWCHAR_MONK
-										|| GetBaseClass(Hero->Class)==CLASS_RAGEFIGHTER
+										|| gCharacterManager.GetBaseClass(Hero->Class)==CLASS_RAGEFIGHTER
 #endif //PBG_ADD_NEWCHAR_MONK
 										)
 										Level = 50*2/3;
@@ -3694,7 +3694,7 @@ void RenderObjects_AfterCharacter()
 
 									if ( gCharacterManager.GetBaseClass(Hero->Class)==CLASS_DARK || gCharacterManager.GetBaseClass(Hero->Class)==CLASS_DARK_LORD 
 #ifdef PBG_ADD_NEWCHAR_MONK
-										|| GetBaseClass(Hero->Class)==CLASS_RAGEFIGHTER
+										|| gCharacterManager.GetBaseClass(Hero->Class)==CLASS_RAGEFIGHTER
 #endif //PBG_ADD_NEWCHAR_MONK
 										)
 										Level = 80*2/3;
@@ -5434,20 +5434,185 @@ void ItemObjectAttribute(OBJECT *o)
 	}
 }
 
+// array<float, 4> = { angle[0], angle[1], angle[2], scale }
+using angle_opt = std::optional<float>;
+static std::map<int, std::array<angle_opt, 4>> s_itemAngleMap = {
+		{ MODEL_BOW + 20, {0.f, 0.f, std::nullopt, std::nullopt} },
+		{ MODEL_BOW + 21, {0.f, 0.f, std::nullopt, std::nullopt} },
+		{ MODEL_BOW + 22, {0.f, 0.f, std::nullopt, std::nullopt} },
+		{ MODEL_WING + 49, {270.0f, 180.0f, 45.0f, 0.7f} },
+		{ MODEL_WING + 50, {250.0f, 180.0f, 45.0f, std::nullopt}},
+		{ MODEL_POTION + 45, {0.f, std::nullopt, 90.f, 0.9f}},
+		{ MODEL_POTION + 49, {0.f, std::nullopt, 90.f, 0.9f}},
+		{ MODEL_POTION + 50, {0.f, std::nullopt, 90.f, 0.26f}},
+		{ MODEL_POTION + 54, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 58, {std::nullopt, std::nullopt, 90.f, 0.3f}},
+		{ MODEL_POTION + 59, {90.f, 90.f, std::nullopt, 0.3f}},
+		{ MODEL_POTION + 60, {90.f, 90.f, std::nullopt, 0.3f}},
+		{ MODEL_POTION + 61, {90.f, 90.f, std::nullopt, 0.3f}},
+		{ MODEL_POTION + 62, {90.f, std::nullopt, std::nullopt, 0.3f}},
+
+		{ MODEL_POTION + 53, {std::nullopt, std::nullopt, 90.f, 0.2f}},
+		{ MODEL_POTION + 43, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 44, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 45, {90.f, std::nullopt, std::nullopt, 0.5f}},
+
+		{ MODEL_HELPER + 59, {std::nullopt, std::nullopt, 90.f, 0.2f}},
+
+		{ MODEL_HELPER + 60, {std::nullopt, std::nullopt, 90.f, 1.5f}},
+		{ MODEL_HELPER + 61, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_HELPER + 83, {90.f, std::nullopt, std::nullopt, 0.3f}},
+
+		{ MODEL_POTION + 91, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 92, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 93, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 95, {90.f, std::nullopt, std::nullopt, 0.5f}},
+		{ MODEL_POTION + 94, {std::nullopt, std::nullopt, 90.f, 0.6f}},
+		{ MODEL_POTION + 84, {std::nullopt, std::nullopt, 90.f, 0.8f}},
+
+		{ MODEL_POTION + 85, {std::nullopt, std::nullopt, 90.f, 0.9f}},
+		{ MODEL_POTION + 86, {std::nullopt, std::nullopt, 90.f, 0.7f}},
+		{ MODEL_POTION + 87, {std::nullopt, std::nullopt, 90.f, 1.3f}},
+
+		{ MODEL_POTION + 88, {180.f, 180.f, std::nullopt/*90.f*/, 0.7f}},
+		{ MODEL_POTION + 89, {30.f, std::nullopt, 90.f, 0.7f}},
+		{ MODEL_POTION + 90, {30.f, std::nullopt, 90.f, 0.7f}},
+
+		{ MODEL_POTION + 140, {std::nullopt, std::nullopt, 90.f, 0.5f}},
+		{ MODEL_POTION + 96, {std::nullopt, std::nullopt, 90.f, 0.2f}},
+
+		{ MODEL_HELPER + 49, {90.f, 0.f, std::nullopt, 0.3f}},
+		{ MODEL_HELPER + 50, {0.f, std::nullopt, std::nullopt, 0.6f}},
+		{ MODEL_HELPER + 51, {90.f, std::nullopt, std::nullopt, 0.45f}},
+
+		{ MODEL_POTION + 64, {0.f, std::nullopt, std::nullopt, 0.8f}},
+		{ MODEL_HELPER + 52, {0.f, std::nullopt, std::nullopt, 1.2f}},
+		{ MODEL_HELPER + 53, {0.f, std::nullopt, std::nullopt, 1.2f}},
+
+		{ MODEL_POTION + 65, {90.f, std::nullopt, std::nullopt, 0.6f}},
+		{ MODEL_POTION + 66, {90.f, std::nullopt, std::nullopt, 0.8f}},
+		{ MODEL_POTION + 67, {270.f, std::nullopt, std::nullopt, 0.8f}},
+
+		{ MODEL_POTION + 68, {std::nullopt, std::nullopt, -135.f, 0.6f}},
+		{ MODEL_EVENT + 4, {90.f, std::nullopt, std::nullopt, std::nullopt}},
+		{ MODEL_EVENT + 8, {270.f, std::nullopt, 45.f, std::nullopt}},
+		{ MODEL_EVENT + 9, {270.f, std::nullopt, 45.f, std::nullopt}},
+
+		{ MODEL_EVENT + 10, {std::nullopt, std::nullopt, std::nullopt, .2f}},
+		{ MODEL_EVENT + 5, {90.f, std::nullopt, std::nullopt, std::nullopt}},
+		{ MODEL_POTION + 23, {std::nullopt, 45.f, 45.f, std::nullopt}},
+
+		{ MODEL_POTION + 24, {std::nullopt, std::nullopt, 45.f, std::nullopt}},
+
+		{ MODEL_POTION + 17, {90.f, std::nullopt, std::nullopt, std::nullopt}},
+		{ MODEL_POTION + 63, {70.f, std::nullopt, std::nullopt, 1.5f}},
+		{ MODEL_POTION + 99, {70.f, std::nullopt, 0.f, 1.0f}},
+		{ MODEL_POTION + 52, {std::nullopt, std::nullopt, -10.f, 0.4f}},
+
+		{ MODEL_POTION + 18, {270.f, std::nullopt, 270.f, std::nullopt}},
+		{ MODEL_POTION + 19, {270.f, std::nullopt, 90.f, std::nullopt}},
+		{ MODEL_POTION + 29, {90.f, std::nullopt, 70.f, std::nullopt}},
+		{ MODEL_EVENT + 11, {115.f, 75.f, 8.f, 0.4f}},
+
+		{ MODEL_HELPER + 16, {-45.f,-5.f, 18.f, 0.48f}},
+		{ MODEL_HELPER + 17, {-45.f,-5.f, 18.f, 0.48f}},
+		{ MODEL_HELPER + 18, {165.f, -168.f, 198.f, 0.48f}},
+		{ MODEL_HELPER + 30, {-45.f, 0.f, 45.f, 0.5f}},
+
+		{ MODEL_EVENT + 16, {std::nullopt, std::nullopt, 45.f, 0.5f}},
+		{ MODEL_EVENT + 12, {160.f, -183.f, 198.f, 0.38f}},
+		{ MODEL_EVENT + 13, {160.f, -183.f, 198.f, 0.54f}},
+
+		{ MODEL_POTION + 21, {270.f, std::nullopt, 90.f, std::nullopt}},
+		{ MODEL_EVENT + 7, {std::nullopt, std::nullopt, 45.f, std::nullopt}},
+		{ MODEL_POTION + 20, {std::nullopt, std::nullopt, 45.f, std::nullopt}},
+
+		{ MODEL_HELPER + 33, {std::nullopt, std::nullopt, 45.f, 1.2f}},
+		{ MODEL_HELPER + 34, {90.f, std::nullopt, std::nullopt, std::nullopt}},
+		{ MODEL_HELPER + 35, {std::nullopt, std::nullopt, 90.f, std::nullopt}},
+
+		{ MODEL_HELPER + 36, {std::nullopt, std::nullopt, 90.f, 1.3f}},
+		{ MODEL_HELPER + 37, {std::nullopt, std::nullopt, 180.f, std::nullopt}},
+		{ MODEL_POTION + 16, {270.f, std::nullopt, 90.f-45.f, std::nullopt}},
+
+		{ MODEL_POTION + 42, {270.f, std::nullopt, -15.f, 1.3f}},
+		{ MODEL_POTION + 43, {270.f, std::nullopt, -15.f, 1.0f}},
+		{ MODEL_POTION + 44, {270.f, std::nullopt, -15.f, 1.0f} },
+
+		{ MODEL_HELPER + 66, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_POTION + 100, {180.0f, std::nullopt, std::nullopt/*0.0f*/, 1.0f}},
+
+		{ MODEL_HELPER + 97, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 98, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_POTION + 91, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+
+
+		{ MODEL_HELPER + 99, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_POTION + 110, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_POTION + 111, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+
+		{ MODEL_HELPER + 107, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 104, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 105, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+
+		{ MODEL_HELPER + 103, {0.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_POTION + 133, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 109, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+
+		{ MODEL_HELPER + 110, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 111, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 112, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+
+		{ MODEL_HELPER + 113, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 114, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 115, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+
+		{ MODEL_POTION + 112, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_POTION + 113, {270.0f, std::nullopt, std::nullopt, 1.0f} },
+		{ MODEL_HELPER + 116, {90.f, std::nullopt, std::nullopt, 0.5f} },
+
+		{ MODEL_HELPER + 121, {90.f, std::nullopt, std::nullopt, 0.5f} },
+		{ MODEL_HELPER + 123, {30.f, std::nullopt, std::nullopt, 0.4f} },
+#ifdef LEM_ADD_LUCKYITEM
+		{ MODEL_POTION + 160, {90.f, std::nullopt, std::nullopt, 0.2f} },
+		{ MODEL_POTION + 161, {90.f, std::nullopt, std::nullopt, 0.2f} },
+#endif
+};
+
+
+
 void ItemAngle(OBJECT *o)
 {
 	Vector(0.f,0.f,-45.f,o->Angle);
+
+	auto iter = s_itemAngleMap.find(o->Type);
+	if (iter != s_itemAngleMap.end())
+	{
+		std::array<angle_opt, 4> &arr = iter->second;
+		if (arr[0].has_value())
+		{
+			o->Angle[0] = arr[0].value();
+		}
+		if (arr[1].has_value())
+		{
+			o->Angle[1] = arr[1].value();
+		}
+		if (arr[2].has_value())
+		{
+			o->Angle[2] = arr[2].value();
+		}
+		if (arr[3].has_value())
+		{
+			o->Scale = arr[3].value();
+		}
+		return;
+	}
 
 	if(o->Type>=MODEL_SWORD && o->Type<MODEL_AXE+MAX_ITEM_INDEX)
 	{
 		o->Angle[0] = 60.f;
 		if(o->Type == MODEL_SWORD+19)
 			o->Scale = 0.7f;
-	}
-	else if(o->Type == MODEL_BOW+20 || o->Type == MODEL_BOW+21 || o->Type == MODEL_BOW+22)
-	{
-		o->Angle[0] = 0.f;
-		o->Angle[1] = 0.f;
 	}
 	else if((o->Type>=MODEL_BOW+8  && o->Type<MODEL_BOW+17) || (o->Type>=MODEL_BOW+18 && o->Type<MODEL_BOW+20))
 	{
@@ -5494,44 +5659,10 @@ void ItemAngle(OBJECT *o)
 		o->Angle[0] = 0.f;
 		o->Scale = 0.6f;
 	}
-#ifdef PBG_ADD_NEWCHAR_MONK_ITEM
-	else if(o->Type == MODEL_WING+49)
-	{
-		o->Angle[0] = 270.0f;
-		o->Angle[1] = 180.0f;
-		o->Angle[2] = 45.0f;
-        o->Scale    = 0.7f;
-    }
-	else if(o->Type == MODEL_WING+50)
-	{
-		o->Angle[0] = 250.0f;
-		o->Angle[1] = 180.0f;
-		o->Angle[2] = 45.0f;
-	}
-#endif //PBG_ADD_NEWCHAR_MONK_ITEM
-
-	else if ( o->Type==MODEL_POTION+45)
-	{
-		o->Scale = 0.9f;
-		o->Angle[0] = 0.f;
-		o->Angle[2] = 90.f;
-	}
 	else if ( o->Type>=MODEL_POTION+46 && o->Type<=MODEL_POTION+48)
 	{
 		o->Scale = 0.7f;
 		o->Angle[0] = 90.f;
-	}
-	else if ( o->Type==MODEL_POTION+49)
-	{
-		o->Scale = 0.9f;
-		o->Angle[0] = 0.f;
-		o->Angle[2] = 90.f;
-	}
-	else if ( o->Type==MODEL_POTION+50)
-	{
-		o->Scale = 0.26f;
-		o->Angle[0] = 0.f;
-		o->Angle[2] = 90.f;
 	}
 	else if ( o->Type>=MODEL_POTION+32 && o->Type<=MODEL_POTION+34)
 	{
@@ -5550,37 +5681,6 @@ void ItemAngle(OBJECT *o)
 		o->Scale = 0.5f;
 		o->Angle[0] = 90.f;
 	}
-	else if(o->Type == MODEL_POTION+54)
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+58)
-	{
-		o->Scale = 0.3f;
-		o->Angle[2] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+59 || o->Type == MODEL_POTION+60)
-	{
-		o->Scale = 0.3f;
-		o->Angle[0] = 90.f;
-		o->Angle[1] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+61 || o->Type == MODEL_POTION+62)
-	{
-		o->Scale = 0.3f;
-		o->Angle[0] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+53 )
-	{
-		o->Scale = 0.2f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_HELPER+43 || o->Type == MODEL_HELPER+44 || o->Type == MODEL_HELPER+45 )
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
 	else if( o->Type >= MODEL_POTION+70 && o->Type <= MODEL_POTION+71 )
 	{
 		o->Scale = 0.6f;
@@ -5589,11 +5689,6 @@ void ItemAngle(OBJECT *o)
 	else if( o->Type >= MODEL_POTION+72 && o->Type <= MODEL_POTION+77 )
 	{
 		o->Scale = 0.5f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_HELPER+59 )
-	{
-		o->Scale = 0.2f;
 		o->Angle[2] = 90.f;
 	}
 	else if( o->Type >= MODEL_HELPER+54 && o->Type <= MODEL_HELPER+58 )
@@ -5606,21 +5701,6 @@ void ItemAngle(OBJECT *o)
 		o->Scale = 0.5f;
 		o->Angle[2] = 90.f;
 	}
-	else if( o->Type == MODEL_HELPER+60 )
-	{
-		o->Scale = 1.5f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_HELPER+61 )
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+83)
-	{
-		o->Scale = 0.3f;
-		o->Angle[0] = 90.f;
-	}
 	else if(o->Type >= MODEL_POTION+145 && o->Type <= MODEL_POTION+150)
 	{
 		o->Scale = 0.3f;
@@ -5630,71 +5710,6 @@ void ItemAngle(OBJECT *o)
 	{
 		o->Scale = 0.5f;
 		o->Angle[0] = 90.f;
-	}
-
-	else if(o->Type == MODEL_POTION+91)
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+92)
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+93)
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+95)
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+94 )
-	{
-		o->Scale = 0.6f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+84 )
-	{
-		o->Scale = 0.8f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+85 )
-	{
-		o->Scale = 0.9f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+86 )
-	{
-		o->Scale = 0.7f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+87 )
-	{
-		o->Scale = 1.3f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+88 )
-	{
-		o->Scale = 0.7f;
-		o->Angle[0] = 180.f;
-		o->Angle[1] = 180.f;
-		//o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+89 )
-	{
-		o->Scale = 0.7f;
-		o->Angle[0] = 30.f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+90 )
-	{
-		o->Scale = 0.7f;
-		o->Angle[0] = 30.f;
-		o->Angle[2] = 90.f;
 	}
 	else if(o->Type >= MODEL_HELPER+62 && o->Type <= MODEL_HELPER+63)
 	{
@@ -5706,16 +5721,6 @@ void ItemAngle(OBJECT *o)
 		o->Scale = 0.5f;
 		o->Angle[2] = 90.f;
 	}
-	else if(o->Type == MODEL_POTION+140)
-	{
-		o->Scale = 0.5f;
-		o->Angle[2] = 90.f;
-	}
-	else if( o->Type == MODEL_POTION+96 ) 
-	{
-		o->Scale = 0.2f;
-		o->Angle[2] = 90.f;
-	}
 	else if( o->Type >= MODEL_HELPER+64 && o->Type <= MODEL_HELPER+65 )
 	{
 		switch(o->Type)
@@ -5725,345 +5730,23 @@ void ItemAngle(OBJECT *o)
 		}
 		o->Angle[2] = 70.f;
 	}
-	
-	else if(o->Type == MODEL_HELPER+49)
-	{
-		o->Angle[0] = 90.f;
-		o->Angle[1] = 0.f;
-		o->Scale = 0.3f;
-	}
-	else if(o->Type == MODEL_HELPER+50)
-	{
-		o->Angle[0] = 0.f;
-		o->Scale = 0.6f;
-	}
-	else if(o->Type == MODEL_HELPER+51)
-	{
-		o->Angle[0] = 90.f;
-		o->Scale = 0.45f;
-	}
-	else if(o->Type == MODEL_POTION+64)
-	{
-		o->Angle[0] = 0.f;
-		o->Scale = 0.8f;
-	}
-	else if(o->Type == MODEL_HELPER+52)
-	{
-		o->Angle[0] = 0.f;
-		o->Scale = 1.2f;
-	}
-	else if(o->Type == MODEL_HELPER+53)
-	{
-		o->Angle[0] = 0.f;
-		o->Scale = 1.2f;
-	}
-	else if(o->Type == MODEL_POTION+65)
-	{
-		o->Angle[0] = 90.f;
-		o->Scale = 0.6f;
-	}
-	else if(o->Type == MODEL_POTION+66)
-	{
-		o->Angle[0] = 90.f;
-		o->Scale = 0.8f;
-	}
-	else if(o->Type == MODEL_POTION+67)
-	{
-		o->Angle[0] = 270.f;
-		o->Scale = 0.8f;
-	}
-	else if (o->Type == MODEL_POTION+68)
-	{
-		o->Angle[2] = -135.f;
-		o->Scale = 0.6f;
-	}
-	else if(o->Type==MODEL_EVENT+4)
-	{
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type==MODEL_EVENT+8 || o->Type==MODEL_EVENT+9)
-	{
-		o->Angle[0] = 270.f;
-		o->Angle[2] = 45.f;
-	}
-	else if(o->Type==MODEL_EVENT+10)
-	{
-		o->Scale    = .2f;
-	}
-	else if(o->Type==MODEL_EVENT+5)
-	{
-		o->Angle[0] = 90.f;
-	}
-    else if ( o->Type==MODEL_POTION+23 )
-    {
-        o->Angle[1] = 45.f;
-        o->Angle[2] = 45.f;
-    }
-    else if ( o->Type==MODEL_POTION+24 )
-    {
-        o->Angle[2] = 45.f;
-    }
     else if ( ( o->Type>=MODEL_POTION+25 && o->Type<MODEL_POTION+27) || o->Type == MODEL_HELPER+14)
     {
         o->Angle[2] = 45.f;
     }
-	else if(o->Type==MODEL_POTION+17)
-	{
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type==MODEL_POTION+63)
-	{
-		o->Angle[0] = 70.f;
-		o->Scale = 1.5f;
-	}
-	else if(o->Type==MODEL_POTION+99)
-	{
-		o->Angle[0] = 70.f;
-		o->Angle[2] = 0.f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type==MODEL_POTION+52)
-	{
-		o->Angle[2] = -10.f;
-		o->Scale = 0.4f;
-	}
-	else if(o->Type==MODEL_POTION+18)
-	{
-		o->Angle[0] = o->Angle[2] = 270.f;
-	}
-	else if(o->Type==MODEL_POTION+19)
-	{
-		o->Angle[0] = 270.f;
-		o->Angle[2] = 90.f;
-	}
-	else if(o->Type == MODEL_POTION+29)
-	{
-		o->Angle[0] = 90.f;
-		o->Angle[2] = 70.f;
-	}
-	else if(o->Type == MODEL_EVENT+11)
-	{
-		o->Angle[0] = 115.f;
-		o->Angle[1] = 75.f;
-		o->Angle[2] = 8.f;
-		o->Scale = 0.4f;
-	}
-	else if(o->Type == MODEL_HELPER+16 || o->Type == MODEL_HELPER+17)
-	{
-		o->Angle[0] = -45.f;
-		o->Angle[1] = -5.f;
-		o->Angle[2] = 18.f;
-		o->Scale = 0.48f;
-	}
-	else if(o->Type == MODEL_HELPER+18)
-	{
-		o->Angle[0] = 165.f;
-		o->Angle[1] = -168.f;
-		o->Angle[2] = 198.f;
-		o->Scale = 0.48f;
-	}
-    else if ( o->Type==MODEL_HELPER+30 )
-    {
-        o->Angle[0] = -45.f;
-        o->Angle[1] = 0.f;
-        o->Angle[2] = 45.f;
-        o->Scale    = 0.5f;
-    }
-    else if ( o->Type==MODEL_EVENT+16 )
-    {
-		o->Angle[2] = 45.f;
-        o->Scale    = 0.5f;
-    }
-	else if(o->Type==MODEL_EVENT+12)
-	{
-		o->Angle[0] = 160.f;
-		o->Angle[1] = -183.f;
-		o->Angle[2] = 198.f;
-		o->Scale = 0.38f;
-	}
-	else if(o->Type==MODEL_EVENT+13)
-	{
-		o->Angle[0] = 160.f;
-		o->Angle[1] = -183.f;
-		o->Angle[2] = 198.f;
-		o->Scale = 0.54f;
-	}
-    else if(o->Type==MODEL_POTION+21)
-    {
-		o->Angle[0] = 270.f;
-		o->Angle[2] = 90.f;
-    }
-	else if(o->Type==MODEL_EVENT+7)
-	{
-		o->Angle[2] = 45.f;
-	}
-	else if(o->Type==MODEL_POTION+20)
-	{
-		o->Angle[2] = 45.f;
-	}
     else if ( o->Type>=MODEL_HELPER+21 && o->Type<=MODEL_HELPER+24 )
     {
 		o->Angle[2] = 20.f;
     }
-	else if(o->Type == MODEL_HELPER+33)
-	{
-		o->Angle[2] = 45.f;
-		o->Scale = 1.2f;
-	}
-	else if(o->Type == MODEL_HELPER+34)
-	{
-		o->Angle[0] = 90.f;
-	}
-	else if(o->Type == MODEL_HELPER+35)
-	{
-		o->Angle[2] = 90.f;
-	}
-	else if(o->Type == MODEL_HELPER+36)
-	{
-		o->Angle[2] = 90.f;
-		o->Scale = 1.3f;
-	}
-	else if(o->Type == MODEL_HELPER+37)
-	{
-		o->Angle[2] = 180.f;
-	}
-	else if( o->Type == MODEL_POTION+16 )
-	{
-		o->Angle[0] = 270.f;
-		o->Angle[2] = 90.f - 45.f;
-	}
-	else if( o->Type == MODEL_POTION+42 )
-	{
-		o->Angle[0] = 270.f;
-		o->Angle[2] = -15.f;
-		o->Scale = 1.3f;
-	}
-	else if( o->Type == MODEL_POTION+43 || o->Type == MODEL_POTION+44 )
-	{
-		o->Angle[0] = 270.f;
-		o->Angle[2] = -15.f;
-		o->Scale = 1.0f;
-	}
 	else if(o->Type >= MODEL_ETC+19 && o->Type <= MODEL_ETC+27)
 	{
 		o->Angle[0] = 270.f;
 		o->Scale = 0.8f;
 	}
-	else if(o->Type == MODEL_HELPER+66 )
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_POTION+100)
-	{
-		o->Angle[0] = 180.0f;
-	//	o->Angle[2] = 0.0f;
-		o->Scale = 1.0f;
-	}
 	else if( o->Type >= MODEL_TYPE_CHARM_MIXWING+EWS_BEGIN && o->Type <= MODEL_TYPE_CHARM_MIXWING+EWS_END )
 	{
 		o->Scale = 0.5f;
 		o->Angle[2] = 90.f;
-	}
-	else if(o->Type == MODEL_HELPER+97 || o->Type == MODEL_HELPER+98 || o->Type == MODEL_POTION+91)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+99)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_POTION+110 || o->Type == MODEL_POTION+111)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+107)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+104)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+105)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+103)
-	{
-		o->Angle[0] = 0.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_POTION+133)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+109)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+110)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+111)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+112)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+113)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+114)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_HELPER+115)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_POTION+112)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if(o->Type == MODEL_POTION+113)
-	{
-		o->Angle[0] = 270.0f;
-		o->Scale = 1.0f;
-	}
-	else if( o->Type == MODEL_HELPER+116 )
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if( o->Type == MODEL_HELPER+121 )
-	{
-		o->Scale = 0.5f;
-		o->Angle[0] = 90.f;
-	}
-	else if (o->Type == MODEL_HELPER+123)
-	{
-		o->Scale = 0.4f;
-		o->Angle[0] = 30.f;
 	}
 #ifdef PBG_ADD_NEWCHAR_MONK_ITEM
 	else if(o->Type >= MODEL_HELM+59 && o->Type <= MODEL_HELM+59+2)
@@ -6086,11 +5769,6 @@ void ItemAngle(OBJECT *o)
 	}
 #ifdef LEM_ADD_LUCKYITEM
 	else if( o->Type >= MODEL_HELPER+135 && o->Type <= MODEL_HELPER+145 )
-	{
-		o->Scale = 0.2f;
-		o->Angle[0] = 90.f;
-	}
-	else if(  o->Type == MODEL_POTION+160 || o->Type == MODEL_POTION+161 )
 	{
 		o->Scale = 0.2f;
 		o->Angle[0] = 90.f;

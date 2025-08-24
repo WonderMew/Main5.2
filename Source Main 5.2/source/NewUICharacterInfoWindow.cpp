@@ -173,7 +173,7 @@ bool SEASON3B::CNewUICharacterInfoWindow::BtnProcess()
 	{
 		if(gCharacterManager.IsMasterLevel( Hero->Class ) == true 
 #ifdef PBG_ADD_NEWCHAR_MONK
-			&& GetCharacterClass(Hero->Class) != CLASS_TEMPLENIGHT
+			&& gCharacterManager.GetCharacterClass(Hero->Class) != CLASS_TEMPLENIGHT
 #endif //PBG_ADD_NEWCHAR_MONK
 			)
 			g_pNewUISystem->Toggle(SEASON3B::INTERFACE_MASTER_LEVEL);
@@ -1688,7 +1688,7 @@ void SEASON3B::CNewUICharacterInfoWindow::OpenningProcess()
 
 	if(gCharacterManager.IsMasterLevel(Hero->Class) == true
 #ifdef PBG_ADD_NEWCHAR_MONK
-		&& GetCharacterClass(Hero->Class) != CLASS_TEMPLENIGHT
+		&& gCharacterManager.GetCharacterClass(Hero->Class) != CLASS_TEMPLENIGHT
 #endif //PBG_ADD_NEWCHAR_MONK
 		)
 	{

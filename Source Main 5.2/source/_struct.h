@@ -305,19 +305,11 @@ typedef struct
 typedef struct
 {
 	char Name[32];
-#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
-	WORD Level;
-#else
 	BYTE Level;
-#endif
 	WORD Damage;
 	WORD Mana;
 	WORD AbilityGuage;
-#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
-	DWORD Distance;
-#else
 	BYTE Distance;
-#endif
 	int  Delay;
 	int Energy;
 	WORD Charisma;
@@ -327,18 +319,10 @@ typedef struct
 	BYTE KillCount;
 	BYTE RequireDutyClass[MAX_DUTY_CLASS];
 	BYTE RequireClass[MAX_CLASS];
-#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
-	BYTE SkillRank;
-#endif
 	WORD Magic_Icon;
 	BYTE TypeSkill;
 	int Strength;
 	int Dexterity;
-#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
-	BYTE ItemSkill;
-	BYTE IsDamage;
-	WORD Effect;
-#endif
 } SKILL_ATTRIBUTE;
 
 
