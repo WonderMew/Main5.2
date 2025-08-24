@@ -1646,9 +1646,9 @@ void CMapManager::DeleteObjects()
 
 bool CMapManager::InChaosCastle(int iMap)
 {
-	if (iMap == -1) return false;
+	//if (iMap == -1) return false;
 
-	if((iMap >= WD_18CHAOS_CASTLE && iMap <= WD_18CHAOS_CASTLE_END)|| iMap == WD_53CAOSCASTLE_MASTER_LEVEL)
+	if ((this->WorldActive >= WD_11BLOODCASTLE1 && this->WorldActive <= WD_11BLOODCASTLE_END) || this->WorldActive == WD_52BLOODCASTLE_MASTER_LEVEL)
 	{
 		return true;
 	}
@@ -1658,9 +1658,9 @@ bool CMapManager::InChaosCastle(int iMap)
 
 bool CMapManager::InBloodCastle(int iMap)
 {
-	if (iMap == -1) return false;
+	//if (iMap == -1) return false;
 
-	if((iMap >= WD_11BLOODCASTLE1 && iMap <= WD_11BLOODCASTLE_END)|| iMap == WD_52BLOODCASTLE_MASTER_LEVEL)
+	if ((this->WorldActive >= WD_11BLOODCASTLE1 && this->WorldActive <= WD_11BLOODCASTLE_END) || this->WorldActive == WD_52BLOODCASTLE_MASTER_LEVEL)
 	{
 		return true;
 	}
