@@ -383,7 +383,11 @@
 
 #define MAX_MONSTER			1024
 
+#ifdef PBG_ADD_NEWCHAR_MONK
+#define MAX_SKILLS			650
+#else
 #define MAX_SKILLS			600
+#endif
 
 #define MAX_DUTY_CLASS		3
 

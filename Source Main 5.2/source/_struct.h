@@ -154,7 +154,7 @@ typedef struct
 #ifdef PBG_ADD_NEWCHAR_MONK_SKILL
 	WORD m_wSkillIndex;
 #else //PBG_ADD_NEWCHAR_MONK_SKILL
-	WORD m_bySkillIndex;
+	WORD m_bySkillIndex;   // ?
 #endif //PBG_ADD_NEWCHAR_MONK_SKILL
 	BYTE Width;
 	BYTE Height;
@@ -171,13 +171,17 @@ typedef struct
 	WORD RequireStrength;
 	WORD RequireDexterity;
 	WORD RequireEnergy;
-	WORD  RequireVitality;
+	WORD RequireVitality;
 	WORD RequireCharisma;
 	WORD RequireLevel;
 	WORD Value;
 	int  iZen;
 	BYTE  AttType;
+#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
+	BYTE RequireClass[MAX_CLASS];
+#else
 	BYTE RequireClass[MAX_CLASS+1];
+#endif
 	BYTE Resistance[MAX_RESISTANCE+1];
 } ITEM_ATTRIBUTE;
 
@@ -301,15 +305,21 @@ typedef struct
 typedef struct
 {
 	char Name[32];
+#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
+	WORD Level;
+#else
 	BYTE Level;
+#endif
 	WORD Damage;
 	WORD Mana;
 	WORD AbilityGuage;
+#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
+	DWORD Distance;
+#else
 	BYTE Distance;
+#endif
 	int  Delay;
-
 	int Energy;
-	
 	WORD Charisma;
 	BYTE MasteryType;
 	BYTE SkillUseType;
@@ -317,13 +327,18 @@ typedef struct
 	BYTE KillCount;
 	BYTE RequireDutyClass[MAX_DUTY_CLASS];
 	BYTE RequireClass[MAX_CLASS];
+#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
+	BYTE SkillRank;
+#endif
 	WORD Magic_Icon;
-	
 	BYTE TypeSkill;
-
 	int Strength;
 	int Dexterity;
-
+#ifdef PBG_ADD_NEWCHAR_MONK_SKILL
+	BYTE ItemSkill;
+	BYTE IsDamage;
+	WORD Effect;
+#endif
 } SKILL_ATTRIBUTE;
 
 

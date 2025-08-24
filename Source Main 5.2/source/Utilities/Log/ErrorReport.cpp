@@ -187,7 +187,7 @@ void CErrorReport::HexWrite( void *pBuffer, int iSize)
 	DWORD dwWritten = 0;
 	char szLine[256] = {0, };
 	int offset = 0;
-	offset += sprintf(szLine, "0x%00000008X : ", (DWORD*)pBuffer);
+	offset += sprintf(szLine, "0x%08X : ", reinterpret_cast<DWORD_PTR>(pBuffer));
 	for(int i=0; i<iSize; i++) {
 		offset += sprintf(szLine+offset,"%02X", *((BYTE*)pBuffer+i));
 		if(i > 0 && i < iSize-1) {
