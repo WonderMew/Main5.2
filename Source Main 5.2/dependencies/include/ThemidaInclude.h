@@ -6,7 +6,7 @@
 #else
 #define VM_START
 #define VM_END
-// ©╘╠Б©║ ╩Г©Кго╢б ╦ее╘╥н цъ╟║гр ╟м  
+// Л≈╛Й╦╟Л≈░ Л┌╛Л ╘М∙≤К┼■ К╖╓М│╛К║° Л╤■Й╟─М∙═ Й╡┐  
 #endif 
 
 #endif // _THEMIDA_INCLUDE_H_
