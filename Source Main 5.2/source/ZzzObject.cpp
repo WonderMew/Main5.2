@@ -45,6 +45,8 @@
 #ifdef PBG_ADD_NEWCHAR_MONK
 #include "MonkSystem.h"
 #endif //PBG_ADD_NEWCHAR_MONK
+#include <optional>
+#include <array>
 
 extern vec3_t VertexTransform[MAX_MESH][MAX_VERTICES];
 extern vec3_t LightTransform[MAX_MESH][MAX_VERTICES];

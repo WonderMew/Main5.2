@@ -65,7 +65,7 @@
 #include "ServerListManager.h"
 #include "ProtocolSend.h"
 #include "MapManager.h"
-
+#include <thread>
 
 extern CUITextInputBox * g_pSingleTextInputBox;
 extern CUITextInputBox * g_pSinglePasswdInputBox;
